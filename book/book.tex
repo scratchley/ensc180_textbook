@@ -416,27 +416,24 @@ followed by the name of a command.
 
 \begin{verbatim}
 >> help sin
- SIN    Sine of argument in radians.
-    SIN(X) is the sine of the elements of X.
+ sin    Sine of argument in radians.
+    sin(X) is the sine of the elements of X.
  
     See also asin, sind.
 
-    Overloaded functions or methods (ones with the same name in other
-       directories) help sym/sin.m
-
-    Reference page in Help browser
-       doc sin
+    Reference page for sin
+    Other functions named sin
 \end{verbatim}
 
-Unfortunately, this documentation is not beginner-friendly.
-
-One gotcha is that the name of the function appears in the
-help page in capital letters, but if you type it like that
+MATLAB functions are case sensitive, if you type it like that
 in MATLAB, you get an error:
 
 \begin{verbatim}
 >> SIN(1)
-??? Undefined command/function 'SIN'.
+Undefined function 'SIN' for input arguments of type 'double'.
+ 
+Did you mean:
+>> sin(1)
 \end{verbatim}
 
 Another problem is that the help page uses vocabulary you don't
@@ -633,8 +630,8 @@ for multiplication.
 
 \begin{verbatim}
 >> area = pi r^2
-??? area = pi r^2
-              |
+ area = pi r^2
+           | 
 Error: Unexpected MATLAB expression.
 \end{verbatim}
 
@@ -649,7 +646,7 @@ to write something like $\sin \pi$, but not in MATLAB.
 
 \begin{verbatim}
 >> sin pi
-??? Function 'sin' is not defined for values of class 'char'.
+Undefined function 'sin' for input arguments of type 'char'.
 \end{verbatim}
 
 The problem is that when you leave out the parentheses, MATLAB treats
@@ -660,7 +657,10 @@ do you think is going on here?
 
 \begin{verbatim}
 >> abs pi
-ans =  112   105
+
+ans =
+
+   112   105
 \end{verbatim}
 
 There is a reason for this ``feature'', but rather than get into that
@@ -770,18 +770,16 @@ ans = 7.257415615307994e+306
 ans = Inf
 \end{verbatim}
 
-Division by zero also returns {\tt Inf}, but in this case MATLAB
-gives you a warning because division by zero is usually
-considered undefined.
-
+Division by zero also returns {\tt Inf}. 
 \begin{verbatim}
 >> 1/0
-Warning: Divide by zero.
 
-ans = Inf
+ans =
+
+   Inf
 \end{verbatim}
 
-A warning is like an error message without teeth; the computation
+In older version of MATLAB (pre 2015 version), it gives you a warning because division by zeros is usally consider undefined. A warning is like an error message without teeth; the computation
 is allowed to continue.  Allowing {\tt Inf} to propagate
 through a computation doesn't always do what you expect, but if you
 are careful with how you use it, {\tt Inf} can be quite useful.
@@ -791,9 +789,10 @@ which stands for ``not a number''.
 
 \begin{verbatim}
 >> 0/0
-Warning: Divide by zero.
 
-ans = NaN
+ans =
+
+   NaN
 \end{verbatim}
 
 
@@ -933,7 +932,6 @@ Note: you can't use Greek letters in MATLAB; when translating
 math expressions with Greek letters, it is common to write out
 the name of the letter (assuming you know it).
 \end{ex}
- 
 
 % chap02
 \chapter{Scripts}
@@ -987,7 +985,7 @@ get an error message like:
 
 \begin{verbatim}
 >> myscript
-??? Undefined function or variable 'myscript'.
+Undefined function or variable 'myscript'.
 \end{verbatim}
 
 In this case you can either save your script again in a directory
@@ -1000,13 +998,12 @@ something meaningful and memorable.  You should be very careful to choose a
 name that is not already in use; if you do, you might accidentally
 replace one of MATLAB's functions with your own.
 Finally, the name of the file cannot contain spaces.  If you create
-a file named {\tt my script.m}, MATLAB doesn't complain until you try
+a file named {\tt my script.m}, MATLAB doesn't give warning until you try
 to run it:
 
 \begin{verbatim}
 >> my script
-??? Undefined function or method 'my' for input arguments 
-of type 'char'.
+Undefined function or variable 'my'.
 \end{verbatim}
 
 The problem is that it is looking for a scipt named {\tt my}.  The
@@ -1015,8 +1012,8 @@ that exists.  Just for fun, create a script named {\tt abs val.m}
 and run it.
 
 Keeping track of your scripts can be a pain.  To keep things simple,
-for now, I suggest putting all of your scripts in the default
-directory.
+for now, I suggest putting all of your scripts in one
+directory of your own.
 
 \begin{ex}
 The Fibonacci sequence, denoted $F$, is described by the equations
@@ -1037,10 +1034,10 @@ F_n = \frac{1}{\sqrt{5}}
 \end{equation}
 
 Translate this expression into MATLAB and store your
-code in a file named {\tt fibonacci1}.  At the prompt, set the value
+code in a file named {\tt fibonacci1.m}.  At the prompt, set the value
 of {\tt n} to 10 and then run your script.  The last line of your
 script should assign the value of $F_n$ to {\tt ans}.
-(The correct value of $F_{10}$ is 55).
+(The correct value of $F_{10}$ is 55.0000 in the command window).
 \end{ex}
 
 
@@ -1097,7 +1094,7 @@ the code you think you are running.
 
 The variables you create are stored in the {\bf workspace}, which is a
 set of variables and their values.  The {\tt who} command prints the
-names of the variables in the workspace.
+names of the variables in the workspace. Make sure the workspace is empty and try the following commands.
 
 \begin{verbatim}
 >> x=5;
@@ -1136,10 +1133,6 @@ But it's easier to just type the variable name.
 z = 9
 \end{verbatim}
 
-(Strictly speaking, the name of a variable is an expression, so
-evaluating it should assign a value to {\tt ans}, but MATLAB seems
-to handle this as a special case.)
-
 
 \section{More errors}
 
@@ -1152,10 +1145,10 @@ to assign a value to {\tt n}.  If you don't:
 
 \begin{verbatim}
 >> fibonacci1
-??? Undefined function or variable "n".
+Undefined function or variable 'n'.
 
-Error in ==> fibonacci1 at 4
-diff = t1^(n+1) - t2^(n+1);
+Error in fibonacci1 (line 9)
+diff = t1^n - t2^n;
 \end{verbatim}
  
 The details of this message might be different for you, depending
@@ -1233,10 +1226,10 @@ But this is not:
 
 \begin{verbatim}
 >> y+1 = x
-??? y+1 = x
-        |
-Error: The expression to the left of the equals sign is not a valid 
-target for an assignment.
+ y+1 = x
+     |
+Error: The expression to the left of the equals sign is not a
+valid target for an assignment.
 \end{verbatim}
 
 In this case the error message is pretty helpful, as long as you know
@@ -1249,7 +1242,7 @@ does not get updated.
 
 A third difference is that a mathematical equality is a statement that
 may or may not be true.  For example, $y = y+1$ is a statement that
-happens to be false for all real values of $y$.  In MATLAB, {\tt y
+happens to be false for all complex values of $y$.  In MATLAB, {\tt y
 = y+1} is a sensible and useful assignment statement.  It reads the
 current value of {\tt y}, adds one, and replaces the old value with
 the new value.
@@ -1719,15 +1712,16 @@ the new plot.  The {\tt hold} command lets you override that behavior.
 {\tt hold on} tells MATLAB not to clear the figure when it makes a new
 plot; {\tt hold off} returns to the default behavior.
 
-Try this:
+Ensure no figures are on the screen, and then try this:
 
 \begin{verbatim}
 >> hold on
 >> plot(1, 1, 'o')
 >> plot(2, 2, 'o')
+>> hold off
 \end{verbatim}
 
-You should see a figure with two points.  MATLAB scales
+You should see a figure with two circles.  MATLAB scales
 the plot automatically so that the axes run from the lowest value in
 the plot to the highest.  So in this example the points are plotted in
 the corners.
@@ -1862,10 +1856,10 @@ end
 ans = total
 \end{verbatim}
 
-Now the script can compute any number of terms, with the
+Now the script above can compute any number of terms, with the
 precondition that you have to set {\tt n} before you execute
-the script.  Here's how you could run it with different values
-of {\tt n}:
+the script.  Put the script in a file named {\tt series.m}, then run it with different values
+of {\tt n} as shown in the following:
 
 \begin{verbatim}
 >> n=10; series

@@ -30,8 +30,8 @@
 \contentsline {section}{\numberline {3.5}plotting}{26}
 \contentsline {section}{\numberline {3.6}Sequences}{27}
 \contentsline {section}{\numberline {3.7}Series}{28}
-\contentsline {section}{\numberline {3.8}Generalization}{28}
-\contentsline {section}{\numberline {3.9}Glossary}{29}
+\contentsline {section}{\numberline {3.8}Generalization}{29}
+\contentsline {section}{\numberline {3.9}Glossary}{30}
 \contentsline {section}{\numberline {3.10}Exercises}{30}
 \contentsline {chapter}{\numberline {4}Vectors}{33}
 \contentsline {section}{\numberline {4.1}Checking preconditions}{33}
