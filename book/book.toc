@@ -54,7 +54,7 @@
 \contentsline {chapter}{\numberline {5}Functions}{49}
 \contentsline {section}{\numberline {5.1}Name Collisions}{49}
 \contentsline {section}{\numberline {5.2}Functions}{50}
-\contentsline {section}{\numberline {5.3}Documentation}{51}
+\contentsline {section}{\numberline {5.3}Documentation}{52}
 \contentsline {section}{\numberline {5.4}Function names}{52}
 \contentsline {section}{\numberline {5.5}Multiple input variables}{53}
 \contentsline {section}{\numberline {5.6}Logical functions}{54}
@@ -66,7 +66,7 @@
 \contentsline {section}{\numberline {5.12}{\tt continue}}{61}
 \contentsline {section}{\numberline {5.13}Mechanism and leap of faith}{62}
 \contentsline {section}{\numberline {5.14}Glossary}{63}
-\contentsline {section}{\numberline {5.15}Exercises}{63}
+\contentsline {section}{\numberline {5.15}Exercises}{64}
 \contentsline {chapter}{\numberline {6}Zero-finding}{65}
 \contentsline {section}{\numberline {6.1}Why functions?}{65}
 \contentsline {section}{\numberline {6.2}Maps}{65}

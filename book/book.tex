@@ -2999,7 +2999,7 @@ function res = myfunc(x)
 end
 \end{verbatim}
 
-The first word of the file has to be the word {\tt function}, because
+Other than comments, the first word of the file has to be the word {\tt function}, because
 that's how MATLAB tells the difference between a script and a function
 file.
 
@@ -3080,8 +3080,14 @@ function completes.
 >> y = myfunc(1);
 >> s, c
 
-s = 1
-c = 1
+s =
+
+     1
+
+
+c =
+
+     1
 \end{verbatim}
 
 So inside a function you can use whatever variable names you
@@ -3179,8 +3185,8 @@ try to run it, you get:
 
 \begin{verbatim}
 >> y = my func(1)
-??? y = my func(1)
-           |
+ y = my func(1)
+        |
 Error: Unexpected MATLAB expression.
 \end{verbatim}
 
@@ -3252,10 +3258,10 @@ if you provide too few, you get
 
 \begin{verbatim}
 >> c = hypotenuse(3)
-??? Input argument "b" is undefined.
+Not enough input arguments.
 
-Error in ==> hypotenuse at 2
-    res = sqrt(a^2 + b^2);
+Error in hypotenuse (line 2)
+    res = (a.^2 + b.^2) ^ (1/2);
 \end{verbatim}
 
 This error message is confusing, because it suggests that
@@ -3266,7 +3272,7 @@ If you provide too many arguments, you get
 
 \begin{verbatim}
 >> c = hypotenuse(3, 4, 5)
-??? Error using ==> hypotenuse
+Error using hypotenuse
 Too many input arguments.
 \end{verbatim}
 
@@ -3587,7 +3593,7 @@ range of values.
 
 \begin{verbatim}
 function res = find_triples (n)
-    for a=1:n
+    for a=1:n-1
         for b=a:n
             c = hypotenuse(a, b);
             flag = isintegral(c);
@@ -3604,11 +3610,29 @@ Here are the results for the range from 1 to 15:
 \begin{verbatim}
 >> find_triples(15)
 
-ans = 3     4     5
-ans = 5    12    13
-ans = 6     8    10
-ans = 8    15    17
-ans = 9    12    15
+ans =
+
+     3     4     5
+
+
+ans =
+
+     5    12    13
+
+
+ans =
+
+     6     8    10
+
+
+ans =
+
+     8    15    17
+
+
+ans =
+
+     9    12    15
 \end{verbatim}
 
 Some of these are more interesting than others.  The triples
