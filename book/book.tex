@@ -2014,7 +2014,9 @@ aren't any numbers that fit that description, so the result is
 \begin{verbatim}
 >> 1:-1
 
-ans = Empty matrix: 1-by-0
+ans =
+
+   Empty matrix: 1-by-0
 \end{verbatim}
 
 If the matrix is empty, you might expect it to be ``0-by-0,'' but
@@ -2219,6 +2221,7 @@ a vector.  You can assign a vector value to a variable:
 >> X = 1:5
 
 X = 1     2     3     4     5
+
 \end{verbatim}
 
 Variables that contain vectors are often capital letters.  That's
@@ -2262,7 +2265,7 @@ Otherwise:
 W = 1     2     3
 
 >> X+W
-??? Error using ==> plus
+Error using  + 
 Matrix dimensions must agree.
 \end{verbatim}
 
@@ -2341,7 +2344,7 @@ X = 1     2     3     4     5
 Y = 1     2     3     4     5
 
 >> Z = X*Y
-??? Error using ==> mtimes
+Error using  * 
 Inner matrix dimensions must agree.
 \end{verbatim}
 
@@ -2438,19 +2441,18 @@ zero or negative, you get this:
 
 \begin{verbatim}
 >> Y(0)
-??? Subscript indices must either be real positive integers or
+Subscript indices must either be real positive integers or
 logicals.
 \end{verbatim}
 
 ``Subscript indices'' is MATLAB's longfangled way to say ``indices.''
-``Real positive integers'' means that complex numbers are
-out.  And you can forget about ``logicals'' for now.
+``Real positive integers'' means that the imaginary part of a complex number should be zero.  And you can forget about ``logicals'' for now.
 
 If the index is too big, you get this:
 
 \begin{verbatim}
 >> Y(6)
-??? Index exceeds matrix dimensions.
+Index exceeds matrix dimensions.
 \end{verbatim}
 
 There's the ``m'' word again, but other than that, this message
@@ -2460,7 +2462,7 @@ Finally, don't forget that the index has to be an integer:
 
 \begin{verbatim}
 >> Y(1.5)
-??? Subscript indices must either be real positive integers or
+Subscript indices must either be real positive integers or
 logicals.
 \end{verbatim}
 
@@ -2749,7 +2751,7 @@ Experienced MATLAB programmers would never write the kind of loops
 in this chapter, because MATLAB provides simpler and faster ways to
 perform many reduce, filter and search operations.
 
-For example, the {\tt sum} function computes the sum of the elements
+For example, the {\tt sum()} function computes the sum of the elements
 in a vector and {\tt prod} computes the product.
 
 Many apply operations can be done with elementwise operators.  The
