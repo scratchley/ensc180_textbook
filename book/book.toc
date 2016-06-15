@@ -88,7 +88,7 @@
 \contentsline {section}{\numberline {7.5}Vectorizing your functions}{82}
 \contentsline {section}{\numberline {7.6}Sums and differences}{84}
 \contentsline {section}{\numberline {7.7}Products and ratios}{85}
-\contentsline {section}{\numberline {7.8}Existential quantification}{85}
+\contentsline {section}{\numberline {7.8}Existential quantification}{86}
 \contentsline {section}{\numberline {7.9}Universal quantification}{86}
 \contentsline {section}{\numberline {7.10}Logical vectors}{87}
 \contentsline {section}{\numberline {7.11}Glossary}{88}
@@ -99,7 +99,7 @@
 \contentsline {section}{\numberline {8.4}{\tt ode45}}{92}
 \contentsline {section}{\numberline {8.5}Multiple output variables}{94}
 \contentsline {section}{\numberline {8.6}Analytic or numerical?}{95}
-\contentsline {section}{\numberline {8.7}What can go wrong?}{96}
+\contentsline {section}{\numberline {8.7}What can go wrong?}{97}
 \contentsline {section}{\numberline {8.8}Stiffness}{98}
 \contentsline {section}{\numberline {8.9}Glossary}{99}
 \contentsline {section}{\numberline {8.10}Exercises}{100}
