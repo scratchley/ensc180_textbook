@@ -107,11 +107,11 @@
 \contentsline {section}{\numberline {9.1}Matrices}{103}
 \contentsline {section}{\numberline {9.2}Row and column vectors}{104}
 \contentsline {section}{\numberline {9.3}The transpose operator}{105}
-\contentsline {section}{\numberline {9.4}Lotka-Voltera}{106}
+\contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}
 \contentsline {section}{\numberline {9.5}What can go wrong?}{108}
 \contentsline {section}{\numberline {9.6}Output matrices}{108}
 \contentsline {section}{\numberline {9.7}Glossary}{110}
-\contentsline {section}{\numberline {9.8}Exercises}{110}
+\contentsline {section}{\numberline {9.8}Exercises}{111}
 \contentsline {chapter}{\numberline {10}Second-order systems}{113}
 \contentsline {section}{\numberline {10.1}Nested functions}{113}
 \contentsline {section}{\numberline {10.2}Newtonian motion}{114}

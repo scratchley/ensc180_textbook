@@ -6099,10 +6099,10 @@ have on row vectors, column vectors, and scalars?
 \end{ex}
 
 
-\section{Lotka-Voltera}
+\section{Lotka-Volterra}
 \label{lotka}
 
-The Lotka-Voltera model describes the interactions between two
+The Lotka-Volterra model describes the interactions between two
 species in an ecosystem, a predator and its prey.  A common example
 is rabbits and foxes.
 
@@ -6110,8 +6110,8 @@ The model is governed by the following system of differential
 equations:
 
 \begin{eqnarray*}
-R_t = a R - b R F \\
-F_t = e b R F - c F
+\frac{dR}{dt} = a R - b R F \\
+\frac{dF}{dt} = e b R F - c F
 \end{eqnarray*}
 %
 where
@@ -6163,7 +6163,9 @@ function res = lotka(t, V)
 end
 \end{verbatim}
 
-As usual, the first input variable is time.
+As usual, the first input variable is time. Even though the time variable, {\tt t}, 
+is not used inside the function, its present is required for using the {\tt ode45} 
+solver in order to indicate the time span.
 The second input variable is a vector with two elements,
 $R(t)$ and $F(t)$.  I gave it a capital letter to remind me that it
 is a vector.  The body of the function includes four {\bf paragraphs},
@@ -6231,12 +6233,12 @@ The output vector from the rate function
 has to be a column vector; otherwise you get
 
 \begin{verbatim}
-??? Error using ==> funfun/private/odearguments
+Error using odearguments (line 90)
 LOTKA must return a column vector.
 
-Error in ==> ode45 at 173
-[neq, tspan, ntspan, next, t0, tfinal, tdir, y0, f0, odeArgs,
-odeFcn, ...
+Error in ode45 (line 115)
+    odearguments(FcnHandlesUsed, solver_name, ode,...
+    tspan, y0, options, varargin);
 \end{verbatim}
 
 Which is pretty good as error messages go.  It's not clear {\em why}
@@ -6344,7 +6346,7 @@ but for 4 or more variables, you are on your own.
 
 \begin{description}
 
-\item[row vector:] In MATLAB, a matrix that has only one row. 
+\item[row vector:] A matrix that has only one row. 
 
 \item[column vector:] A matrix that has only one column. 
 
@@ -6524,10 +6526,12 @@ find the position of the object, $p$?  Well, we know that acceleration
 is the second derivative of position, so we can write a differential
 equation
 
-\[ p_{tt} = a \]
+
+\[ \frac{d^2p}{dt^2} = a\]
+
 
 Where $a$ and $p$ are functions of time that return vectors,
-and $p_{tt}$ is the second time derivative of $p$.
+and $\frac{d^2p}{dt^2}$ is the second time derivative of $p$.
 
 Because this equation includes a second derivative, it is a second-order
 ODE.  {\tt ode45} can't solve this equation in this form, but by
@@ -6535,8 +6539,9 @@ introducing a new variable, $v$, for velocity, we can rewrite it as
 a system of first-order ODEs.
 
 \begin{eqnarray*}
-p_t &=& v \\
-v_t &=& a
+\frac{dp}{dt} &=& v \\
+\\
+\frac{dv}{dt} &=& a
 \end{eqnarray*}
 
 The first equation says that the first derivative of $p$ is $v$; the
