@@ -1,4 +1,4 @@
-function res = proj(t, W)
+function res = proj1(t, W)
     P = W(1:2);
     V = W(3:4);
 

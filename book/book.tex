@@ -6638,7 +6638,7 @@ To convert from force to acceleration, we have to know mass, so let's
 say that the skydiver (with equipment) weighs 75 kg.
 
 Here's a version of {\tt acceleration} that takes air resistance
-into account (you don't have to make any changes in {\tt freefall}:
+into account (you don't have to make any changes in the {\tt freefall} function:
 
 \begin{verbatim}
 function res = acceleration(t, p, v)
@@ -6779,7 +6779,7 @@ ode45(@projectile, [0,10], [0, 3, 40, 30]);
 
 And the result looks like this:
 
-\beforefig \centerline{\includegraphics[height=2in]{figs/proj1.eps}}
+\beforefig \centerline{\includegraphics[height=2in]{figs/proj1_10s.eps}}
 
 You might have to think a little to figure out which line is
 which.  It looks like the flight time is about 6 seconds.
@@ -6864,14 +6864,15 @@ b =  1
      3
 
 >> c = [a, b]
-??? Error using ==> horzcat
-All matrices on a row in the bracketed expression must have the 
- same number of rows.
+Error using horzcat
+Dimensions of matrices being concatenated are not
+consistent.
 
 >> c = [a; b]
-??? Error using ==> vertcat
-All rows in the bracketed expression must have the same 
-number of columns.
+Error using vertcat
+Dimensions of matrices being concatenated are not
+consistent.
+
 \end{verbatim}
 
 In this example, {\tt a} is a row vector and {\tt b} is a column
@@ -7135,7 +7136,7 @@ root.  If $y$ is negative then the pair $(x_1, x_3)$ brackets the root.
 Either way the size of the bracket gets smaller, so our
 estimate of the location of the root gets better.
 
-So that was root-finding.  The Golden Section Search is similar, but
+So that was root-finding.  The Sliver Section Search is similar, but
 we have to start with three values, and the picture looks like
 this:
 
@@ -7430,7 +7431,7 @@ The following plot shows $f$ ({\tt Y} plotted as a function of {\tt T})
 and the inverse of $f$ ({\tt T} plotted as a function of {\tt Y}).
 
 \beforefig
-\centerline{\includegraphics[height=2in,width=4in]{figs/ratplot.eps}}
+\centerline{\includegraphics[height=2.2in,width=4.6in]{figs/ratplot.eps}}
 
 In this case we can use {\tt interp1} either way because $f$ is
 a {\bf single-valued mapping}, which means that for each value in
@@ -7463,9 +7464,7 @@ ans = 196.3833                % WRONG
 On Day 196, the population is actually 16.8, so {\tt interp1} isn't
 even close!  The problem is that {\tt T} as a function of {\tt Y} is a
 {\bf multivalued mapping}; for some values in the range there are more
-than one values in the domain.  This causes {\tt interp1} to fail.  I
-can't find any documentation for this limitation, so that's pretty
-bad.
+than one values in the domain.  This causes {\tt interp1} to fail.  
 
 
 \section{Field mice}
@@ -7627,7 +7626,7 @@ the form of a MATLAB vector with two elements, $v_x$ and $v_y$,
 which are the components of velocity in the $x$ and $y$ directions.
 
 \begin{verbatim}
->> V = [30, 40]        % velocity in m/s
+>> V = [30; 40]        % velocity in m/s
 \end{verbatim}
 
 And suppose you are asked to compute the total acceleration of
@@ -7704,7 +7703,7 @@ A = Ag + Ad;
 
 One nice thing about this computation is that we didn't have to
 think much about the components of the vectors.  By treating
-spatial vectors as basic quantities, we can express complex computations
+spatial vectors as basic quantities, we can express complicated computations
 concisely.
 
 
@@ -7762,8 +7761,7 @@ a function, {\tt cross}, that computes cross products.
 C = cross(A, B)
 \end{verbatim}
 
-{\tt cross} only works for 3-dimensional vectors; the result is
-a 3-dimensional vector.
+{\tt cross} calculates the cross product of corresponding vectors along the first array dimension whose size equals 3.
 
 A common use of {\tt cross} is to compute torques.  If you represent
 a moment arm $R$ and a force $F$ as 3-dimensional vectors, then
@@ -7786,7 +7784,7 @@ to compute with spatial vectors.
 Imagine a star with mass $m_1$ at a point in space described by the
 vector $P_1$, and a planet with mass $m_2$ at point $P_2$.  The
 magnitude of the gravitational force\footnote{See
-\url{http://en.wikipedia.org/wiki/Gravity}} between them is
+\url{https://en.wikipedia.org/wiki/Gravity}} between them is
 
 \[ f_g = G \frac{m_1 m_2}{r^2}  \]
 %
@@ -7829,7 +7827,7 @@ gravity\_force\_func} that takes {\tt P1}, {\tt m1}, {\tt P2}, and
 Write a simulation of the orbit of Jupiter around the Sun.  The mass
 of the Sun is about $2.0 \times 10^{30}$ kg.  You can get the mass of
 Jupiter, its distance from the Sun and orbital velocity from
-\url{http://en.wikipedia.org/wiki/Jupiter}.  Confirm that it takes
+\url{https://en.wikipedia.org/wiki/Jupiter}.  Confirm that it takes
 about 4332 days for Jupiter to orbit the Sun.
 \end{ex}
 
@@ -8087,11 +8085,11 @@ room temperature and one boiling, which one freezes first?
 Hint: you might want to do some research on the Mpemba effect.
 
 % You might have to do some research on thermal expansion\footnote{See
-% \url{http://en.wikipedia.org/wiki/Thermal_expansion}.},
+% \url{https://en.wikipedia.org/wiki/Thermal_expansion}.},
 % cooling\footnote{See
-% \url{http://en.wikipedia.org/wiki/Heat_conduction}.},
+% \url{https://en.wikipedia.org/wiki/Heat_conduction}.},
 % evaporation\footnote{See
-% \url{http://en.wikipedia.org/wiki/Evaporation}.} and
+% \url{https://en.wikipedia.org/wiki/Evaporation}.} and
 % freezing\footnote{See \url{http://en.wikipedia.org/wiki/Freezing}.},
 % and think about which factors you have to include in the model and
 % which you can ignore.
@@ -8117,7 +8115,7 @@ animation of the result.
 
 A binary star system contains two stars orbiting each other and
 sometimes planets that orbit one or both stars\footnote{See
-\url{http://en.wikipedia.org/wiki/Binary_star}.}.  In a binary
+\url{https://en.wikipedia.org/wiki/Binary_star}.}.  In a binary
 system, some orbits are ``stable'' in the sense that a planet can stay
 in orbit without crashing into one of the stars or flying off into
 space.
@@ -8125,7 +8123,7 @@ space.
 Simulation is a useful tool for investigating the nature of these
 orbits, as in Holman, M.J. and P.A. Wiegert, 1999, ``Long-Term Stability
 of Planets in Binary Systems,''  {\em Astronomical Journal} 117, 
-available from \url{http://citeseer.ist.psu.edu/358720.html}.
+available from \url{http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.255.4314}.
 
 Read this paper and then modify your planetary simulation to
 replicate or extend the results.

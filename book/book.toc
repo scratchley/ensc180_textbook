@@ -137,7 +137,7 @@
 \contentsline {section}{\numberline {12.2}Dot and cross products}{139}
 \contentsline {section}{\numberline {12.3}Celestial mechanics}{140}
 \contentsline {section}{\numberline {12.4}Animation}{141}
-\contentsline {section}{\numberline {12.5}Conservation of Energy}{142}
+\contentsline {section}{\numberline {12.5}Conservation of Energy}{143}
 \contentsline {section}{\numberline {12.6}What is a model for?}{143}
 \contentsline {section}{\numberline {12.7}Glossary}{144}
 \contentsline {section}{\numberline {12.8}Exercises}{144}
