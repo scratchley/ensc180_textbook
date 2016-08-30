@@ -7,7 +7,7 @@ function rats2
         plot_point(T(i), Y(i), NaN)
     end
     hold off
-    print -deps 'matlab/ode45.eps'
+    %print -deps 'matlab/ode45.eps'
 end
 
 function res = rats(t, y)

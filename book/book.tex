@@ -140,9 +140,6 @@ Unported License, which is available at
 
 
 \chapter{Preface}
-
-Test ...
-
 Most books that use MATLAB are aimed at readers who know how
 to program.  This book is for people who have never programmed
 before.
@@ -247,8 +244,7 @@ code examples look better.
 \label{calc}
 
 At heart, MATLAB is a glorified calculator.  When you start MATLAB
-you will see a window
-entitled {\sf MATLAB} that contains smaller windows entitled {\sf
+you will see a window entitled {\sf MATLAB} that contains smaller windows entitled {\sf
 Current Directory}, {\sf Command History} and {\sf Command Window}.
 The Command Window runs the MATLAB {\bf interpreter}, which allows you
 to type MATLAB {\bf commands}, then executes them and prints the
@@ -300,7 +296,8 @@ an asterisk, {\tt *} (sometimes pronounced ``splat''); division by
 a forward slash {\tt /}.
 
 \begin{verbatim}
->> 2*3 - 4/5
+>> 2*3 - 4/5+
+
 ans = 5.2000
 \end{verbatim}
 
@@ -3610,29 +3607,11 @@ Here are the results for the range from 1 to 15:
 \begin{verbatim}
 >> find_triples(15)
 
-ans =
-
-     3     4     5
-
-
-ans =
-
-     5    12    13
-
-
-ans =
-
-     6     8    10
-
-
-ans =
-
-     8    15    17
-
-
-ans =
-
-     9    12    15
+ans = 3     4     5
+ans = 5    12    13
+ans = 6     8    10
+ans = 8    15    17
+ans = 9    12    15
 \end{verbatim}
 
 Some of these are more interesting than others.  The triples
@@ -3648,7 +3627,7 @@ I decided to add a third input variable to {\tt hypotenuse}:
 
 \begin{verbatim}
 function res = hypotenuse(a, b, d)
-    res = (a.^d + b.^d) ^ (1/d);
+    res = (a^d + b^d) ^ (1/d);
 end
 \end{verbatim}
 
@@ -3658,12 +3637,12 @@ an example.  Now when you run {\tt find\_triples}, you get:
 
 \begin{verbatim}
 >> find_triples(20)
-??? Input argument "d" is undefined.
+Not enough input arguments.
 
-Error in ==> hypotenuse at 2
-    res = (a.^d + b.^d) ^ (1/d);
+Error in hypotenuse (line 2)
+    res = (a^d + b^d)^(1/d);
 
-Error in ==> find_triples at 7
+Error in find_triples (line 7)
             c = hypotenuse(a, b);
 \end{verbatim}
 
@@ -5627,14 +5606,13 @@ to see all of the data points, you have to use {\tt hold on}.
 >> [T, Y] = ode45(@rats, [0, 10], 2);
 \end{verbatim}
 The simple version of the script shows the output from Day 0 to 10 without label:
-\beforefig \centerline{\includegraphics[height=2in]{figs/ode45_simple.eps}}
+\beforefig \centerline{\includegraphics[height=2.2in]{figs/ode45_simple.eps}}
 
 A more comprehensive version of the script, "rats2.m", can be obtained from the textbook's website\footnote{
 \url{https://github.com/AllenDowney/PhysicalModelingInMATLAB/blob/master/code/rats2.m}}.
-
 This script shows part of the output, zoomed in on the range from Day 100 to 170:
 
-\beforefig \centerline{\includegraphics[height=2in]{figs/ode45.eps}}
+\beforefig \centerline{\includegraphics[height=2.2in]{figs/ode45.eps}}
 
 The circles show the points where {\tt ode45} called {\tt rats}.
 The lines through the circles show the slope (rate of change) calculated
@@ -5654,9 +5632,9 @@ call, and calls {\tt rats} without providing arguments.
 
 \begin{verbatim}
 >> ode45(rats, [0,365], 2)
-??? Input argument "y" is undefined.
+Not enough input arguments.
 
-Error in ==> rats at 4
+Error in rats (line 4)
     res = a * y * (1 + sin(omega * t));
 \end{verbatim}
 
@@ -5709,19 +5687,15 @@ end
 And then call it from {\tt ode45}, you get
 
 \begin{verbatim}
->> ode45(@rats, [0,365], 2)
-??? Output argument "res" (and maybe others) not assigned during 
-call to "/home/downey/rats.m (rats)".
+Output argument "res" (and maybe others) not assigned during call
+to "rats_8_7".
 
-Error in ==> rats at 2
-    a = 0.01;
-
-Error in ==> funfun/private/odearguments at 110
+Error in odearguments (line 87)
 f0 = feval(ode,t0,y0,args{:});   % ODE15I sets args{1} to yp0.
 
-Error in ==> ode45 at 173
-[neq, tspan, ntspan, next, t0, tfinal, tdir, y0, f0, odeArgs, 
-odeFcn, ...
+Error in ode45 (line 115)
+    odearguments(FcnHandlesUsed, solver_name, ode, tspan, y0, 
+    options, varargin);
 \end{verbatim}
 
 This might be a scary message, but if you read the first line
@@ -5733,13 +5707,13 @@ thinks there are four arguments, and you get
 
 \begin{verbatim}
 >> ode45(@rats, 0, 365, 2)
-??? Error using ==> funfun/private/odearguments
-When the first argument to ode45 is a function handle, the 
-tspan argument must have at least two elements.
+Error using odearguments (line 21)
+When the first argument to ode45 is a function handle, the tspan
+argument must have at least two elements.
 
-Error in ==> ode45 at 173
-[neq, tspan, ntspan, next, t0, tfinal, tdir, y0, f0, odeArgs, 
-odeFcn, ...
+Error in ode45 (line 115)
+    odearguments(FcnHandlesUsed, solver_name, ode, tspan, y0, 
+    options, varargin);
 \end{verbatim}
 
 Again, if you read the first line, you should be able to figure
@@ -5852,7 +5826,7 @@ effects individually would be challenging and unnecessary to answer
 the question as posed.
 
 As a simplification, we can use Newton's Law of
-Cooling\footnote{\url{http://en.wikipedia.org/wiki/Heat_conduction}}:
+Cooling\footnote{\url{https://en.wikipedia.org/wiki/Heat_conduction}}:
 
 \[ \frac{df}{dt} = -r (f - e) \]
 %
@@ -5898,7 +5872,7 @@ take the volumes and temperatures of the liquids as parameters.
 
 In general, the final temperature of a mixture depends on the specific
 heat of the two
-substances\footnote{\url{http://en.wikipedia.org/wiki/Heat_capacity}}.
+substances\footnote{\url{https://en.wikipedia.org/wiki/Heat_capacity}}.
 But if we make the simplifying assumption that coffee and cream
 have the same density and specific heat, then the final temperature is
 $(v_1 y_1 + v_2 y_2) / (v_1 + v_2)$, where $v_1$ and $v_2$ are
@@ -6384,7 +6358,7 @@ all ODEs describe population as
 a function of time, but that's not true.
 
 According to the
-Wikipedia\footnote{\url{http://en.wikipedia.org/wiki/Lorenz_attractor}},
+Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Lorenz_attractor}},
 ``The Lorenz attractor, introduced by Edward Lorenz in 1963, is a
 non-linear three-dimensional deterministic dynamical system derived
 from the simplified equations of convection rolls arising in the
@@ -6730,7 +6704,7 @@ instead of a skydiver, think of a circus performer being fired
 out of a cannon.
 
 According to the
-Wikipedia\footnote{\url{http://en.wikipedia.org/wiki/Human_cannonball}},
+Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Human_cannonball}},
 the record distance for a human cannonball is 56.5 meters (almost 186
 feet).
 
@@ -6958,7 +6932,7 @@ the direction of the velocity vector.  The mass of the baseball is
 $0.145$ kg.
 
 For more information about drag, see
-\url{http://en.wikipedia.org/wiki/Drag_(physics)}.
+\url{https://en.wikipedia.org/wiki/Drag_(physics)}.
 
 \begin{itemize}
 
@@ -6970,7 +6944,8 @@ as an output variable.
 \item Write a function that takes the initial velocity of the baseball
 as an input variable, computes the launch angle that maximizes
 the range, and returns the optimal angle and range as output variables.
-How does the optimal angle vary with initial velocity?
+How does the optimal angle vary with initial velocity? Hint: To have a better 
+understanding on what optimal means, you can refer to Section 11.2.
 
 \item When the Red Sox won the World Series in 2007, they played the
 Colorado Rockies at their home field in Denver, Colorado.  Find an
@@ -7225,7 +7200,7 @@ worst case the loop executes 50 times.
 I call this algorithm a Silver Section Search because it is almost as
 good as a Golden Section Search.  Read the Wikipedia page about the
 Golden Section Search
-(\url{http://en.wikipedia.org/wiki/Golden_section_search}) and then
+(\url{https://en.wikipedia.org/wiki/Golden_section_search}) and then
 modify this code to implement it.
 \end{ex}
 
@@ -7556,7 +7531,7 @@ the range maps to more than one value in the domain.
 \label{golf}
 
 A golf ball\footnote{See
-\url{http://en.wikipedia.org/wiki/Golf_ball}.} hit with backspin
+\url{https://en.wikipedia.org/wiki/Golf_ball}.} hit with backspin
 generates lift, which might increase the range, but the energy that
 goes into generating spin probably comes at the cost of lower initial
 velocity.  Write a simulation of the flight of a golf ball and use it
@@ -7565,7 +7540,7 @@ to find the launch angle and allocation of spin and initial velocity
 ball in the air.
 
 The lift of a spinning ball is due to the Magnus force\footnote{See
-\url{http://en.wikipedia.org/wiki/Magnus_effect}.}, which is
+\url{https://en.wikipedia.org/wiki/Magnus_effect}.}, which is
 perpendicular to the axis of spin and the path of flight.  The
 coefficient of lift is proportional to the spin rate; for a ball
 spinning at 3000 rpm it is about 0.1.  The coefficient of drag of a
@@ -7608,7 +7583,7 @@ In this chapter we will see another use of MATLAB vectors:
 representing spatial vectors.  A spatial vector is a value that
 represents a multidimensional physical quantity like position,
 velocity, acceleration or force\footnote{See
-\url{http://en.wikipedia.org/wiki/Vector_(spatial)}.}.
+\url{https://en.wikipedia.org/wiki/Vector_(spatial)}.}.
 
 These quantities cannot be described with a
 single number because they contain multiple components.  For example,
@@ -8090,7 +8065,7 @@ Hint: you might want to do some research on the Mpemba effect.
 % \url{https://en.wikipedia.org/wiki/Heat_conduction}.},
 % evaporation\footnote{See
 % \url{https://en.wikipedia.org/wiki/Evaporation}.} and
-% freezing\footnote{See \url{http://en.wikipedia.org/wiki/Freezing}.},
+% freezing\footnote{See \url{https://en.wikipedia.org/wiki/Freezing}.},
 % and think about which factors you have to include in the model and
 % which you can ignore.
 \end{ex}
