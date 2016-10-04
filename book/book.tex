@@ -9,11 +9,18 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{url}
-\usepackage{makeidx}
+
+%% Index packages, in order to get every instance of a word we want indexed, use the search and replace command in your editor to repalce "desired word" with "\index{desired word}"
+\usepackage{makeidx}   %% Package for Indices
+\makeindex             %% Creat the filees needed for indexing
+
 \usepackage[symbol*]{footmisc}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{hevea}                           
 \usepackage{upquote}
+
+%% Packages for adding bookmarks to generated pdf file
+\usepackage{bookmark}
 
 % load package with ``framed'' and ``numbered'' option.
 %\usepackage[framed,autolinebreaks,useliterate]{mcode}
@@ -317,6 +324,7 @@ easier to read.  Style doesn't change what the program does; the MATLAB
 interpreter doesn't check for style.  But human readers do, and the
 most important human who will read your code is you.
 
+%% Index Test
 And that brings us to the First Theorem of debugging:
 
 \begin{quote}
@@ -4415,7 +4423,7 @@ working on a hard bug, there are four things to try:
 check that it means what you meant to say.
 
 \item[running:] Experiment by making changes and running different
-versions.  Often if you display the right thing at the right place
+\index{version}s.  Often if you display the right thing at the right place
 in the program, the problem becomes obvious, but sometimes you have to
 spend some time to build scaffolding.
 
@@ -4965,7 +4973,7 @@ D = 2     3     4     5
 \end{verbatim}
 
 Notice that the output vector is shorter by one than the input
-vector.  As a result, MATLAB's version of {\tt diff} is not
+vector.  As a result, MATLAB's \index{version} of {\tt diff} is not
 exactly the inverse of {\tt cumsum}.  If it were, then we would
 expect {\tt cumsum(diff(X))} to be {\tt X}:
 
@@ -4987,7 +4995,7 @@ return {\tt X}.
 
 \section{Products and ratios}
 
-The multiplicative version of {\tt cumsum} is {\tt cumprod},
+The multiplicative \index{version} of {\tt cumsum} is {\tt cumprod},
 which computes the {\bf cumulative product}.  In math notation,
 that's:
 
@@ -5010,7 +5018,7 @@ Write a function named {\tt cumulative\_prod} that uses
 a loop to compute the cumulative product of the input vector.
 \end{ex}
 
-MATLAB doesn't provide the multiplicative version
+MATLAB doesn't provide the multiplicative \index{version}
 of {\tt diff}, which would be called {\tt ratio}, and which would
 compute the ratio of successive elements of the input vector.
 
@@ -5156,7 +5164,7 @@ ans =
 
 This example computes the logical vector and passes it as an
 argument to {\tt find} without assigning it to an intermediate
-variable.  You can read this version abstractly as ``find
+variable.  You can read this \index{version} abstractly as ``find
 the indices of elements of {\tt V} that are greater than 10.''
 
 We can also use {\tt find} to write {\tt exists} more concisely:
@@ -5169,7 +5177,7 @@ end
 \end{verbatim}
 
 \begin{ex}
-Write a version of {\tt forall} using {\tt find}.
+Write a \index{version} of {\tt forall} using {\tt find}.
 \end{ex}
 
 
@@ -5587,7 +5595,7 @@ of nonlinear ODEs.
 
 If you are curious to know more about how {\tt ode45} works, you
 can modify {\tt rats} to display the points, $(t, y)$, where
-{\tt ode45} evaluates $g$.  Here is a simple version:
+{\tt ode45} evaluates $g$.  Here is a simple \index{version}:
 
 \begin{verbatim}
 function res = rats(t, y)
@@ -5605,10 +5613,10 @@ to see all of the data points, you have to use {\tt hold on}.
 >> clf; hold on
 >> [T, Y] = ode45(@rats, [0, 10], 2);
 \end{verbatim}
-The simple version of the script shows the output from Day 0 to 10 without label:
+The simple \index{version} of the script shows the output from Day 0 to 10 without label:
 \beforefig \centerline{\includegraphics[height=2.2in]{figs/ode45_simple.eps}}
 
-A more comprehensive version of the script, "rats2.m", can be obtained from the textbook's website\footnote{
+A more comprehensive \index{version} of the script, "rats2.m", can be obtained from the textbook's website\footnote{
 \url{https://github.com/AllenDowney/PhysicalModelingInMATLAB/blob/master/code/rats2.m}}.
 This script shows part of the output, zoomed in on the range from Day 100 to 170:
 
@@ -5911,7 +5919,7 @@ it?
 
 \section{Matrices}
 
-A matrix is a two-dimensional version of a vector.  Like a vector,
+A matrix is a two-dimensional \index{version} of a vector.  Like a vector,
 it contains elements that are identified by indices.  The difference
 is that the elements are arranged in rows and columns, so it takes
 {\em two} indices to identify an element.
@@ -6611,7 +6619,7 @@ problem, let's say that $c = 0.2$.
 To convert from force to acceleration, we have to know mass, so let's
 say that the skydiver (with equipment) weighs 75 kg.
 
-Here's a version of {\tt acceleration} that takes air resistance
+Here's a \index{version} of {\tt acceleration} that takes air resistance
 into account (you don't have to make any changes in the {\tt freefall} function:
 
 \begin{verbatim}
@@ -7091,7 +7099,7 @@ A better algorithm is a Golden Section Search.
 \section{Golden section search}
 
 To present the Golden Section Search, I will start with a simplified
-version I'll call a Silver Section Search.  The basic idea is similar to
+\index{version} I'll call a Silver Section Search.  The basic idea is similar to
 the methods for zero-finding we saw in Section~\ref{zero}.  In the
 case of zero-finding, we had a picture like this:
 
@@ -7636,7 +7644,7 @@ way to compute it is to divide $V$ by its own norm.
 \begin{verbatim}
 >> Vhat = V / v
 
-Vhat =  0.6  0.8
+aVhat =  0.6  0.8
 \end{verbatim}
 
 Then we can confirm that the norm of $\hat{V}$ is 1:
@@ -8110,6 +8118,10 @@ replicate or extend the results.
 %\blankpage
 %\blankpage
 
+%% Index Sction
+\clearpage   %% Clear page to make it pretty
+\addcontentsline{toc}{chapter}{Index}   %% Add index to the table of contents
+\printindex   %% Command to print the index
 \end{document}
 
 

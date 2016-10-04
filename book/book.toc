@@ -1,143 +1,144 @@
-\contentsline {chapter}{Preface}{iii}
-\contentsline {chapter}{\numberline {1}Variables and values}{1}
-\contentsline {section}{\numberline {1.1}A glorified calculator}{1}
-\contentsline {section}{\numberline {1.2}Math functions}{2}
-\contentsline {section}{\numberline {1.3}Documentation}{3}
-\contentsline {section}{\numberline {1.4}Variables}{4}
-\contentsline {section}{\numberline {1.5}Assignment statements}{5}
-\contentsline {section}{\numberline {1.6}Why variables?}{6}
-\contentsline {section}{\numberline {1.7}Errors}{7}
-\contentsline {section}{\numberline {1.8}Floating-point arithmetic}{8}
-\contentsline {section}{\numberline {1.9}Comments}{9}
-\contentsline {section}{\numberline {1.10}Glossary}{10}
-\contentsline {section}{\numberline {1.11}Exercises}{11}
-\contentsline {chapter}{\numberline {2}Scripts}{13}
-\contentsline {section}{\numberline {2.1}M-files}{13}
-\contentsline {section}{\numberline {2.2}Why scripts?}{14}
-\contentsline {section}{\numberline {2.3}The workspace}{15}
-\contentsline {section}{\numberline {2.4}More errors}{16}
-\contentsline {section}{\numberline {2.5}Pre- and post-conditions}{17}
-\contentsline {section}{\numberline {2.6}Assignment and equality}{17}
-\contentsline {section}{\numberline {2.7}Incremental development}{18}
-\contentsline {section}{\numberline {2.8}Unit testing}{19}
-\contentsline {section}{\numberline {2.9}Glossary}{20}
-\contentsline {section}{\numberline {2.10}Exercises}{20}
-\contentsline {chapter}{\numberline {3}Loops}{23}
-\contentsline {section}{\numberline {3.1}Updating variables}{23}
-\contentsline {section}{\numberline {3.2}Kinds of error}{24}
-\contentsline {section}{\numberline {3.3}Absolute and relative error}{24}
-\contentsline {section}{\numberline {3.4}for loops}{25}
-\contentsline {section}{\numberline {3.5}plotting}{26}
-\contentsline {section}{\numberline {3.6}Sequences}{27}
-\contentsline {section}{\numberline {3.7}Series}{28}
-\contentsline {section}{\numberline {3.8}Generalization}{29}
-\contentsline {section}{\numberline {3.9}Glossary}{30}
-\contentsline {section}{\numberline {3.10}Exercises}{30}
-\contentsline {chapter}{\numberline {4}Vectors}{33}
-\contentsline {section}{\numberline {4.1}Checking preconditions}{33}
-\contentsline {section}{\numberline {4.2}{\tt if}}{34}
-\contentsline {section}{\numberline {4.3}Relational operators}{35}
-\contentsline {section}{\numberline {4.4}Logical operators}{35}
-\contentsline {section}{\numberline {4.5}Vectors}{36}
-\contentsline {section}{\numberline {4.6}Vector arithmetic}{37}
-\contentsline {section}{\numberline {4.7}Everything is a matrix}{37}
-\contentsline {section}{\numberline {4.8}Indices}{39}
-\contentsline {section}{\numberline {4.9}Indexing errors}{40}
-\contentsline {section}{\numberline {4.10}Vectors and sequences}{41}
-\contentsline {section}{\numberline {4.11}Plotting vectors}{42}
-\contentsline {section}{\numberline {4.12}Reduce}{42}
-\contentsline {section}{\numberline {4.13}Apply}{43}
-\contentsline {section}{\numberline {4.14}Search}{43}
-\contentsline {section}{\numberline {4.15}Spoiling the fun}{45}
-\contentsline {section}{\numberline {4.16}Glossary}{45}
-\contentsline {section}{\numberline {4.17}Exercises}{46}
-\contentsline {chapter}{\numberline {5}Functions}{49}
-\contentsline {section}{\numberline {5.1}Name Collisions}{49}
-\contentsline {section}{\numberline {5.2}Functions}{50}
-\contentsline {section}{\numberline {5.3}Documentation}{52}
-\contentsline {section}{\numberline {5.4}Function names}{52}
-\contentsline {section}{\numberline {5.5}Multiple input variables}{53}
-\contentsline {section}{\numberline {5.6}Logical functions}{54}
-\contentsline {section}{\numberline {5.7}An incremental development example}{55}
-\contentsline {section}{\numberline {5.8}Nested loops}{56}
-\contentsline {section}{\numberline {5.9}Conditions and flags}{57}
-\contentsline {section}{\numberline {5.10}Encapsulation and generalization}{58}
-\contentsline {section}{\numberline {5.11}A misstep}{60}
-\contentsline {section}{\numberline {5.12}{\tt continue}}{61}
-\contentsline {section}{\numberline {5.13}Mechanism and leap of faith}{62}
-\contentsline {section}{\numberline {5.14}Glossary}{63}
-\contentsline {section}{\numberline {5.15}Exercises}{63}
-\contentsline {chapter}{\numberline {6}Zero-finding}{65}
-\contentsline {section}{\numberline {6.1}Why functions?}{65}
-\contentsline {section}{\numberline {6.2}Maps}{65}
-\contentsline {section}{\numberline {6.3}A note on notation}{66}
-\contentsline {section}{\numberline {6.4}Nonlinear equations}{66}
-\contentsline {section}{\numberline {6.5}Zero-finding}{68}
-\contentsline {section}{\numberline {6.6}{\tt fzero}}{69}
-\contentsline {section}{\numberline {6.7}What could go wrong?}{71}
-\contentsline {section}{\numberline {6.8}Finding an initial guess}{72}
-\contentsline {section}{\numberline {6.9}More name collisions}{73}
-\contentsline {section}{\numberline {6.10}Debugging in four acts}{74}
-\contentsline {section}{\numberline {6.11}Glossary}{75}
-\contentsline {section}{\numberline {6.12}Exercises}{76}
-\contentsline {chapter}{\numberline {7}Functions of vectors}{79}
-\contentsline {section}{\numberline {7.1}Functions and files}{79}
-\contentsline {section}{\numberline {7.2}Physical modeling}{80}
-\contentsline {section}{\numberline {7.3}Vectors as input variables}{81}
-\contentsline {section}{\numberline {7.4}Vectors as output variables}{82}
-\contentsline {section}{\numberline {7.5}Vectorizing your functions}{82}
-\contentsline {section}{\numberline {7.6}Sums and differences}{84}
-\contentsline {section}{\numberline {7.7}Products and ratios}{85}
-\contentsline {section}{\numberline {7.8}Existential quantification}{86}
-\contentsline {section}{\numberline {7.9}Universal quantification}{86}
-\contentsline {section}{\numberline {7.10}Logical vectors}{87}
-\contentsline {section}{\numberline {7.11}Glossary}{88}
-\contentsline {chapter}{\numberline {8}Ordinary Differential Equations}{89}
-\contentsline {section}{\numberline {8.1}Differential equations}{89}
-\contentsline {section}{\numberline {8.2}Euler's method}{90}
-\contentsline {section}{\numberline {8.3}Another note on notation}{91}
-\contentsline {section}{\numberline {8.4}{\tt ode45}}{92}
-\contentsline {section}{\numberline {8.5}Multiple output variables}{94}
-\contentsline {section}{\numberline {8.6}Analytic or numerical?}{95}
-\contentsline {section}{\numberline {8.7}What can go wrong?}{97}
-\contentsline {section}{\numberline {8.8}Stiffness}{98}
-\contentsline {section}{\numberline {8.9}Glossary}{99}
-\contentsline {section}{\numberline {8.10}Exercises}{100}
-\contentsline {chapter}{\numberline {9}Systems of ODEs}{103}
-\contentsline {section}{\numberline {9.1}Matrices}{103}
-\contentsline {section}{\numberline {9.2}Row and column vectors}{104}
-\contentsline {section}{\numberline {9.3}The transpose operator}{105}
-\contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}
-\contentsline {section}{\numberline {9.5}What can go wrong?}{108}
-\contentsline {section}{\numberline {9.6}Output matrices}{108}
-\contentsline {section}{\numberline {9.7}Glossary}{110}
-\contentsline {section}{\numberline {9.8}Exercises}{111}
-\contentsline {chapter}{\numberline {10}Second-order systems}{113}
-\contentsline {section}{\numberline {10.1}Nested functions}{113}
-\contentsline {section}{\numberline {10.2}Newtonian motion}{114}
-\contentsline {section}{\numberline {10.3}Freefall}{115}
-\contentsline {section}{\numberline {10.4}Air resistance}{116}
-\contentsline {section}{\numberline {10.5}Parachute!}{118}
-\contentsline {section}{\numberline {10.6}Two dimensions}{118}
-\contentsline {section}{\numberline {10.7}What could go wrong?}{120}
-\contentsline {section}{\numberline {10.8}Glossary}{122}
-\contentsline {section}{\numberline {10.9}Exercises}{122}
-\contentsline {chapter}{\numberline {11}Optimization and Interpolation}{125}
-\contentsline {section}{\numberline {11.1}ODE Events}{125}
-\contentsline {section}{\numberline {11.2}Optimization}{126}
-\contentsline {section}{\numberline {11.3}Golden section search}{127}
-\contentsline {section}{\numberline {11.4}Discrete and continuous maps}{130}
-\contentsline {section}{\numberline {11.5}Interpolation}{131}
-\contentsline {section}{\numberline {11.6}Interpolating the inverse function}{132}
-\contentsline {section}{\numberline {11.7}Field mice}{134}
-\contentsline {section}{\numberline {11.8}Glossary}{135}
-\contentsline {section}{\numberline {11.9}Exercises}{135}
-\contentsline {chapter}{\numberline {12}Vectors as vectors}{137}
-\contentsline {section}{\numberline {12.1}What's a vector?}{137}
-\contentsline {section}{\numberline {12.2}Dot and cross products}{139}
-\contentsline {section}{\numberline {12.3}Celestial mechanics}{140}
-\contentsline {section}{\numberline {12.4}Animation}{141}
-\contentsline {section}{\numberline {12.5}Conservation of Energy}{143}
-\contentsline {section}{\numberline {12.6}What is a model for?}{143}
-\contentsline {section}{\numberline {12.7}Glossary}{144}
-\contentsline {section}{\numberline {12.8}Exercises}{144}
+\contentsline {chapter}{Preface}{iii}{chapter*.1}
+\contentsline {chapter}{\numberline {1}Variables and values}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}A glorified calculator}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Math functions}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Documentation}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Variables}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Assignment statements}{5}{section.1.5}
+\contentsline {section}{\numberline {1.6}Why variables?}{6}{section.1.6}
+\contentsline {section}{\numberline {1.7}Errors}{7}{section.1.7}
+\contentsline {section}{\numberline {1.8}Floating-point arithmetic}{8}{section.1.8}
+\contentsline {section}{\numberline {1.9}Comments}{9}{section.1.9}
+\contentsline {section}{\numberline {1.10}Glossary}{10}{section.1.10}
+\contentsline {section}{\numberline {1.11}Exercises}{11}{section.1.11}
+\contentsline {chapter}{\numberline {2}Scripts}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}M-files}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Why scripts?}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}The workspace}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}More errors}{16}{section.2.4}
+\contentsline {section}{\numberline {2.5}Pre- and post-conditions}{17}{section.2.5}
+\contentsline {section}{\numberline {2.6}Assignment and equality}{17}{section.2.6}
+\contentsline {section}{\numberline {2.7}Incremental development}{18}{section.2.7}
+\contentsline {section}{\numberline {2.8}Unit testing}{19}{section.2.8}
+\contentsline {section}{\numberline {2.9}Glossary}{20}{section.2.9}
+\contentsline {section}{\numberline {2.10}Exercises}{20}{section.2.10}
+\contentsline {chapter}{\numberline {3}Loops}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Updating variables}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}Kinds of error}{24}{section.3.2}
+\contentsline {section}{\numberline {3.3}Absolute and relative error}{24}{section.3.3}
+\contentsline {section}{\numberline {3.4}for loops}{25}{section.3.4}
+\contentsline {section}{\numberline {3.5}plotting}{26}{section.3.5}
+\contentsline {section}{\numberline {3.6}Sequences}{27}{section.3.6}
+\contentsline {section}{\numberline {3.7}Series}{28}{section.3.7}
+\contentsline {section}{\numberline {3.8}Generalization}{29}{section.3.8}
+\contentsline {section}{\numberline {3.9}Glossary}{30}{section.3.9}
+\contentsline {section}{\numberline {3.10}Exercises}{30}{section.3.10}
+\contentsline {chapter}{\numberline {4}Vectors}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Checking preconditions}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}{\tt if}}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Relational operators}{35}{section.4.3}
+\contentsline {section}{\numberline {4.4}Logical operators}{35}{section.4.4}
+\contentsline {section}{\numberline {4.5}Vectors}{36}{section.4.5}
+\contentsline {section}{\numberline {4.6}Vector arithmetic}{37}{section.4.6}
+\contentsline {section}{\numberline {4.7}Everything is a matrix}{37}{section.4.7}
+\contentsline {section}{\numberline {4.8}Indices}{39}{section.4.8}
+\contentsline {section}{\numberline {4.9}Indexing errors}{40}{section.4.9}
+\contentsline {section}{\numberline {4.10}Vectors and sequences}{41}{section.4.10}
+\contentsline {section}{\numberline {4.11}Plotting vectors}{42}{section.4.11}
+\contentsline {section}{\numberline {4.12}Reduce}{42}{section.4.12}
+\contentsline {section}{\numberline {4.13}Apply}{43}{section.4.13}
+\contentsline {section}{\numberline {4.14}Search}{43}{section.4.14}
+\contentsline {section}{\numberline {4.15}Spoiling the fun}{45}{section.4.15}
+\contentsline {section}{\numberline {4.16}Glossary}{45}{section.4.16}
+\contentsline {section}{\numberline {4.17}Exercises}{46}{section.4.17}
+\contentsline {chapter}{\numberline {5}Functions}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Name Collisions}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}Functions}{50}{section.5.2}
+\contentsline {section}{\numberline {5.3}Documentation}{52}{section.5.3}
+\contentsline {section}{\numberline {5.4}Function names}{52}{section.5.4}
+\contentsline {section}{\numberline {5.5}Multiple input variables}{53}{section.5.5}
+\contentsline {section}{\numberline {5.6}Logical functions}{54}{section.5.6}
+\contentsline {section}{\numberline {5.7}An incremental development example}{55}{section.5.7}
+\contentsline {section}{\numberline {5.8}Nested loops}{56}{section.5.8}
+\contentsline {section}{\numberline {5.9}Conditions and flags}{57}{section.5.9}
+\contentsline {section}{\numberline {5.10}Encapsulation and generalization}{58}{section.5.10}
+\contentsline {section}{\numberline {5.11}A misstep}{60}{section.5.11}
+\contentsline {section}{\numberline {5.12}{\tt continue}}{61}{section.5.12}
+\contentsline {section}{\numberline {5.13}Mechanism and leap of faith}{62}{section.5.13}
+\contentsline {section}{\numberline {5.14}Glossary}{63}{section.5.14}
+\contentsline {section}{\numberline {5.15}Exercises}{63}{section.5.15}
+\contentsline {chapter}{\numberline {6}Zero-finding}{65}{chapter.6}
+\contentsline {section}{\numberline {6.1}Why functions?}{65}{section.6.1}
+\contentsline {section}{\numberline {6.2}Maps}{65}{section.6.2}
+\contentsline {section}{\numberline {6.3}A note on notation}{66}{section.6.3}
+\contentsline {section}{\numberline {6.4}Nonlinear equations}{66}{section.6.4}
+\contentsline {section}{\numberline {6.5}Zero-finding}{68}{section.6.5}
+\contentsline {section}{\numberline {6.6}{\tt fzero}}{69}{section.6.6}
+\contentsline {section}{\numberline {6.7}What could go wrong?}{71}{section.6.7}
+\contentsline {section}{\numberline {6.8}Finding an initial guess}{72}{section.6.8}
+\contentsline {section}{\numberline {6.9}More name collisions}{73}{section.6.9}
+\contentsline {section}{\numberline {6.10}Debugging in four acts}{74}{section.6.10}
+\contentsline {section}{\numberline {6.11}Glossary}{75}{section.6.11}
+\contentsline {section}{\numberline {6.12}Exercises}{76}{section.6.12}
+\contentsline {chapter}{\numberline {7}Functions of vectors}{79}{chapter.7}
+\contentsline {section}{\numberline {7.1}Functions and files}{79}{section.7.1}
+\contentsline {section}{\numberline {7.2}Physical modeling}{80}{section.7.2}
+\contentsline {section}{\numberline {7.3}Vectors as input variables}{81}{section.7.3}
+\contentsline {section}{\numberline {7.4}Vectors as output variables}{82}{section.7.4}
+\contentsline {section}{\numberline {7.5}Vectorizing your functions}{82}{section.7.5}
+\contentsline {section}{\numberline {7.6}Sums and differences}{84}{section.7.6}
+\contentsline {section}{\numberline {7.7}Products and ratios}{85}{section.7.7}
+\contentsline {section}{\numberline {7.8}Existential quantification}{86}{section.7.8}
+\contentsline {section}{\numberline {7.9}Universal quantification}{86}{section.7.9}
+\contentsline {section}{\numberline {7.10}Logical vectors}{87}{section.7.10}
+\contentsline {section}{\numberline {7.11}Glossary}{88}{section.7.11}
+\contentsline {chapter}{\numberline {8}Ordinary Differential Equations}{89}{chapter.8}
+\contentsline {section}{\numberline {8.1}Differential equations}{89}{section.8.1}
+\contentsline {section}{\numberline {8.2}Euler's method}{90}{section.8.2}
+\contentsline {section}{\numberline {8.3}Another note on notation}{91}{section.8.3}
+\contentsline {section}{\numberline {8.4}{\tt ode45}}{92}{section.8.4}
+\contentsline {section}{\numberline {8.5}Multiple output variables}{94}{section.8.5}
+\contentsline {section}{\numberline {8.6}Analytic or numerical?}{95}{section.8.6}
+\contentsline {section}{\numberline {8.7}What can go wrong?}{97}{section.8.7}
+\contentsline {section}{\numberline {8.8}Stiffness}{98}{section.8.8}
+\contentsline {section}{\numberline {8.9}Glossary}{99}{section.8.9}
+\contentsline {section}{\numberline {8.10}Exercises}{100}{section.8.10}
+\contentsline {chapter}{\numberline {9}Systems of ODEs}{103}{chapter.9}
+\contentsline {section}{\numberline {9.1}Matrices}{103}{section.9.1}
+\contentsline {section}{\numberline {9.2}Row and column vectors}{104}{section.9.2}
+\contentsline {section}{\numberline {9.3}The transpose operator}{105}{section.9.3}
+\contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}{section.9.4}
+\contentsline {section}{\numberline {9.5}What can go wrong?}{108}{section.9.5}
+\contentsline {section}{\numberline {9.6}Output matrices}{108}{section.9.6}
+\contentsline {section}{\numberline {9.7}Glossary}{110}{section.9.7}
+\contentsline {section}{\numberline {9.8}Exercises}{111}{section.9.8}
+\contentsline {chapter}{\numberline {10}Second-order systems}{113}{chapter.10}
+\contentsline {section}{\numberline {10.1}Nested functions}{113}{section.10.1}
+\contentsline {section}{\numberline {10.2}Newtonian motion}{114}{section.10.2}
+\contentsline {section}{\numberline {10.3}Freefall}{115}{section.10.3}
+\contentsline {section}{\numberline {10.4}Air resistance}{116}{section.10.4}
+\contentsline {section}{\numberline {10.5}Parachute!}{118}{section.10.5}
+\contentsline {section}{\numberline {10.6}Two dimensions}{118}{section.10.6}
+\contentsline {section}{\numberline {10.7}What could go wrong?}{120}{section.10.7}
+\contentsline {section}{\numberline {10.8}Glossary}{122}{section.10.8}
+\contentsline {section}{\numberline {10.9}Exercises}{122}{section.10.9}
+\contentsline {chapter}{\numberline {11}Optimization and Interpolation}{125}{chapter.11}
+\contentsline {section}{\numberline {11.1}ODE Events}{125}{section.11.1}
+\contentsline {section}{\numberline {11.2}Optimization}{126}{section.11.2}
+\contentsline {section}{\numberline {11.3}Golden section search}{127}{section.11.3}
+\contentsline {section}{\numberline {11.4}Discrete and continuous maps}{130}{section.11.4}
+\contentsline {section}{\numberline {11.5}Interpolation}{131}{section.11.5}
+\contentsline {section}{\numberline {11.6}Interpolating the inverse function}{132}{section.11.6}
+\contentsline {section}{\numberline {11.7}Field mice}{134}{section.11.7}
+\contentsline {section}{\numberline {11.8}Glossary}{135}{section.11.8}
+\contentsline {section}{\numberline {11.9}Exercises}{135}{section.11.9}
+\contentsline {chapter}{\numberline {12}Vectors as vectors}{137}{chapter.12}
+\contentsline {section}{\numberline {12.1}What's a vector?}{137}{section.12.1}
+\contentsline {section}{\numberline {12.2}Dot and cross products}{139}{section.12.2}
+\contentsline {section}{\numberline {12.3}Celestial mechanics}{140}{section.12.3}
+\contentsline {section}{\numberline {12.4}Animation}{141}{section.12.4}
+\contentsline {section}{\numberline {12.5}Conservation of Energy}{143}{section.12.5}
+\contentsline {section}{\numberline {12.6}What is a model for?}{143}{section.12.6}
+\contentsline {section}{\numberline {12.7}Glossary}{144}{section.12.7}
+\contentsline {section}{\numberline {12.8}Exercises}{144}{section.12.8}
+\contentsline {chapter}{Index}{146}{ex.12.11}
