@@ -6780,7 +6780,80 @@ $0.2$, but that was based on the assumption that the skydiver is
 falling flat.  A human cannonball, flying head-first, probably
 has a drag constant closer to $0.1$.  What initial velocity
 is needed to achieve the record flight distance of 65.6 meters?
-Hint: what is the optimal launch angle?
+Hint: the needed initial velocity is depended on the lunch angle, and let's 
+assume the lunch angle to be 45 degrees. 
+\end{ex}
+
+\section{ODE Events}
+\label{events}
+
+Normally when you call {\tt ode45} you have to specify
+a start time and an end time.  But in many cases, you don't know ahead
+of time when the simulation should end.
+Fortunately MATLAB provides a mechanism for dealing
+with this problem.  The bad news is that it is a little awkward.
+Here's how it works:
+
+\begin{enumerate}
+
+\item Before calling {\tt ode45} you use {\tt odeset} to create an
+object called {\tt options} that contains values that control
+how {\tt ode45} works:
+
+\begin{verbatim}
+options = odeset('Events', @events);
+\end{verbatim}
+%
+In this case, the name of the option is {\tt Events} and the
+value is a function handle.  When {\tt ode45} runs, it will invoke
+{\tt events} after each timestep.
+You can call this function anything you want, but the name
+{\tt events} is conventional.
+
+\item The function you provide has to take
+the same input variables as your rate function.  For example,
+here is an event function that would work with {\tt projectile}
+from Section~\ref{projectile}
+
+\begin{verbatim}
+function [value,isterminal,direction] = events(t,X)
+    value = X(2);        % Extract the current height.
+    isterminal = 1;      % Stop the integration if height crosses zero.
+    direction = -1;      % But only if the height is decreasing.
+end
+\end{verbatim}
+
+{\tt events} returns three output variables:
+
+{\tt value} determines
+when an event occurs.  In this case {\tt value} gets the second
+element of {\tt X}, which is understood to be the height of the
+projectile.  An ``event'' is a point in time when this value passes
+through 0.
+
+{\tt direction} determines whether an event occurs when
+{\tt value} is increasing ({\tt direction=1}), decreasing ({\tt
+direction=-1}, or both {\tt direction=0}.
+
+{\tt isterminal} determines what happens when an event
+occurs.  If {\tt isterminal=1}, the event is ``terminal'' and the
+simulation stops.  If {\tt isterminal=0}, the simulation continues,
+but {\tt ode45} does some additional work to make sure that the
+solution in the vicinity of the event is accurate, and that one of the
+estimated values in the result is at the time of the event.
+
+\item When you call {\tt ode45}, you pass {\tt options} as a fourth
+argument:
+
+\begin{verbatim}
+ode45(@projectile, [0,10], [0, 3, 40, 30], options);
+\end{verbatim}
+%
+\end{enumerate}
+
+\begin{ex}
+How would you modify {\tt events} to stop when the height of
+the projectile falls through 3m?
 \end{ex}
 
 
@@ -6917,8 +6990,10 @@ form a new matrix.
 
 \end{description}
 
-\section{Exercises}
-
+% chap11
+\chapter{Optimization and Interpolation}
+\section{Optimization}
+In order to grasp the concept of optimization, let's first go through the following exercise.
 \begin{ex}
 \label{baseball}
 
@@ -6982,85 +7057,6 @@ ranges?  How big is the effect on the optimal angles?
 \end{itemize}
 
 \end{ex}
-
-
-% chap11
-\chapter{Optimization and Interpolation}
-
-\section{ODE Events}
-\label{events}
-
-Normally when you call {\tt ode45} you have to specify
-a start time and an end time.  But in many cases, you don't know ahead
-of time when the simulation should end.
-Fortunately MATLAB provides a mechanism for dealing
-with this problem.  The bad news is that it is a little awkward.
-Here's how it works:
-
-\begin{enumerate}
-
-\item Before calling {\tt ode45} you use {\tt odeset} to create an
-object called {\tt options} that contains values that control
-how {\tt ode45} works:
-
-\begin{verbatim}
-options = odeset('Events', @events);
-\end{verbatim}
-%
-In this case, the name of the option is {\tt Events} and the
-value is a function handle.  When {\tt ode45} runs, it will invoke
-{\tt events} after each timestep.
-You can call this function anything you want, but the name
-{\tt events} is conventional.
-
-\item The function you provide has to take
-the same input variables as your rate function.  For example,
-here is an event function that would work with {\tt projectile}
-from Section~\ref{projectile}
-
-\begin{verbatim}
-function [value,isterminal,direction] = events(t,X)
-    value = X(2);        % Extract the current height.
-    isterminal = 1;      % Stop the integration if height crosses zero.
-    direction = -1;      % But only if the height is decreasing.
-end
-\end{verbatim}
-
-{\tt events} returns three output variables:
-
-{\tt value} determines
-when an event occurs.  In this case {\tt value} gets the second
-element of {\tt X}, which is understood to be the height of the
-projectile.  An ``event'' is a point in time when this value passes
-through 0.
-
-{\tt direction} determines whether an event occurs when
-{\tt value} is increasing ({\tt direction=1}), decreasing ({\tt
-direction=-1}, or both {\tt direction=0}.
-
-{\tt isterminal} determines what happens when an event
-occurs.  If {\tt isterminal=1}, the event is ``terminal'' and the
-simulation stops.  If {\tt isterminal=0}, the simulation continues,
-but {\tt ode45} does some additional work to make sure that the
-solution in the vicinity of the event is accurate, and that one of the
-estimated values in the result is at the time of the event.
-
-\item When you call {\tt ode45}, you pass {\tt options} as a fourth
-argument:
-
-\begin{verbatim}
-ode45(@projectile, [0,10], [0, 3, 40, 30], options);
-\end{verbatim}
-%
-\end{enumerate}
-
-\begin{ex}
-How would you modify {\tt events} to stop when the height of
-the projectile falls through 3m?
-\end{ex}
-
-
-\section{Optimization}
 
 In Exercise~\ref{baseball}, you were asked to find the optimal
 launch angle for a batted ball.  ``Optimal'' is a fancy way of

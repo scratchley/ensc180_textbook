@@ -119,19 +119,18 @@
 \contentsline {section}{\numberline {10.4}Air resistance}{116}{section.10.4}
 \contentsline {section}{\numberline {10.5}Parachute!}{118}{section.10.5}
 \contentsline {section}{\numberline {10.6}Two dimensions}{118}{section.10.6}
-\contentsline {section}{\numberline {10.7}What could go wrong?}{120}{section.10.7}
-\contentsline {section}{\numberline {10.8}Glossary}{122}{section.10.8}
-\contentsline {section}{\numberline {10.9}Exercises}{122}{section.10.9}
+\contentsline {section}{\numberline {10.7}ODE Events}{120}{section.10.7}
+\contentsline {section}{\numberline {10.8}What could go wrong?}{121}{section.10.8}
+\contentsline {section}{\numberline {10.9}Glossary}{123}{section.10.9}
 \contentsline {chapter}{\numberline {11}Optimization and Interpolation}{125}{chapter.11}
-\contentsline {section}{\numberline {11.1}ODE Events}{125}{section.11.1}
-\contentsline {section}{\numberline {11.2}Optimization}{126}{section.11.2}
-\contentsline {section}{\numberline {11.3}Golden section search}{127}{section.11.3}
-\contentsline {section}{\numberline {11.4}Discrete and continuous maps}{130}{section.11.4}
-\contentsline {section}{\numberline {11.5}Interpolation}{131}{section.11.5}
-\contentsline {section}{\numberline {11.6}Interpolating the inverse function}{132}{section.11.6}
-\contentsline {section}{\numberline {11.7}Field mice}{134}{section.11.7}
-\contentsline {section}{\numberline {11.8}Glossary}{135}{section.11.8}
-\contentsline {section}{\numberline {11.9}Exercises}{135}{section.11.9}
+\contentsline {section}{\numberline {11.1}Optimization}{125}{section.11.1}
+\contentsline {section}{\numberline {11.2}Golden section search}{127}{section.11.2}
+\contentsline {section}{\numberline {11.3}Discrete and continuous maps}{130}{section.11.3}
+\contentsline {section}{\numberline {11.4}Interpolation}{131}{section.11.4}
+\contentsline {section}{\numberline {11.5}Interpolating the inverse function}{132}{section.11.5}
+\contentsline {section}{\numberline {11.6}Field mice}{134}{section.11.6}
+\contentsline {section}{\numberline {11.7}Glossary}{135}{section.11.7}
+\contentsline {section}{\numberline {11.8}Exercises}{135}{section.11.8}
 \contentsline {chapter}{\numberline {12}Vectors as vectors}{137}{chapter.12}
 \contentsline {section}{\numberline {12.1}What's a vector?}{137}{section.12.1}
 \contentsline {section}{\numberline {12.2}Dot and cross products}{139}{section.12.2}
@@ -141,4 +140,3 @@
 \contentsline {section}{\numberline {12.6}What is a model for?}{143}{section.12.6}
 \contentsline {section}{\numberline {12.7}Glossary}{144}{section.12.7}
 \contentsline {section}{\numberline {12.8}Exercises}{144}{section.12.8}
-\contentsline {chapter}{Index}{146}{ex.12.11}
