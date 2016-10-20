@@ -1,4 +1,5 @@
-\contentsline {chapter}{Preface}{iii}{chapter*.1}
+\contentsline {chapter}{Preface to the Second Edition}{iii}{chapter*.1}
+\contentsline {chapter}{Preface}{v}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Variables and values}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}A glorified calculator}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Math functions}{2}{section.1.2}
