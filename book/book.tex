@@ -1,4 +1,3 @@
-
 % LaTeX source for textbook ``Physical Modeling in MATLAB''
 % Copyright 2012 Allen B. Downey.
 
@@ -12,8 +11,8 @@
 \usepackage{url}
 
 %% Index packages, in order to get every instance of a word we want indexed, use the search and replace command in your editor to repalce "desired word" with "\index{desired word}"
-% \usepackage{makeidx}   %% Package for Indices
-% \makeindex             %% Creat the filees needed for indexing
+\usepackage{makeidx}   %% Package for Indices
+\makeindex             %% Create the filees needed for indexing
 
 \usepackage[symbol*]{footmisc}
 \usepackage{amsmath, amsthm, amssymb}
@@ -64,7 +63,6 @@
 
 %\blankpage
 %\blankpage
-
 \newcommand{\thetitle}{Physical Modeling in MATLAB\myreg}
 \newcommand{\theversion}{1.1.8}
 
@@ -4424,7 +4422,7 @@ working on a hard bug, there are four things to try:
 check that it means what you meant to say.
 
 \item[running:] Experiment by making changes and running different
-\index{version}s.  Often if you display the right thing at the right place
+versions.  Often if you display the right thing at the right place
 in the program, the problem becomes obvious, but sometimes you have to
 spend some time to build scaffolding.
 
@@ -5016,12 +5014,12 @@ P = 1     2     6    24   120
 
 \begin{ex}
 Write a function named {\tt cumulative\_prod} that uses
-a loop to compute the cumulative product of the input vector.
+a loop to compute the cumulative product of the input \index{vector}.
 \end{ex}
 
 MATLAB doesn't provide the multiplicative \index{version}
 of {\tt diff}, which would be called {\tt ratio}, and which would
-compute the ratio of successive elements of the input vector.
+compute the ratio of successive elements of the input \index{vector}.
 
 \begin{ex}
 Write a function named {\tt myratio} that computes the
@@ -5032,7 +5030,7 @@ return {\tt X}.
 You can use a loop, or if you want to be clever, you can take
 advantage of the fact that $e^{\ln a + \ln b} = a b$.
 
-If you apply {\tt myratio} to a vector that contains Fibonacci
+If you apply {\tt myratio} to a \index{vector} that contains Fibonacci
 numbers, you can confirm that the ratio of successive elements
 converges on the golden ratio, $(1+\sqrt{5})/2$ (see
 Exercise~\ref{fibratio}).
@@ -5042,7 +5040,7 @@ Exercise~\ref{fibratio}).
 
 \section{Existential quantification}
 
-It is often useful to check the elements of a vector to see if there
+It is often useful to check the elements of a \index{vector} to see if there
 are any that satisfy a condition.  For example, you might want to
 know if there are any positive elements.  In logic, this condition
 is called {\bf existential quantification}, and it is denoted with
@@ -5083,7 +5081,7 @@ we were looking for (because if we had, we would have hit the
 
 \section{Universal quantification}
 
-Another common operation on vectors is to check whether {\em all}
+Another common operation on \index{vector}s is to check whether {\em all}
 of the elements satisfy a condition, which is known to
 logicians as {\bf universal quantification} and denoted with
 the symbol $\forall$ which is pronounced ``for all.''  So this
@@ -5111,17 +5109,17 @@ that are non-positive.
 
 \begin{ex}
 Write a function named {\tt forall} that
-takes a vector and returns 1 if all of the elements are positive
+takes a \index{vector} and returns 1 if all of the elements are positive
 and 0 if there are any non-positive elements.
 \end{ex}
 
 
 
 
-\section{Logical vectors}
+\section{Logical \index{vector}s}
 
-When you apply a logical operator to a vector, the result is a {\bf
-logical vector}; that is, a vector whose elements are the logical
+When you apply a logical operator to a \index{vector}, the result is a {\bf
+logical \index{vector}}; that is, a \index{vector} whose elements are the logical
 values 1 and 0.
 
 \begin{verbatim}
@@ -5134,13 +5132,13 @@ V = -3    -2    -1     0     1     2     3
 L =  0     0     0     0     1     1     1
 \end{verbatim}
 
-In this example, {\tt L} is a logical vector whose elements
+In this example, {\tt L} is a logical \index{vector} whose elements
 correspond to the elements of {\tt V}.  For each positive element of
 {\tt V}, the corresponding element of {\tt L} is 1.
 
-Logical vectors can be used like flags to store the state of
+Logical \index{vector}s can be used like flags to store the state of
 a condition.  They are also often used with the {\tt find} function,
-which takes a logical vector and returns a vector that contains
+which takes a logical \index{vector} and returns a \index{vector} that contains
 the indices of the elements that are ``true.''
 
 Applying {\tt find} to {\tt L} yields
@@ -5153,7 +5151,7 @@ ans = 5     6     7
 
 which indicates that elements 5, 6 and 7 have the value 1.
 
-If there are no ``true'' elements, the result is an empty vector.
+If there are no ``true'' elements, the result is an empty \index{vector}.
 
 \begin{verbatim}
 >> find(V>10)
@@ -5163,7 +5161,7 @@ ans =
    Empty matrix: 1-by-0
 \end{verbatim}
 
-This example computes the logical vector and passes it as an
+This example computes the logical \index{vector} and passes it as an
 argument to {\tt find} without assigning it to an intermediate
 variable.  You can read this \index{version} abstractly as ``find
 the indices of elements of {\tt V} that are greater than 10.''
@@ -5217,8 +5215,8 @@ property.
 \item[universal quantification:] A logical condition that expresses
 the idea that all elements of a set have a certain property.
 
-\item[logical vector:] A vector, usually the result of applying a logical
-operator to a vector, that contains logical values 1 and 0. 
+\item[logical \index{vector}:] A \index{vector}, usually the result of applying a logical
+operator to a \index{vector}, that contains logical values 1 and 0. 
 
 
 \end{description}
@@ -5558,7 +5556,7 @@ space between the points is not quite even.  They are closer
 together at the beginning of the interval and farther apart at the end.
 
 To see the population at the end of the year, you can display the
-last element from each vector:
+last element from each \index{vector}:
 
 \begin{verbatim}
 >> [T(end), Y(end)]
@@ -5583,8 +5581,8 @@ of $a$?
 
 When you solve an ODE analytically, the result is a function, $f$,
 that allows you to compute the population, $f(t)$, for any value of
-$t$.  When you solve an ODE numerically, you get two vectors.  You can
-think of these vectors as a discrete approximation of the continuous
+$t$.  When you solve an ODE numerically, you get two \index{vector}s.  You can
+think of these \index{vector}s as a discrete approximation of the continuous
 function $f$: ``discrete'' because it is only defined for certain
 values of $t$, and ``approximate'' because each value $F_i$
 is only an estimate of the true value $f(t)$.
@@ -5920,7 +5918,7 @@ it?
 
 \section{Matrices}
 
-A matrix is a two-dimensional \index{version} of a vector.  Like a vector,
+A matrix is a two-dimensional \index{version} of a \index{vector}.  Like a \index{vector},
 it contains elements that are identified by indices.  The difference
 is that the elements are arranged in rows and columns, so it takes
 {\em two} indices to identify an element.
@@ -5945,7 +5943,7 @@ display it:
   M           3x3                        72  double array
 \end{verbatim}
 
-Or the {\tt size} function, which returns a vector:
+Or the {\tt size} function, which returns a \index{vector}:
 
 \begin{verbatim}
 >> V = size(M)
@@ -5988,9 +5986,9 @@ ans = 2     3
 \end{verbatim}
 
 
-\section{Row and column vectors}
+\section{Row and column \index{vector}s}
 
-Although it is useful to think in terms of scalars, vectors and matrices,
+Although it is useful to think in terms of scalars, \index{vector}s and matrices,
 from MATLAB's point of view, everything is a matrix.  A scalar
 is just a matrix that happens to have one row and one column:
 
@@ -6001,7 +5999,7 @@ is just a matrix that happens to have one row and one column:
 ans = 1     1
 \end{verbatim}
 
-And a vector is a matrix with only one row:
+And a \index{vector} is a matrix with only one row:
 
 \begin{verbatim}
 >> R = 1:5;
@@ -6010,12 +6008,12 @@ And a vector is a matrix with only one row:
 ans = 1     5
 \end{verbatim}
 
-Well, some vectors, anyway.  Actually, there are two kind
-of vectors.  The ones we have seen so far are called {\bf row vectors},
+Well, some \index{vector}s, anyway.  Actually, there are two kind
+of \index{vector}s.  The ones we have seen so far are called {\bf row \index{vector}s},
 because the elements are arranged in a row; the other kind are
-{\bf column vectors}, where the elements are in a single column.
+{\bf column \index{vector}s}, where the elements are in a single column.
 
-One way to create a column vector is to create a matrix with only
+One way to create a column \index{vector} is to create a matrix with only
 one element per row:
 
 \begin{verbatim}
@@ -6032,10 +6030,10 @@ C =
 ans = 3     1
 \end{verbatim}
 
-The difference between row and column vectors is important in
+The difference between row and column \index{vector}s is important in
 linear algebra, but for
-most basic vector operations, it doesn't matter.  When you
-index the elements of a vector, you don't have to know what kind
+most basic \index{vector} operations, it doesn't matter.  When you
+index the elements of a \index{vector}, you don't have to know what kind
 it is:
 
 \begin{verbatim}
@@ -6078,7 +6076,7 @@ Dt = 1     4
 
 \begin{ex}
 What effect does the transpose operator
-have on row vectors, column vectors, and scalars?
+have on row \index{vector}s, column \index{vector}s, and scalars?
 \end{ex}
 
 
@@ -6118,7 +6116,7 @@ and not just a list of unrelated equations.  To solve a system, you
 have to solve the equations simultaneously.
 
 Fortunately, {\tt ode45} can handle systems of equations.  The
-difference is that the initial condition is a vector that contains
+difference is that the initial condition is a \index{vector} that contains
 initial values $R(0)$ and $F(0)$, and the output is a matrix
 that contains one column for $R$ and one for $F$.
 
@@ -6141,7 +6139,7 @@ function res = lotka(t, V)
     drdt = a*r - b*r*f;
     dfdt = e*b*r*f - c*f;
     
-    % pack the derivatives into a vector
+    % pack the derivatives into a \index{vector}
     res = [drdt; dfdt];
 end
 \end{verbatim}
@@ -6149,12 +6147,12 @@ end
 As usual, the first input variable is time. Even though the time variable, {\tt t}, 
 is not used inside the function, its present is required for using the {\tt ode45} 
 solver in order to indicate the time span.
-The second input variable is a vector with two elements,
+The second input variable is a \index{vector} with two elements,
 $R(t)$ and $F(t)$.  I gave it a capital letter to remind me that it
-is a vector.  The body of the function includes four {\bf paragraphs},
+is a \index{vector}.  The body of the function includes four {\bf paragraphs},
 each explained by a comment.
 
-The first paragraph {\bf unpacks} the vector by copying the elements
+The first paragraph {\bf unpacks} the \index{vector} by copying the elements
 into scalar variables.  This isn't necessary, but giving names to
 these values helps me remember what's what.  It also makes the third
 paragraph, where we compute the derivatives, resemble the mathematical
@@ -6167,8 +6165,8 @@ would come from observations of real animals, but for this example
 I chose values that yield interesting results.
 
 The last paragraph {\bf packs} the computed derivatives back into a
-vector.  When {\tt ode45} calls this function, it provides a vector
-as input and expects to get a vector as output.
+\index{vector}.  When {\tt ode45} calls this function, it provides a \index{vector}
+as input and expects to get a \index{vector} as output.
 
 Sharp-eyed readers will notice something different about this line:
 
@@ -6176,9 +6174,9 @@ Sharp-eyed readers will notice something different about this line:
     res = [drdt; dfdt];
 \end{verbatim}
 
-The semi-colon between the elements of the vector is not an error.  It
+The semi-colon between the elements of the \index{vector} is not an error.  It
 is necessary in this case because {\tt ode45} requires the result of
-this function to be a column vector.
+this function to be a column \index{vector}.
 
 Now we can run {\tt ode45} like this:
 
@@ -6188,14 +6186,14 @@ ode45(@lotka, [0, 365], [100, 10])
 
 As always, the first argument is a function handle, the second is the
 time interval, and the third is the initial condition.  The initial
-condition is a vector: the first element is the number of rabbits at
+condition is a \index{vector}: the first element is the number of rabbits at
 $t=0$, the second element is the number of foxes.
 
 The order of these elements (rabbits and foxes) is up to you, but
 you have to be consistent.  That is, the initial conditions you
 provide when you call {\tt ode45} have to be the same as the order,
-inside {\tt lotka}, where you unpack the input vector and repack
-the output vector.  MATLAB doesn't know what these values mean;
+inside {\tt lotka}, where you unpack the input \index{vector} and repack
+the output \index{vector}.  MATLAB doesn't know what these values mean;
 it is up to you as the programmer to keep track.
 
 But if you get the order right, you should see something like this:
@@ -6212,12 +6210,12 @@ different values.
 
 \section{What can go wrong?}
 
-The output vector from the rate function
-has to be a column vector; otherwise you get
+The output \index{vector} from the rate function
+has to be a column \index{vector}; otherwise you get
 
 \begin{verbatim}
 Error using odearguments (line 90)
-LOTKA must return a column vector.
+LOTKA must return a column \index{vector}.
 
 Error in ode45 (line 115)
     odearguments(FcnHandlesUsed, solver_name, ode,...
@@ -6225,10 +6223,10 @@ Error in ode45 (line 115)
 \end{verbatim}
 
 Which is pretty good as error messages go.  It's not clear {\em why}
-it needs to be a column vector, but that's not our problem.
+it needs to be a column \index{vector}, but that's not our problem.
 
 Another possible error is reversing the order of the elements in the
-initial conditions, or the vectors inside {\tt lotka}.  Again, MATLAB
+initial conditions, or the \index{vector}s inside {\tt lotka}.  Again, MATLAB
 doesn't know what the elements are supposed to mean, so it can't catch
 errors like this; it will just produce incorrect results.
 
@@ -6245,10 +6243,10 @@ Here's what that looks like:
 >> [T, M] = ode45(@lotka, [0, 365], [100, 10]);
 \end{verbatim}
 
-You can think of the left side of this assignment as a vector
+You can think of the left side of this assignment as a \index{vector}
 of variables.
 
-As in previous examples, {\tt T} is a vector of time values where {\tt
+As in previous examples, {\tt T} is a \index{vector} of time values where {\tt
 ode45} made estimates.  But unlike previous examples, the
 second output variable is a matrix containing one column for each
 variable (in this case, $R$ and $F$) and one row for each time value.
@@ -6292,11 +6290,11 @@ ans = 185     1
 ans = 185     1
 \end{verbatim}
 
-So {\tt R} and {\tt F} are column vectors.  
+So {\tt R} and {\tt F} are column \index{vector}s.  
 
 
 If you plot these
-vectors against each other, like this
+\index{vector}s against each other, like this
 
 \begin{verbatim}
 >> plot(R, F)
@@ -6329,9 +6327,9 @@ but for 4 or more variables, you are on your own.
 
 \begin{description}
 
-\item[row vector:] A matrix that has only one row. 
+\item[row \index{vector}:] A matrix that has only one row. 
 
-\item[column vector:] A matrix that has only one column. 
+\item[column \index{vector}:] A matrix that has only one column. 
 
 \item[transpose:] An operation that transforms the rows of a matrix
 into columns (or the other way around, if you prefer). 
@@ -6342,9 +6340,9 @@ a set of variables such that the equations are intertangled.
 \item[paragraph:] A chunk of code that makes up part of a function,
 usually with an explanatory comment. 
 
-\item[unpack:] To copy the elements of a vector into a set of variables.
+\item[unpack:] To copy the elements of a \index{vector} into a set of variables.
 
-\item[pack:] To copy values from a set of variables into a vector. 
+\item[pack:] To copy values from a set of variables into a \index{vector}. 
 
 \item[state:] If a system can be described by a set of variables,
 the values of those variables are called the state of the system.
@@ -6395,7 +6393,7 @@ system of equations.
 takes {\tt t} and {\tt V} as input variables, where the components
 of {\tt V} are understood to be the current values of {\tt x},
 {\tt y} and {\tt z}.  It should compute the corresponding derivatives
-and return them in a single column vector.
+and return them in a single column \index{vector}.
 
 \item The next step is to test your function by calling it from
 the command line with values like
@@ -6489,11 +6487,11 @@ Newton's second law of motion is often written like this
 where $F$ is the net force acting on a object, $m$ is the mass
 of the object, and $a$ is the resulting acceleration of the object.
 In a simple case where the object is moving along a straight line,
-$F$ and $a$ are scalars, but in general they are vectors.
+$F$ and $a$ are scalars, but in general they are \index{vector}s.
 
 Even more generally, if $F$ and $a$ vary in time, then they can
-be thought of as functions that return vectors; that is, $F$ is
-a function and the result of evaluating $F(t)$ is a vector that
+be thought of as functions that return \index{vector}s; that is, $F$ is
+a function and the result of evaluating $F(t)$ is a \index{vector} that
 describes the net force at time $t$.  So a more explicit way to
 write Newton's law is
 
@@ -6513,7 +6511,7 @@ equation
 \[ \frac{d^2p}{dt^2} = a\]
 
 
-Where $a$ and $p$ are functions of time that return vectors,
+Where $a$ and $p$ are functions of time that return \index{vector}s,
 and $\frac{d^2p}{dt^2}$ is the second time derivative of $p$.
 
 Because this equation includes a second derivative, it is a second-order
@@ -6554,7 +6552,7 @@ function res = freefall(t, X)
     dpdt = v;                          
     dvdt = acceleration(t, p, v);
 
-    res = [dpdt; dvdt];    % pack the results in a column vector
+    res = [dpdt; dvdt];    % pack the results in a column \index{vector}
 end
 
 function res = acceleration(t, p, v)
@@ -6566,7 +6564,7 @@ end
 The first function is the rate function.  It gets {\tt t} and
 {\tt X} as input variables, where the elements of {\tt X} are understood
 to be position and velocity.  The return value from {\tt freefall}
-is a (column) vector that contains the derivatives of position
+is a (column) \index{vector} that contains the derivatives of position
 and velocity, which are velocity and acceleration, respectively. 
 
 Computing $p_t$ is easy because we are given velocity
@@ -6737,15 +6735,15 @@ function res = acceleration(t, P, V)
 end
 \end{verbatim}
 
-The second argument of the rate function is a vector, {\tt W}, with
+The second argument of the rate function is a \index{vector}, {\tt W}, with
 four elements.  The first two are assigned to {\tt P}, which
 represents position; the last two are assigned to {\tt V}, which
 represents velocity.
-{\tt P} and {\tt V} are vectors with
+{\tt P} and {\tt V} are \index{vector}s with
 elements for the $x$ and $y$ components.
 
 The result from
-{\tt acceleration} is also a vector; ignoring air resistance
+{\tt acceleration} is also a \index{vector}; ignoring air resistance
 (for now), the acceleration in the $x$ direction is 0; in
 the $y$ direction it's $g$.
 Other than that, this code is similar to what we saw in
@@ -6793,7 +6791,7 @@ the operation of joining two matrices into a larger matrix.
 top of each other; ``horizontal catenation'' lays them
 side by side.
 
-Here's an example of horizontal catenation with row vectors:
+Here's an example of horizontal catenation with row \index{vector}s:
 
 \begin{verbatim}
 >> x = 1:3
@@ -6858,8 +6856,8 @@ consistent.
 
 \end{verbatim}
 
-In this example, {\tt a} is a row vector and {\tt b} is a column
-vector, so they can't be catenated in either direction.
+In this example, {\tt a} is a row \index{vector} and {\tt b} is a column
+\index{vector}, so they can't be catenated in either direction.
 
 Reading the error messages, you probably guessed that {\tt horzcat}
 is the function that performs horizontal catenation, and likewise
@@ -6881,18 +6879,18 @@ function res = projectile(t, W)
 end
 \end{verbatim}
 
-As long as both {\tt dPdt} and {\tt dVdt} are column vectors,
+As long as both {\tt dPdt} and {\tt dVdt} are column \index{vector}s,
 the semi-colon performs vertical catenation, and the result is
-a column vector with four elements.  But if either of them is a
-row vector, that's trouble.
+a column \index{vector} with four elements.  But if either of them is a
+row \index{vector}, that's trouble.
 
 {\tt ode45} expects the result from {\tt projectile} to be a
-column vector, so if you are working with {\tt ode45}, it is
-probably a good idea to make {\em everything} a column vector.
+column \index{vector}, so if you are working with {\tt ode45}, it is
+probably a good idea to make {\em everything} a column \index{vector}.
 
 In general, if you run into problems with {\tt horzcat} and {\tt
 vertcat}, use {\tt size} to display the dimensions of the operands,
-and make sure you are clear on which way your vectors go.
+and make sure you are clear on which way your \index{vector}s go.
 
 
 \section{Glossary}
@@ -6932,12 +6930,12 @@ A simple model of the drag of a baseball is:
 %
 \[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
 %
-where $F_d$ is a vector that represents the force on the baseball due
+where $F_d$ is a \index{vector} that represents the force on the baseball due
 to drag, $C_d$ is the drag coefficient (0.3 is a reasonable choice),
 $\rho$ is the density of air (1.3 kg/m$^3$ at sea level), $A$ is the
 cross sectional area of the baseball (0.0042 m$^2$), $v$ is the
-magnitude of the velocity vector, and $\hat{V}$ is a unit vector in
-the direction of the velocity vector.  The mass of the baseball is
+magnitude of the velocity \index{vector}, and $\hat{V}$ is a unit \index{vector} in
+the direction of the velocity \index{vector}.  The mass of the baseball is
 $0.145$ kg.
 
 For more information about drag, see
@@ -7189,7 +7187,7 @@ function res = optimize(V)
 end
 \end{verbatim}
 
-The input variable is a vector that contains three values that bracket
+The input variable is a \index{vector} that contains three values that bracket
 a maximum; in this case they are angles in degrees.  {\tt optimize}
 starts by evaluating {\tt height\_func} for each of the three values.
 We assume that {\tt height\_func} returns the quantity we want to
@@ -7255,7 +7253,7 @@ of a baseball with a given velocity.
 
 When you solve an ODE analytically, the result is a function,
 which you can think of as a continuous map.  When you use an
-ODE solver, you get two vectors (or a vector and a matrix), which
+ODE solver, you get two \index{vector}s (or a \index{vector} and a matrix), which
 you can think of as a discrete map.
 
 For example, in Section~\ref{ode45}, we used the following rate
@@ -7269,7 +7267,7 @@ function res = rats(t, y)
 end
 \end{verbatim}
 
-The result from {\tt ode45} is two vectors:
+The result from {\tt ode45} is two \index{vector}s:
 
 \begin{verbatim}
 >> [T, Y] = ode45(@rats, [0, 365], 2);
@@ -7559,40 +7557,40 @@ golf ball is about 0.2 as long as the ball is moving faster than 20 m/s.
 
 
 %chap12
-\chapter{Vectors as vectors}
+\chapter{\index{vector}s as \index{vector}s}
 
-\section{What's a vector?}
+\section{What's a \index{vector}?}
 
-The word ``vector'' means different things to different people.
-In MATLAB, a vector is a matrix that has either one row or one
-column.  So far we have used MATLAB vectors to represent
+The word ``\index{vector}'' means different things to different people.
+In MATLAB, a \index{vector} is a matrix that has either one row or one
+column.  So far we have used MATLAB \index{vector}s to represent
 
 \begin{description}
 
 \item[sequences:] A sequence is a set of values identified by
 integer indices; it is natural to store the elements of the
-sequence as elements of a MATLAB vector.
+sequence as elements of a MATLAB \index{vector}.
 
-\item[state vectors:] A state vector is a set of values that
+\item[state \index{vector}s:] A state \index{vector} is a set of values that
 describes the state of a physical system.  When you call
 {\tt ode45}, you give it in the initial conditions in a state
-vector.  Then when {\tt ode45} calls your rate function, it
-gives you a state vector.
+\index{vector}.  Then when {\tt ode45} calls your rate function, it
+gives you a state \index{vector}.
 
-\item[discrete maps:] If you have two vectors with the same
+\item[discrete maps:] If you have two \index{vector}s with the same
 length, you can think of them as a mapping from the elements
-of one vector to the corresponding elements of the other.  For
+of one \index{vector} to the corresponding elements of the other.  For
 example, in Section~\ref{rats}, the results from {\tt ode45}
-are vectors, {\tt T} and {\tt Y}, that represent a mapping
+are \index{vector}s, {\tt T} and {\tt Y}, that represent a mapping
 from the time values in {\tt T} to the population values in {\tt Y}.
 
 \end{description}
 
-In this chapter we will see another use of MATLAB vectors:
-representing spatial vectors.  A spatial vector is a value that
+In this chapter we will see another use of MATLAB \index{vector}s:
+representing spatial \index{vector}s.  A spatial \index{vector} is a value that
 represents a multidimensional physical quantity like position,
-velocity, acceleration or force\footnote{See
-\url{https://en.wikipedia.org/wiki/Vector_(spatial)}.}.
+velocity, acceleration or force% \footnote{See
+% \url{https://en.wikipedia.org/wiki/\index{vector}_(spatial)}.}.
 
 These quantities cannot be described with a
 single number because they contain multiple components.  For example,
@@ -7602,11 +7600,11 @@ $z$ coordinates.  As another example, in 2-dimensional polar
 coordinates, you can specify a velocity with two numbers, a
 magnitude and an angle, often called $r$ and $\theta$.
 
-It is convenient to represent spatial vectors using MATLAB vectors
-because MATLAB knows how to perform most of the vector
+It is convenient to represent spatial \index{vector}s using MATLAB \index{vector}s
+because MATLAB knows how to perform most of the \index{vector}
 operations you need for physical modeling.  For example,
 suppose that you are given the velocity of a baseball in
-the form of a MATLAB vector with two elements, $v_x$ and $v_y$,
+the form of a MATLAB \index{vector} with two elements, $v_x$ and $v_y$,
 which are the components of velocity in the $x$ and $y$ directions.
 
 \begin{verbatim}
@@ -7619,18 +7617,18 @@ due to drag is
 
 \[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
 
-where $V$ is a spatial vector representing velocity, $v$ is the magnitude
+where $V$ is a spatial \index{vector} representing velocity, $v$ is the magnitude
 of the velocity (sometimes called ``speed''), and $\hat{V}$ is a unit
-vector in the direction of the velocity vector.  The other terms,
+\index{vector} in the direction of the velocity \index{vector}.  The other terms,
 $\rho$, $A$ and $C_d$, are scalars.
 
-The magnitude of a vector is the square root of the sum of the squares
+The magnitude of a \index{vector} is the square root of the sum of the squares
 of the elements.  You could compute it with {\tt hypotenuse} from
 Section~\ref{hypotenuse}, or you could use the MATLAB function {\tt
 norm} ({\bf norm} is another name\footnote{Magnitude is also called
 ``length'' but I will avoid that term because it gets confused with
 the {\tt length} function, which returns the number of elements in a
-MATLAB vector.}  for the magnitude of a vector):
+MATLAB \index{vector}.}  for the magnitude of a \index{vector}):
 
 \begin{verbatim}
 >> v = norm(V)
@@ -7638,7 +7636,7 @@ MATLAB vector.}  for the magnitude of a vector):
 v = 50
 \end{verbatim}
 
-$\hat{V}$ is a {\bf unit vector}, which means it should have norm 1,
+$\hat{V}$ is a {\bf unit \index{vector}}, which means it should have norm 1,
 and it should point in the same direction as $V$.  The simplest
 way to compute it is to divide $V$ by its own norm.
 
@@ -7662,14 +7660,14 @@ To compute $F_d$ we just multiply the scalar terms by $\hat{V}$.
 Fd = - 1/2 * C * rho * A * v^2 * Vhat
 \end{verbatim}
 
-Similarly, we can compute acceleration by dividing the vector
+Similarly, we can compute acceleration by dividing the \index{vector}
 $F_d$ by the scalar $m$.
 
 \begin{verbatim}
 Ad = Fd / m
 \end{verbatim}
 
-To represent the acceleration of gravity, we create a vector 
+To represent the acceleration of gravity, we create a \index{vector} 
 with two components:
 
 \begin{verbatim}
@@ -7678,7 +7676,7 @@ Ag = [0; -9.8]
 
 The $x$ component of gravity is 0; the $y$ component is $-9.8 m/s^2$.
 
-Finally we compute total acceleration by adding vector
+Finally we compute total acceleration by adding \index{vector}
 quantities:
 
 \begin{verbatim}
@@ -7686,25 +7684,25 @@ A = Ag + Ad;
 \end{verbatim}
 
 One nice thing about this computation is that we didn't have to
-think much about the components of the vectors.  By treating
-spatial vectors as basic quantities, we can express complicated computations
+think much about the components of the \index{vector}s.  By treating
+spatial \index{vector}s as basic quantities, we can express complicated computations
 concisely.
 
 
 \section{Dot and cross products}
 
-Multiplying a vector by a scalar is a straightforward operation;
-so is adding two vectors.  But multiplying two vectors is more
-subtle.  It turns out that there are two vector operations that
+Multiplying a \index{vector} by a scalar is a straightforward operation;
+so is adding two \index{vector}s.  But multiplying two \index{vector}s is more
+subtle.  It turns out that there are two \index{vector} operations that
 resemble multiplication: {\bf dot product}
 and {\bf cross product}.
 
-The dot product of vectors $A$ and $B$ is a scalar:
+The dot product of \index{vector}s $A$ and $B$ is a scalar:
 
 \[ d = a b \cos \theta \]
 %
 where $a$ is the magnitude of $A$, $b$ is the magnitude of $B$,
-and $\theta$ is the angle between the vectors.  We already know
+and $\theta$ is the angle between the \index{vector}s.  We already know
 how to compute magnitudes, and you could probably figure out
 how to compute $\theta$, but you don't have to.  MATLAB provides
 a function, {\tt dot}, that computes dot products.
@@ -7716,39 +7714,39 @@ d = dot(A, B)
 {\tt dot} works in any number of dimensions, as long as {\tt A}
 and {\tt B} have the same number of elements.
 
-If one of the operands is a unit vector, you can use the dot
-product to compute the component of a vector $A$ that is in
-the direction of a unit vector, $\hat{i}$:
+If one of the operands is a unit \index{vector}, you can use the dot
+product to compute the component of a \index{vector} $A$ that is in
+the direction of a unit \index{vector}, $\hat{i}$:
 
 \begin{verbatim}
 s = dot(A, ihat)
 \end{verbatim}
 
 In this example, $s$ is the {\bf scalar projection} of $A$
-onto $\hat{i}$.  The {\bf vector projection} is the vector
+onto $\hat{i}$.  The {\bf \index{vector} projection} is the \index{vector}
 that has magnitude $s$ in the direction of $\hat{i}$:
 
 \begin{verbatim}
 V = dot(A, ihat) * ihat
 \end{verbatim}
 
-The cross product of vectors $A$ and $B$ is a vector whose direction
+The cross product of \index{vector}s $A$ and $B$ is a \index{vector} whose direction
 is perpendicular to $A$ and $B$ and whose magnitude is
 
 \[ c = a b \sin \theta \]
 %
 where (again) $a$ is the magnitude of $A$, $b$ is the magnitude of
-$B$, and $\theta$ is the angle between the vectors.  MATLAB provides
+$B$, and $\theta$ is the angle between the \index{vector}s.  MATLAB provides
 a function, {\tt cross}, that computes cross products.
 
 \begin{verbatim}
 C = cross(A, B)
 \end{verbatim}
 
-{\tt cross} calculates the cross product of corresponding vectors along the first array dimension whose size equals 3.
+{\tt cross} calculates the cross product of corresponding \index{vector}s along the first array dimension whose size equals 3.
 
 A common use of {\tt cross} is to compute torques.  If you represent
-a moment arm $R$ and a force $F$ as 3-dimensional vectors, then
+a moment arm $R$ and a force $F$ as 3-dimensional \index{vector}s, then
 the torque is just
 
 \begin{verbatim}
@@ -7764,9 +7762,9 @@ in Newton-meters.
 \section{Celestial mechanics}
 
 Modeling celestial mechanics is a good opportunity
-to compute with spatial vectors.
+to compute with spatial \index{vector}s.
 Imagine a star with mass $m_1$ at a point in space described by the
-vector $P_1$, and a planet with mass $m_2$ at point $P_2$.  The
+\index{vector} $P_1$, and a planet with mass $m_2$ at point $P_2$.  The
 magnitude of the gravitational force\footnote{See
 \url{https://en.wikipedia.org/wiki/Gravity}} between them is
 
@@ -7779,7 +7777,7 @@ masses are in kilograms, distances in meters, and forces in Newtons.
 
 The direction of the force on the star at $P_1$ is in the
 direction toward $P_2$.  We can compute relative direction by
-subtracting vectors; if we compute {\tt R = P2 - P1}, then
+subtracting \index{vector}s; if we compute {\tt R = P2 - P1}, then
 the direction of {\tt R} is from {\tt P1} to {\tt P2}.
 
 The distance between the planet and star is the length of $R$:
@@ -7795,7 +7793,7 @@ rhat = R / r
 \end{verbatim}
 
 \begin{ex}
-Write a sequence of MATLAB statements that computes {\tt F12}, a vector
+Write a sequence of MATLAB statements that computes {\tt F12}, a \index{vector}
 that represents the force on the star due to the planet, and {\tt
 F21}, the force on the planet due to the star.
 \end{ex}
@@ -7846,13 +7844,13 @@ function animate_func(T,M)
 end
 \end{verbatim}
 
-The input variables are the output from {\tt ode45}, a vector
+The input variables are the output from {\tt ode45}, a \index{vector}
 {\tt T} and a matrix {\tt M}.  The columns of {\tt M} are the
 positions and velocities of the Sun and Jupiter, so
 {\tt X1} and {\tt Y1} get the coordinates of the Sun;
 {\tt X2} and {\tt Y2} get the coordinates of Jupiter.
 
-{\tt minmax} is a vector of four elements which is used inside
+{\tt minmax} is a \index{vector} of four elements which is used inside
 the loop to set the axes of the figure.  This is necessary because
 otherwise MATLAB scales the figure each time through the loop,
 so the axes keep changing, which makes the animation hard
@@ -7899,7 +7897,7 @@ There are two ways to fix this problem:
 
 \begin{enumerate}
 
-\item When you call {\tt ode45} you can give it a vector of
+\item When you call {\tt ode45} you can give it a \index{vector} of
 points in time where it should generate estimates.  Here is
 an example:
 
@@ -7909,7 +7907,7 @@ step = end_time/200;
 [T, M] = ode45(@rate_func, [0:step:end_time], W);
 \end{verbatim}
 
-The second argument is a range vector that goes from 0 to 1000 with a
+The second argument is a range \index{vector} that goes from 0 to 1000 with a
 step size determined by {\tt step}.  Since {\tt step} is {\tt
 end\_time/200}, there will be about 200 rows in {\tt T} and {\tt M}
 (201 to be precise).
@@ -8035,27 +8033,27 @@ each type.
 
 \begin{description}
 
-\item[spatial vector:] A value that represents a
+\item[spatial \index{vector}:] A value that represents a
 multidimensional physical quantity like position, velocity,
 acceleration or force.
 
-\item[norm:] The magnitude of a vector.  Sometimes called ``length,''
+\item[norm:] The magnitude of a \index{vector}.  Sometimes called ``length,''
 but not to be confused with the number of elements in a MATLAB
-vector.
+\index{vector}.
 
-\item[unit vector:] A vector with norm 1, used to indicate
+\item[unit \index{vector}:] A \index{vector} with norm 1, used to indicate
 direction.
 
-\item[dot product:] A scalar product of two vectors, proportional
-to the norms of the vectors and the cosine of the angle between them.
+\item[dot product:] A scalar product of two \index{vector}s, proportional
+to the norms of the \index{vector}s and the cosine of the angle between them.
 
-\item[cross product:] A vector product of two vectors with norm
-proportional to the norms of the vectors and the sine of the angle
+\item[cross product:] A \index{vector} product of two \index{vector}s with norm
+proportional to the norms of the \index{vector}s and the sine of the angle
 between them, and direction perpendicular to both.
 
-\item[projection:] The component of one vector that is in the
+\item[projection:] The component of one \index{vector} that is in the
 direction of the other (might be used to mean ``scalar projection'' or
-``vector projection'').
+``\index{vector} projection'').
 
 \end{description}
 
@@ -8120,9 +8118,9 @@ replicate or extend the results.
 %\blankpage
 
 % %% Index Sction
-% \clearpage   %% Clear page to make it pretty
-% \addcontentsline{toc}{chapter}{Index}   %% Add index to the table of contents
-% \printindex   %% Command to print the index
+\clearpage   %% Clear page to make it pretty
+\addcontentsline{toc}{chapter}{Index}   %% Add index to the table of contents
+\printindex   %% Command to print the index
 \end{document}
 
 

@@ -90,7 +90,7 @@
 \contentsline {section}{\numberline {7.7}Products and ratios}{85}{section.7.7}
 \contentsline {section}{\numberline {7.8}Existential quantification}{86}{section.7.8}
 \contentsline {section}{\numberline {7.9}Universal quantification}{86}{section.7.9}
-\contentsline {section}{\numberline {7.10}Logical vectors}{87}{section.7.10}
+\contentsline {section}{\numberline {7.10}Logical s}{87}{section.7.10}
 \contentsline {section}{\numberline {7.11}Glossary}{88}{section.7.11}
 \contentsline {chapter}{\numberline {8}Ordinary Differential Equations}{89}{chapter.8}
 \contentsline {section}{\numberline {8.1}Differential equations}{89}{section.8.1}
@@ -105,13 +105,13 @@
 \contentsline {section}{\numberline {8.10}Exercises}{100}{section.8.10}
 \contentsline {chapter}{\numberline {9}Systems of ODEs}{103}{chapter.9}
 \contentsline {section}{\numberline {9.1}Matrices}{103}{section.9.1}
-\contentsline {section}{\numberline {9.2}Row and column vectors}{104}{section.9.2}
+\contentsline {section}{\numberline {9.2}Row and column s}{104}{section.9.2}
 \contentsline {section}{\numberline {9.3}The transpose operator}{105}{section.9.3}
 \contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}{section.9.4}
 \contentsline {section}{\numberline {9.5}What can go wrong?}{108}{section.9.5}
 \contentsline {section}{\numberline {9.6}Output matrices}{108}{section.9.6}
 \contentsline {section}{\numberline {9.7}Glossary}{110}{section.9.7}
-\contentsline {section}{\numberline {9.8}Exercises}{111}{section.9.8}
+\contentsline {section}{\numberline {9.8}Exercises}{110}{section.9.8}
 \contentsline {chapter}{\numberline {10}Second-order systems}{113}{chapter.10}
 \contentsline {section}{\numberline {10.1}Nested functions}{113}{section.10.1}
 \contentsline {section}{\numberline {10.2}Newtonian motion}{114}{section.10.2}
@@ -132,12 +132,12 @@
 \contentsline {section}{\numberline {11.7}Field mice}{134}{section.11.7}
 \contentsline {section}{\numberline {11.8}Glossary}{135}{section.11.8}
 \contentsline {section}{\numberline {11.9}Exercises}{135}{section.11.9}
-\contentsline {chapter}{\numberline {12}Vectors as vectors}{137}{chapter.12}
-\contentsline {section}{\numberline {12.1}What's a vector?}{137}{section.12.1}
+\contentsline {chapter}{\numberline {12}s as s}{137}{chapter.12}
+\contentsline {section}{\numberline {12.1}What's a ?}{137}{section.12.1}
 \contentsline {section}{\numberline {12.2}Dot and cross products}{139}{section.12.2}
 \contentsline {section}{\numberline {12.3}Celestial mechanics}{140}{section.12.3}
-\contentsline {section}{\numberline {12.4}Animation}{141}{section.12.4}
-\contentsline {section}{\numberline {12.5}Conservation of Energy}{143}{section.12.5}
+\contentsline {section}{\numberline {12.4}Animation}{140}{section.12.4}
+\contentsline {section}{\numberline {12.5}Conservation of Energy}{142}{section.12.5}
 \contentsline {section}{\numberline {12.6}What is a model for?}{143}{section.12.6}
 \contentsline {section}{\numberline {12.7}Glossary}{144}{section.12.7}
 \contentsline {section}{\numberline {12.8}Exercises}{144}{section.12.8}
