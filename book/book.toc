@@ -108,36 +108,37 @@
 \contentsline {section}{\numberline {9.1}Matrices}{103}{section.9.1}
 \contentsline {section}{\numberline {9.2}Row and column vectors}{104}{section.9.2}
 \contentsline {section}{\numberline {9.3}The transpose operator}{105}{section.9.3}
-\contentsline {section}{\numberline {9.4}Dot and cross products}{106}{section.9.4}
-\contentsline {section}{\numberline {9.5}Usages of vectors}{107}{section.9.5}
-\contentsline {section}{\numberline {9.6}Lotka-Volterra}{108}{section.9.6}
-\contentsline {section}{\numberline {9.7}What can go wrong?}{111}{section.9.7}
-\contentsline {section}{\numberline {9.8}Output matrices}{111}{section.9.8}
-\contentsline {section}{\numberline {9.9}Glossary}{113}{section.9.9}
-\contentsline {section}{\numberline {9.10}Exercises}{113}{section.9.10}
-\contentsline {chapter}{\numberline {10}Second-order systems}{115}{chapter.10}
-\contentsline {section}{\numberline {10.1}Nested functions}{115}{section.10.1}
-\contentsline {section}{\numberline {10.2}Newtonian motion}{116}{section.10.2}
-\contentsline {section}{\numberline {10.3}Freefall}{117}{section.10.3}
-\contentsline {section}{\numberline {10.4}Air resistance}{118}{section.10.4}
-\contentsline {section}{\numberline {10.5}Parachute!}{120}{section.10.5}
-\contentsline {section}{\numberline {10.6}Two dimensions}{120}{section.10.6}
-\contentsline {section}{\numberline {10.7}ODE Events}{122}{section.10.7}
-\contentsline {section}{\numberline {10.8}What could go wrong?}{123}{section.10.8}
-\contentsline {section}{\numberline {10.9}Glossary}{125}{section.10.9}
-\contentsline {chapter}{\numberline {11}Optimization and Interpolation}{127}{chapter.11}
-\contentsline {section}{\numberline {11.1}Optimization}{127}{section.11.1}
-\contentsline {section}{\numberline {11.2}Golden section search}{129}{section.11.2}
-\contentsline {section}{\numberline {11.3}Discrete and continuous maps}{132}{section.11.3}
-\contentsline {section}{\numberline {11.4}Interpolation}{133}{section.11.4}
-\contentsline {section}{\numberline {11.5}Interpolating the inverse function}{134}{section.11.5}
-\contentsline {section}{\numberline {11.6}Field mice}{136}{section.11.6}
-\contentsline {section}{\numberline {11.7}Glossary}{137}{section.11.7}
-\contentsline {section}{\numberline {11.8}Exercises}{137}{section.11.8}
-\contentsline {chapter}{\numberline {12}Vectors as vectors}{139}{chapter.12}
-\contentsline {section}{\numberline {12.1}Celestial mechanics}{139}{section.12.1}
-\contentsline {section}{\numberline {12.2}Animation}{140}{section.12.2}
-\contentsline {section}{\numberline {12.3}Conservation of Energy}{142}{section.12.3}
-\contentsline {section}{\numberline {12.4}What is a model for?}{143}{section.12.4}
-\contentsline {section}{\numberline {12.5}Glossary}{143}{section.12.5}
-\contentsline {section}{\numberline {12.6}Exercises}{144}{section.12.6}
+\contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}{section.9.4}
+\contentsline {section}{\numberline {9.5}What can go wrong?}{108}{section.9.5}
+\contentsline {section}{\numberline {9.6}Output matrices}{108}{section.9.6}
+\contentsline {section}{\numberline {9.7}Glossary}{110}{section.9.7}
+\contentsline {section}{\numberline {9.8}Exercises}{111}{section.9.8}
+\contentsline {chapter}{\numberline {10}Second-order systems}{113}{chapter.10}
+\contentsline {section}{\numberline {10.1}Nested functions}{113}{section.10.1}
+\contentsline {section}{\numberline {10.2}Newtonian motion}{114}{section.10.2}
+\contentsline {section}{\numberline {10.3}Freefall}{115}{section.10.3}
+\contentsline {section}{\numberline {10.4}Air resistance}{116}{section.10.4}
+\contentsline {section}{\numberline {10.5}Parachute!}{118}{section.10.5}
+\contentsline {section}{\numberline {10.6}Two dimensions}{118}{section.10.6}
+\contentsline {section}{\numberline {10.7}ODE Events}{120}{section.10.7}
+\contentsline {section}{\numberline {10.8}What could go wrong?}{121}{section.10.8}
+\contentsline {section}{\numberline {10.9}Glossary}{123}{section.10.9}
+\contentsline {section}{\numberline {10.10}Exercises}{123}{section.10.10}
+\contentsline {chapter}{\numberline {11}Optimization and Interpolation}{125}{chapter.11}
+\contentsline {section}{\numberline {11.1}Optimization}{125}{section.11.1}
+\contentsline {section}{\numberline {11.2}Golden section search}{126}{section.11.2}
+\contentsline {section}{\numberline {11.3}Discrete and continuous maps}{129}{section.11.3}
+\contentsline {section}{\numberline {11.4}Interpolation}{130}{section.11.4}
+\contentsline {section}{\numberline {11.5}Interpolating the inverse function}{131}{section.11.5}
+\contentsline {section}{\numberline {11.6}Field mice}{133}{section.11.6}
+\contentsline {section}{\numberline {11.7}Glossary}{134}{section.11.7}
+\contentsline {section}{\numberline {11.8}Exercises}{134}{section.11.8}
+\contentsline {chapter}{\numberline {12}Vectors as vectors}{135}{chapter.12}
+\contentsline {section}{\numberline {12.1}What is a vector?}{135}{section.12.1}
+\contentsline {section}{\numberline {12.2}Dot and cross products}{137}{section.12.2}
+\contentsline {section}{\numberline {12.3}Celestial mechanics}{138}{section.12.3}
+\contentsline {section}{\numberline {12.4}Animation}{139}{section.12.4}
+\contentsline {section}{\numberline {12.5}Conservation of Energy}{141}{section.12.5}
+\contentsline {section}{\numberline {12.6}What is a model for?}{141}{section.12.6}
+\contentsline {section}{\numberline {12.7}Glossary}{142}{section.12.7}
+\contentsline {section}{\numberline {12.8}Exercises}{142}{section.12.8}
