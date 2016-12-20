@@ -150,32 +150,10 @@ Unported License, which is available at
 \setcounter{chapter}{-1}
 
 \end{htmlonly}
-\chapter{Preface to the Second Edition}
- {\itshape Physical Modeling in MATLAB} is an introductory textbook for people who want to learn MATLAB but do not have programming experience before. Its first edition was published in Jan 2008, and it is a work in progress. The author, Allen B. Downey, has continued updating the book with the help of many contributors. However, due to the fast release of MATLAB software itself, a significant part of the original material was no longer up-to-date. The most recent version of MATLAB is 2016b which was released in September 2016.  Hence, there is a need to reexamine the content of each chapter and to make the book become relevant to the latest version of MATLAB. 
-
-Led by Dr. Craig Scratchley, with support from Teaching and Learning Centre (TLC) and the library of Simon Fraser University (SFU) through the Open Educational Resources (OER) grant, an effort to overhaul Physical Modeling in MATLAB was made.  As the second edition of the book, it builds on top of the first version with the most up-to-date content that is consistent with the response of MATLAB 2016b.  In addition, the chapters were reorganized in a way such that the book provides a more consistent learning path of using MATLAB.  
-The chapters are organized as the following. 
-
-\begin{itemize}
-
-\item Chapter 1 to 5 describe the basic concepts, such as variable, script, loop, vector and function, used in MATLAB programming.
-
-\item Chapter 6 to 7 further describe the usage of functions in different scenarios.
-
-\item Chapter 8 to 10 introduce the concept of ordinary differential equation (ODE), and how to use MATLAB to solve ODE problems. 
-
-\item Chapter 11 touches on concepts of optimization and interpolation, and how to use MATLAB to tackle such problems. 
-
-\item Chapter 12 focuses on the application of MATLAB for modeling physical systems.   
-
-\end{itemize}
-
-
-
-
-
-
-
+\chapter {Preface to Version 2.1}
+ {\itshape Physical Modeling in MATLAB}'s first edition was published in Jan 2008. Credit must be give to the original author, Allen B. Downey, for his intial work, and his continued updates to the book. Similarly, credit must also be given to the many online contributors who have helped improved the book over the years.
+ With the multiple yearly updates of the MATLAB software itself, a significant part of the original material is no longer up-to-date. The most recent version of MATLAB is 2016b which was released in September 2016. Hence, there is a need to reexamine the contents of the book to keep it relevant to the latest version of MATLAB. Led by Dr. Craig Scratchley, with support from Teaching and Learning Centre (TLC) and the library of Simon Fraser University (SFU) through the Open Educational Resources (OER) grant, an effort to overhaul Physical Modeling in MATLAB was made. 
+ Version 2.1 , builds on the first version and was edited to (1) be consistent with MATLAB 2016b, (2) provide corrections, format standardizations and clarifications,(3) follow a unified MATLAB coding-style in its provided coding examples outlined in \href{https://www.mathworks.com/matlabcentral/fileexchange/46056-matlab-style-guidelines-2-0}{MATLAB Style Guidelines 2.0}.
 \chapter{Preface}
 Most books that use MATLAB are aimed at readers who know how
 to program.  This book is for people who have never programmed
@@ -196,7 +174,7 @@ vocabulary early and deciphers some of the messages that
 beginners find confusing.
 
 \item Many of the examples in the first half of the book are
-not idiomatic MATLAB.  I address this problem in the second
+not idiomatic MATLAB code.  I address this problem in the second
 half by translating the examples into a more standard style.
 
 \end{itemize}
@@ -323,8 +301,7 @@ don't.
 ans = 45
 \end{verbatim}
 
-Speaking of spaces, you might have noticed that MATLAB puts some
-space between {\tt ans =} and the result.  In my examples I will leave
+Speaking of spaces, you might have noticed that MATLAB puts a newline character between {\tt ans =} and the result.  In my examples I will leave
 it out to save paper.
 
 The other arithmetic operators are pretty much what you would expect.
@@ -337,6 +314,19 @@ a forward slash {\tt /}.
 
 ans = 5.2000
 \end{verbatim}
+
+Another common operator is exponentiation, which uses the \verb+^+
+symbol, sometimes pronounced ``carat'' or ``hat''.  So 2 raised to the
+16th power is
+
+\begin{verbatim}
+>> 2^16
+ans = 65536
+\end{verbatim}
+
+As in basic algebra, exponentiation happens before multiplication
+and division, but again, you can use parentheses to override the order
+of operations.
 
 The order of operations is what you would expect from basic algebra:
 multiplication and division happen before addition and subtraction.
@@ -363,19 +353,6 @@ Readable code is debuggable code.
 
 It is worth spending time to make your code pretty; it will save
 you time debugging!
-
-The other common operator is exponentiation, which uses the \verb+^+
-symbol, sometimes pronounced ``carat'' or ``hat''.  So 2 raised to the
-16th power is
-
-\begin{verbatim}
->> 2^16
-ans = 65536
-\end{verbatim}
-
-As in basic algebra, exponentiation happens before multiplication
-and division, but again, you can use parentheses to override the order
-of operations.
 
 
 \section{Math functions}
@@ -693,9 +670,7 @@ do you think is going on here?
 \begin{verbatim}
 >> abs pi
 
-ans =
-
-   112   105
+ans = 112   105
 \end{verbatim}
 
 There is a reason for this ``feature'', but rather than get into that
@@ -718,15 +693,20 @@ Here's another common rookie error.  If you were translating
 the following mathematical
 expression into MATLAB:
 
-\[ \frac{1}{2 \sqrt \pi}\]
-
+\begin{equation}
+ \frac{1}{2 \sqrt \pi}
+\end{equation}
 You might be tempted to write something like this:
 
 \begin{verbatim}
 1 / 2 * sqrt(pi)
 \end{verbatim}
 
-But that would be wrong.  So very wrong.
+But that would be wrong.  So very wrong. It should instead be:
+
+\begin{verbatim}
+1 / (2 * sqrt(pi))
+\end{verbatim}
 
 
 \section{Floating-point arithmetic}
@@ -809,9 +789,7 @@ Division by zero also returns {\tt Inf}.
 \begin{verbatim}
 >> 1/0
 
-ans =
-
-   Inf
+ans = Inf
 \end{verbatim}
 
 In older version of MATLAB (pre 2015 version), it gives you a warning because division by zeros is usally consider undefined. A warning is like an error message without teeth; the computation
@@ -825,9 +803,7 @@ which stands for ``not a number''.
 \begin{verbatim}
 >> 0/0
 
-ans =
-
-   NaN
+ans = NaN
 \end{verbatim}
 
 
@@ -1606,10 +1582,15 @@ are right).
 There are two ways of thinking about numerical errors, called {\bf
 absolute} and {\bf relative}.
 
-An absolute error is just the difference between the correct value and
+\begin{description}
+
+\item[Absolute error:] It is just the difference between the correct value and
 the approximation.  We usually write the magnitude of the error,
 ignoring its sign, because it doesn't matter whether the approximation
 is too high or too low.
+
+\item[Absolute error:] It is the error expressed as a fraction (or percentage)
+of the exact value.
 
 For example, we might want to estimate $9!$ using the formula $\sqrt
 {18 \pi} ( 9 / e)^9$.  The exact answer is $9 \cdot 8 \cdot 7 \cdot 6
@@ -1623,11 +1604,10 @@ if we are talking about my annual salary, but not at all if we
 are talking about the national debt.
 
 A natural way to handle this problem is to use relative
-error, which is the error expressed as a fraction (or percentage)
-of the exact value.  In this case, we would divide the error
+error, which i n this case, we would divide the error
 by 362,880, yielding $.00921$, which is just less than 1\%.
 For many purposes, being off by 1\% is good enough.
-
+\end{description}
 
 \section{for loops}
 
@@ -1834,8 +1814,9 @@ math, a sequence is a set of numbers, and a series is an expression
 is often written using the summation symbol $\sum$.
 
 For example, the sum of the first 10 elements of $A$ is
-
-\[ \sum_{i=1}^{10} A_i \]
+\begin{equation}
+\sum_{i=1}^{10} A_i
+\end{equation}
 
 A {\tt for} loop is a natural way to compute the value of this
 series:
@@ -1977,7 +1958,9 @@ any value.
 We have already seen the Fibonacci sequence, $F$, which
 is defined recurrently as
 
-\[ F_{i} = F_{i-1} + F_{i-2} \]
+\begin{equation}
+F_{i} = F_{i-1} + F_{i-2} 
+\end{equation}
 
 In order to get started, you have to specify the first two
 elements, but once you have those, you can compute the rest.
@@ -2049,9 +2032,7 @@ aren't any numbers that fit that description, so the result is
 \begin{verbatim}
 >> 1:-1
 
-ans =
-
-   Empty matrix: 1-by-0
+ans = Empty matrix: 1-by-0
 \end{verbatim}
 
 If the matrix is empty, you might expect it to be ``0-by-0,'' but
@@ -2256,7 +2237,6 @@ a vector.  You can assign a vector value to a variable:
 >> X = 1:5
 
 X = 1     2     3     4     5
-
 \end{verbatim}
 
 Variables that contain vectors are often capital letters.  That's
@@ -2940,7 +2920,9 @@ current population.
 
 Mathematically this can be written as
 
-\[ X_{i+1} = r X_i (1-X_i) \]
+\begin{equation}
+X_{i+1} = r X_i (1-X_i)
+\end{equation}
 
 where $X_i$ is a number between zero and one that represents the
 biomass at year $i$, and $r$ is a positive number that represents a
