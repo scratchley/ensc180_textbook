@@ -1852,7 +1852,7 @@ we were looking for, we assign it to {\tt ans}.
 
 \begin{ex}
 This example computes the terms of the series directly; as
-an exercise, write a script named {\tt recurrent_series} that computes
+an exercise, write a script named {\tt recurrent\_series} that computes
 the same sum by computing the elements recurrently.  You will
 have to be careful about where you start and stop the loop.
 \end{ex}
@@ -6788,98 +6788,8 @@ which.  It looks like the flight time is about 6 seconds.
 \begin{ex}
 Extract the $x$ and $y$ components of
 position, plot the trajectory of the projectile, and estimate the
-distance traveled.
+horizontal distance traveled.
 % along the ground? *** wcs ***
-\end{ex}
-
-\begin{ex}
-Add air resistance to this simulation.  In
-the skydiver scenario, we estimated that the drag constant was
-$0.2$, but that was based on the assumption that the skydiver is
-falling flat.  A human cannonball, flying head-first, probably
-has a drag constant closer to $0.1$.  Approximately what initial velocity
-is needed to achieve the record flight distance of 59.05 meters,
-assuming
-%?
-%Hint: the needed initial velocity is dependent apon the launch angle, and let's 
-%assume 
-for now a launch angle of 45 degrees
-?
-%. 
-Do you think that 45 degress is the optimal launch angle when 
-air resistance is considered?  Why or why not?
-\end{ex}
-
-\section{ODE Events}
-\label{events}
-
-Normally when you call {\tt ode45} you have to specify
-a start time and an end time.  But in many cases, you don't know ahead
-of time when the simulation should end.
-Fortunately MATLAB provides a mechanism for dealing
-with this problem.  The bad news is that it is a little awkward.
-Here's how it works:
-
-\begin{enumerate}
-
-\item Before calling {\tt ode45} you use {\tt odeset} to create an
-object called {\tt options} that contains values that control
-how {\tt ode45} works:
-
-\begin{verbatim}
-options = odeset('Events', @event);
-\end{verbatim}
-%
-In this case, the name of the option is {\tt Events} and the
-value is a function handle.  When {\tt ode45} runs, it will invoke
-{\tt event} after each timestep.
-You can call this function anything you want, but a name
-like {\tt event} is conventional.
-
-\item The function you provide has to take
-the same input variables as your rate function.  For example,
-here is an event function that would work with {\tt projectile}
-from Section~\ref{projectile}
-
-\begin{verbatim}
-function [value,isterminal,direction] = event(t,X)
-    value = X(2);        % Extract the current height.
-    isterminal = 1;      % Stop the integration if height crosses zero.
-    direction = -1;      % But only if the height is decreasing.
-end
-\end{verbatim}
-
-{\tt event} returns three output variables:
-
-{\tt value} determines
-when an event may occur.  In this case {\tt value} gets the second
-element of {\tt X}, which is understood to be the height of the
-projectile.  An ``event'' may occur when this value passes
-through 0.
-
-{\tt direction} determines whether an event occurs when
-{\tt value} is increasing ({\tt direction=1}), decreasing ({\tt
-direction=-1}, or both {\tt direction=0}.
-
-{\tt isterminal} determines what happens when the event
-occurs.  If {\tt isterminal=1}, the event is ``terminal'' and the
-simulation stops.  If {\tt isterminal=0}, the simulation continues,
-but {\tt ode45} does some additional work to make sure that the
-solution in the vicinity of the event is accurate, and that one of the
-estimated values in the result is at the time of the event.
-
-\item When you call {\tt ode45}, you pass {\tt options} as a fourth
-argument:
-
-\begin{verbatim}
-ode45(@projectile, [0,10], [0, 3, 40, 30], options);
-\end{verbatim}
-%
-\end{enumerate}
-
-\begin{ex}
-How would you modify {\tt event} to stop when the height of
-the projectile falls through 3m?
 \end{ex}
 
 
@@ -6993,6 +6903,230 @@ vertcat}, use {\tt size} to display the dimensions of the operands,
 and make sure you are clear on which way your vectors go.
 
 
+\section{ODE Events}
+\label{events}
+
+Normally when you call {\tt ode45} you have to specify
+a start time and an end time.  But in many cases, you don't know ahead
+of time when the simulation should end.
+Fortunately MATLAB provides a mechanism for dealing
+with this problem.  The bad news is that it is a little awkward.
+Here's how it works:
+
+\begin{enumerate}
+
+\item Before calling {\tt ode45} you use {\tt odeset} to create an
+object called {\tt options} that contains values that control
+how {\tt ode45} works:
+
+\begin{verbatim}
+options = odeset('Events', @event);
+\end{verbatim}
+%
+In this case, the name of the option is {\tt Events} and the
+value is a function handle.  When {\tt ode45} runs, it will invoke
+{\tt event} after each timestep.
+You can call this function anything you want, but a name
+like {\tt event} is conventional.
+
+\item The function you provide has to take
+the same input variables as your rate function.  For example,
+here is an event function that would work with {\tt projectile}
+from Section~\ref{projectile}
+
+\begin{verbatim}
+function [value,isterminal,direction] = event(t,X)
+    value = X(2);        % Extract the current height.
+    isterminal = 1;      % Stop the integration if height crosses zero.
+    direction = -1;      % But only if the height is decreasing.
+end
+\end{verbatim}
+
+{\tt event} returns three output variables:
+
+{\tt value} determines
+when an event may occur.  In this case {\tt value} gets the second
+element of {\tt X}, which is understood to be the height of the
+projectile.  An ``event'' may occur when this value passes
+through 0.
+
+{\tt direction} determines whether an event occurs when
+{\tt value} is increasing ({\tt direction=1}), decreasing ({\tt
+direction=-1}, or both {\tt direction=0}.
+
+{\tt isterminal} determines what happens when the event
+occurs.  If {\tt isterminal=1}, the event is ``terminal'' and the
+simulation stops.  If {\tt isterminal=0}, the simulation continues,
+but {\tt ode45} does some additional work to make sure that the
+solution in the vicinity of the event is accurate, and that one of the
+estimated values in the result is at the time of the event.
+
+\item When you call {\tt ode45}, you pass {\tt options} as a fourth
+argument:
+
+\begin{verbatim}
+ode45(@projectile, [0,10], [0, 3, 40, 30], options);
+\end{verbatim}
+%
+\end{enumerate}
+
+\begin{ex}
+How would you modify {\tt event} to stop when the height of
+the projectile falls through 3m?  
+If the human projectile falls on a net at a height of 3m, what
+horizontal distance will she have travelled when she hits the
+net?
+\end{ex}
+
+
+\section{Spacial vectors and air resistance on projectiles}
+
+The word ``vector'' means different things to different people.
+In MATLAB, a vector is a matrix that has either one row or one
+column.  So far we have used MATLAB vectors to represent
+
+\begin{description}
+
+\item[sequences:] A sequence is a set of values identified by
+integer indices; it is natural to store the elements of the
+sequence as elements of a MATLAB vector.
+
+\item[state vectors:] A state vector is a set of values that
+describes the state of a physical system.  When you call
+{\tt ode45}, you give it in the initial conditions in a state
+vector.  Then when {\tt ode45} calls your rate function, it
+gives you a state vector.
+
+\item[discrete maps:] If you have two vectors with the same
+length, you can think of them as a mapping from the elements
+of one vector to the corresponding elements of the other.  For
+example, in Section~\ref{rats}, the results from {\tt ode45}
+are vectors, {\tt T} and {\tt Y}, that represent a mapping
+from the time values in {\tt T} to the population values in {\tt Y}.
+
+\end{description}
+
+In this chapter we will see another use of MATLAB vectors:
+representing spatial vectors.  A spatial vector is a value that
+represents a multidimensional physical quantity like position,
+velocity, acceleration or force\footnote{See
+\url{https://en.wikipedia.org/wiki/Vector_(spatial)}.}.
+
+These quantities cannot be described with a
+single number because they contain multiple components.  For example,
+in a 3-dimensional Cartesian coordinate space, it takes three numbers
+to specify a position in space; they are usually called $x$, $y$ and
+$z$ coordinates.  As another example, in 2-dimensional polar
+coordinates, you can specify a velocity with two numbers, a
+magnitude and an angle, often called $r$ and $\theta$.
+
+It is convenient to represent spatial vectors using MATLAB vectors
+because MATLAB knows how to perform most of the vector
+operations you need for physical modeling.  For example,
+suppose that you are given the velocity of a baseball in
+the form of a MATLAB vector with two elements, $v_x$ and $v_y$,
+which are the components of velocity in the $x$ and $y$ directions.
+
+\begin{verbatim}
+>> V = [30; 40]        % velocity in m/s
+\end{verbatim}
+
+And suppose you are asked to compute the total acceleration of
+the ball due to drag and gravity.  In math notation, the force
+due to drag is
+
+\[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
+
+where $V$ is a spatial vector representing velocity, $v$ is the magnitude
+of the velocity (sometimes called ``speed''), and $\hat{V}$ is a unit
+vector in the direction of the velocity vector.  The other terms,
+$\rho$, $A$ and $C_d$, are scalars.
+
+The magnitude of a vector is the square root of the sum of the squares
+of the elements.  You could compute it with {\tt hypotenuse} from
+Section~\ref{hypotenuse}, or you could use the MATLAB function {\tt
+norm} ({\bf norm} is another name\footnote{Magnitude is also called
+``length'' but I will avoid that term because it gets confused with
+the {\tt length} function, which returns the number of elements in a
+MATLAB vector.}  for the magnitude of a vector):
+
+\begin{verbatim}
+>> v = norm(V)
+
+v = 50
+\end{verbatim}
+
+$\hat{V}$ is a {\bf unit vector}, which means it should have norm 1,
+and it should point in the same direction as $V$.  The simplest
+way to compute it is to divide $V$ by its own norm.
+
+\begin{verbatim}
+>> Vhat = V / v
+
+Vhat =  0.6  0.8
+\end{verbatim}
+
+Then we can confirm that the norm of $\hat{V}$ is 1:
+
+\begin{verbatim}
+>> norm(Vhat)
+
+ans = 1
+\end{verbatim}
+
+To compute $F_d$ we just multiply the scalar terms by $\hat{V}$.
+
+\begin{verbatim}
+Fd = - 1/2 * C * rho * A * v^2 * Vhat
+\end{verbatim}
+
+Similarly, we can compute acceleration by dividing the vector
+$F_d$ by the scalar $m$.
+
+\begin{verbatim}
+Ad = Fd / m
+\end{verbatim}
+
+To represent the acceleration of gravity, we create a vector 
+with two components:
+
+\begin{verbatim}
+Ag = [0; -9.8]
+\end{verbatim}
+
+The $x$ component of gravity is 0; the $y$ component is $-9.8 m/s^2$.
+
+Finally we compute total acceleration by adding vector
+quantities:
+
+\begin{verbatim}
+A = Ag + Ad;
+\end{verbatim}
+
+One nice thing about this computation is that we didn't have to
+think much about the components of the vectors.  By treating
+spatial vectors as basic quantities, we can express complicated computations
+concisely.
+
+\begin{ex}
+Add air resistance to the simulation of the human projectile.  In
+the skydiver scenario, we estimated that the drag constant was
+$0.2$, but that was based on the assumption that the skydiver is
+falling flat.  A human cannonball, flying head-first, probably
+has a drag constant closer to $0.1$.  Approximately what initial velocity
+is needed to achieve the record flight distance of 59.05 meters,
+assuming
+%?
+%Hint: the needed initial velocity is dependent apon the launch angle, and let's 
+%assume 
+for now a launch angle of 45 degrees
+?
+%. 
+Do you think that 45 degress is the optimal launch angle when 
+air resistance is considered?  Why or why not?
+\end{ex}
+
+
 \section{Glossary}
 
 \begin{description}
@@ -7011,6 +7145,17 @@ outer function.
 
 \item[catenation:] The operation of joining two matrices end-to-end to
 form a new matrix.
+
+\item[spatial vector:] A value that represents a
+multidimensional physical quantity like position, velocity,
+acceleration or force.
+
+\item[norm:] The magnitude of a vector.  Sometimes called ``length,''
+but not to be confused with the number of elements in a MATLAB
+vector.
+
+\item[unit vector:] A vector with norm 1, used to indicate
+direction.
 
 
 \end{description}
@@ -7606,208 +7751,7 @@ golf ball is about 0.2 as long as the ball is moving faster than 20 m/s.
 
 
 %chap12
-\chapter{Vectors as vectors}
-
-\section{What is a vector?}
-
-The word ``vector'' means different things to different people.
-In MATLAB, a vector is a matrix that has either one row or one
-column.  So far we have used MATLAB vectors to represent
-
-\begin{description}
-
-\item[sequences:] A sequence is a set of values identified by
-integer indices; it is natural to store the elements of the
-sequence as elements of a MATLAB vector.
-
-\item[state vectors:] A state vector is a set of values that
-describes the state of a physical system.  When you call
-{\tt ode45}, you give it in the initial conditions in a state
-vector.  Then when {\tt ode45} calls your rate function, it
-gives you a state vector.
-
-\item[discrete maps:] If you have two vectors with the same
-length, you can think of them as a mapping from the elements
-of one vector to the corresponding elements of the other.  For
-example, in Section~\ref{rats}, the results from {\tt ode45}
-are vectors, {\tt T} and {\tt Y}, that represent a mapping
-from the time values in {\tt T} to the population values in {\tt Y}.
-
-\end{description}
-
-In this chapter we will see another use of MATLAB vectors:
-representing spatial vectors.  A spatial vector is a value that
-represents a multidimensional physical quantity like position,
-velocity, acceleration or force\footnote{See
-\url{https://en.wikipedia.org/wiki/Vector_(spatial)}.}.
-
-These quantities cannot be described with a
-single number because they contain multiple components.  For example,
-in a 3-dimensional Cartesian coordinate space, it takes three numbers
-to specify a position in space; they are usually called $x$, $y$ and
-$z$ coordinates.  As another example, in 2-dimensional polar
-coordinates, you can specify a velocity with two numbers, a
-magnitude and an angle, often called $r$ and $\theta$.
-
-It is convenient to represent spatial vectors using MATLAB vectors
-because MATLAB knows how to perform most of the vector
-operations you need for physical modeling.  For example,
-suppose that you are given the velocity of a baseball in
-the form of a MATLAB vector with two elements, $v_x$ and $v_y$,
-which are the components of velocity in the $x$ and $y$ directions.
-
-\begin{verbatim}
->> V = [30; 40]        % velocity in m/s
-\end{verbatim}
-
-And suppose you are asked to compute the total acceleration of
-the ball due to drag and gravity.  In math notation, the force
-due to drag is
-
-\[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
-
-where $V$ is a spatial vector representing velocity, $v$ is the magnitude
-of the velocity (sometimes called ``speed''), and $\hat{V}$ is a unit
-vector in the direction of the velocity vector.  The other terms,
-$\rho$, $A$ and $C_d$, are scalars.
-
-The magnitude of a vector is the square root of the sum of the squares
-of the elements.  You could compute it with {\tt hypotenuse} from
-Section~\ref{hypotenuse}, or you could use the MATLAB function {\tt
-norm} ({\bf norm} is another name\footnote{Magnitude is also called
-``length'' but I will avoid that term because it gets confused with
-the {\tt length} function, which returns the number of elements in a
-MATLAB vector.}  for the magnitude of a vector):
-
-\begin{verbatim}
->> v = norm(V)
-
-v = 50
-\end{verbatim}
-
-$\hat{V}$ is a {\bf unit vector}, which means it should have norm 1,
-and it should point in the same direction as $V$.  The simplest
-way to compute it is to divide $V$ by its own norm.
-
-\begin{verbatim}
->> Vhat = V / v
-
-Vhat =  0.6  0.8
-\end{verbatim}
-
-Then we can confirm that the norm of $\hat{V}$ is 1:
-
-\begin{verbatim}
->> norm(Vhat)
-
-ans = 1
-\end{verbatim}
-
-To compute $F_d$ we just multiply the scalar terms by $\hat{V}$.
-
-\begin{verbatim}
-Fd = - 1/2 * C * rho * A * v^2 * Vhat
-\end{verbatim}
-
-Similarly, we can compute acceleration by dividing the vector
-$F_d$ by the scalar $m$.
-
-\begin{verbatim}
-Ad = Fd / m
-\end{verbatim}
-
-To represent the acceleration of gravity, we create a vector 
-with two components:
-
-\begin{verbatim}
-Ag = [0; -9.8]
-\end{verbatim}
-
-The $x$ component of gravity is 0; the $y$ component is $-9.8 m/s^2$.
-
-Finally we compute total acceleration by adding vector
-quantities:
-
-\begin{verbatim}
-A = Ag + Ad;
-\end{verbatim}
-
-One nice thing about this computation is that we didn't have to
-think much about the components of the vectors.  By treating
-spatial vectors as basic quantities, we can express complicated computations
-concisely.
-
-
-\section{Dot and cross products}
-
-Multiplying a vector by a scalar is a straightforward operation;
-so is adding two vectors.  But multiplying two vectors is more
-subtle.  It turns out that there are two vector operations that
-resemble multiplication: {\bf dot product}
-and {\bf cross product}.
-
-The dot product of vectors $A$ and $B$ is a scalar:
-
-\[ d = a b \cos \theta \]
-%
-where $a$ is the magnitude of $A$, $b$ is the magnitude of $B$,
-and $\theta$ is the angle between the vectors.  We already know
-how to compute magnitudes, and you could probably figure out
-how to compute $\theta$, but you don't have to.  MATLAB provides
-a function, {\tt dot}, that computes dot products.
-
-\begin{verbatim}
-d = dot(A, B)
-\end{verbatim}
-
-{\tt dot} works in any number of dimensions, as long as {\tt A}
-and {\tt B} have the same number of elements.
-
-If one of the operands is a unit vector, you can use the dot
-product to compute the component of a vector $A$ that is in
-the direction of a unit vector, $\hat{i}$:
-
-\begin{verbatim}
-s = dot(A, ihat)
-\end{verbatim}
-
-In this example, $s$ is the {\bf scalar projection} of $A$
-onto $\hat{i}$.  The {\bf vector projection} is the vector
-that has magnitude $s$ in the direction of $\hat{i}$:
-
-\begin{verbatim}
-V = dot(A, ihat) * ihat
-\end{verbatim}
-
-The cross product of vectors $A$ and $B$ is a vector whose direction
-is perpendicular to $A$ and $B$ and whose magnitude is
-
-\[ c = a b \sin \theta \]
-%
-where (again) $a$ is the magnitude of $A$, $b$ is the magnitude of
-$B$, and $\theta$ is the angle between the vectors.  MATLAB provides
-a function, {\tt cross}, that computes cross products.
-
-\begin{verbatim}
-C = cross(A, B)
-\end{verbatim}
-
-{\tt cross} calculates the cross product of corresponding vectors along 
-the first array dimension whose size equals 3.
-
-A common use of {\tt cross} is to compute torques.  If you represent
-a moment arm $R$ and a force $F$ as vectors with size equal to 3, then
-the torque is just
-
-\begin{verbatim}
-Tau = cross(R, F)
-\end{verbatim}
-
-If the components of {\tt R} are in meters and the components
-of {\tt F} are in Newtons, then the torques in {\tt Tau} are
-in Newton-meters.
-
-
+\chapter{Celestial mechanics}
 
 \section{Celestial mechanics}
 
@@ -8045,6 +7989,81 @@ Run your simulation with one of the other ODE solvers MATLAB provides
 and see if any of them conserve energy.
 \end{ex}
 
+
+
+%chap13
+\chapter{Final thoughts}
+
+\section{Dot and cross products}
+
+Multiplying a vector by a scalar is a straightforward operation;
+so is adding two vectors.  But multiplying two vectors is more
+subtle.  It turns out that there are two vector operations that
+resemble multiplication: {\bf dot product}
+and {\bf cross product}.
+
+The dot product of vectors $A$ and $B$ is a scalar:
+
+\[ d = a b \cos \theta \]
+%
+where $a$ is the magnitude of $A$, $b$ is the magnitude of $B$,
+and $\theta$ is the angle between the vectors.  We already know
+how to compute magnitudes, and you could probably figure out
+how to compute $\theta$, but you don't have to.  MATLAB provides
+a function, {\tt dot}, that computes dot products.
+
+\begin{verbatim}
+d = dot(A, B)
+\end{verbatim}
+
+{\tt dot} works in any number of dimensions, as long as {\tt A}
+and {\tt B} have the same number of elements.
+
+If one of the operands is a unit vector, you can use the dot
+product to compute the component of a vector $A$ that is in
+the direction of a unit vector, $\hat{i}$:
+
+\begin{verbatim}
+s = dot(A, ihat)
+\end{verbatim}
+
+In this example, $s$ is the {\bf scalar projection} of $A$
+onto $\hat{i}$.  The {\bf vector projection} is the vector
+that has magnitude $s$ in the direction of $\hat{i}$:
+
+\begin{verbatim}
+V = dot(A, ihat) * ihat
+\end{verbatim}
+
+The cross product of vectors $A$ and $B$ is a vector whose direction
+is perpendicular to $A$ and $B$ and whose magnitude is
+
+\[ c = a b \sin \theta \]
+%
+where (again) $a$ is the magnitude of $A$, $b$ is the magnitude of
+$B$, and $\theta$ is the angle between the vectors.  MATLAB provides
+a function, {\tt cross}, that computes cross products.
+
+\begin{verbatim}
+C = cross(A, B)
+\end{verbatim}
+
+{\tt cross} calculates the cross product of corresponding vectors along 
+the first array dimension whose size equals 3.
+
+A common use of {\tt cross} is to compute torques.  If you represent
+a moment arm $R$ and a force $F$ as vectors with size equal to 3, then
+the torque is just
+
+\begin{verbatim}
+Tau = cross(R, F)
+\end{verbatim}
+
+If the components of {\tt R} are in meters and the components
+of {\tt F} are in Newtons, then the torques in {\tt Tau} are
+in Newton-meters.
+
+
 % \section{Scaling}
 
 % \section{Polar coordinates}
@@ -8087,17 +8106,6 @@ each type.
 \section{Glossary}
 
 \begin{description}
-
-\item[spatial vector:] A value that represents a
-multidimensional physical quantity like position, velocity,
-acceleration or force.
-
-\item[norm:] The magnitude of a vector.  Sometimes called ``length,''
-but not to be confused with the number of elements in a MATLAB
-vector.
-
-\item[unit vector:] A vector with norm 1, used to indicate
-direction.
 
 \item[dot product:] A scalar product of two vectors, proportional
 to the norms of the vectors and the cosine of the angle between them.
