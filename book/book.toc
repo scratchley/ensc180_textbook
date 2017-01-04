@@ -61,13 +61,13 @@
 \contentsline {section}{\numberline {5.6}Logical functions}{54}{section.5.6}
 \contentsline {section}{\numberline {5.7}An incremental development example}{55}{section.5.7}
 \contentsline {section}{\numberline {5.8}Nested loops}{56}{section.5.8}
-\contentsline {section}{\numberline {5.9}Conditions and flags}{57}{section.5.9}
-\contentsline {section}{\numberline {5.10}Encapsulation and generalization}{58}{section.5.10}
+\contentsline {section}{\numberline {5.9}Conditions and flags}{58}{section.5.9}
+\contentsline {section}{\numberline {5.10}Encapsulation and generalization}{59}{section.5.10}
 \contentsline {section}{\numberline {5.11}A misstep}{60}{section.5.11}
 \contentsline {section}{\numberline {5.12}{\tt continue}}{61}{section.5.12}
 \contentsline {section}{\numberline {5.13}Mechanism and leap of faith}{62}{section.5.13}
 \contentsline {section}{\numberline {5.14}Glossary}{63}{section.5.14}
-\contentsline {section}{\numberline {5.15}Exercises}{63}{section.5.15}
+\contentsline {section}{\numberline {5.15}Exercises}{64}{section.5.15}
 \contentsline {chapter}{\numberline {6}Zero-finding}{65}{chapter.6}
 \contentsline {section}{\numberline {6.1}Why functions?}{65}{section.6.1}
 \contentsline {section}{\numberline {6.2}Maps}{65}{section.6.2}
@@ -110,7 +110,7 @@
 \contentsline {section}{\numberline {9.3}The transpose operator}{105}{section.9.3}
 \contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}{section.9.4}
 \contentsline {section}{\numberline {9.5}What can go wrong?}{108}{section.9.5}
-\contentsline {section}{\numberline {9.6}Output matrices}{108}{section.9.6}
+\contentsline {section}{\numberline {9.6}Output matrices}{109}{section.9.6}
 \contentsline {section}{\numberline {9.7}Glossary}{110}{section.9.7}
 \contentsline {section}{\numberline {9.8}Exercises}{111}{section.9.8}
 \contentsline {chapter}{\numberline {10}Second-order systems}{113}{chapter.10}
@@ -127,19 +127,19 @@
 \contentsline {section}{\numberline {10.11}Exercises}{125}{section.10.11}
 \contentsline {chapter}{\numberline {11}Optimization and Interpolation}{127}{chapter.11}
 \contentsline {section}{\numberline {11.1}Optimization}{127}{section.11.1}
-\contentsline {section}{\numberline {11.2}Golden section search}{128}{section.11.2}
-\contentsline {section}{\numberline {11.3}Discrete and continuous maps}{131}{section.11.3}
-\contentsline {section}{\numberline {11.4}Interpolation}{132}{section.11.4}
-\contentsline {section}{\numberline {11.5}Interpolating the inverse function}{133}{section.11.5}
+\contentsline {section}{\numberline {11.2}Golden section search}{127}{section.11.2}
+\contentsline {section}{\numberline {11.3}Discrete and continuous maps}{132}{section.11.3}
+\contentsline {section}{\numberline {11.4}Interpolation}{133}{section.11.4}
+\contentsline {section}{\numberline {11.5}Interpolating the inverse function}{134}{section.11.5}
 \contentsline {section}{\numberline {11.6}Field mice}{135}{section.11.6}
 \contentsline {section}{\numberline {11.7}Glossary}{136}{section.11.7}
-\contentsline {section}{\numberline {11.8}Exercises}{136}{section.11.8}
-\contentsline {chapter}{\numberline {12}Celestial mechanics}{137}{chapter.12}
-\contentsline {section}{\numberline {12.1}Celestial mechanics}{137}{section.12.1}
-\contentsline {section}{\numberline {12.2}Animation}{138}{section.12.2}
-\contentsline {section}{\numberline {12.3}Conservation of Energy}{140}{section.12.3}
-\contentsline {chapter}{\numberline {13}Final thoughts}{141}{chapter.13}
-\contentsline {section}{\numberline {13.1}Dot and cross products}{141}{section.13.1}
-\contentsline {section}{\numberline {13.2}What is a model for?}{142}{section.13.2}
-\contentsline {section}{\numberline {13.3}Glossary}{143}{section.13.3}
-\contentsline {section}{\numberline {13.4}Exercises}{143}{section.13.4}
+\contentsline {section}{\numberline {11.8}Exercises}{137}{section.11.8}
+\contentsline {chapter}{\numberline {12}Celestial mechanics}{139}{chapter.12}
+\contentsline {section}{\numberline {12.1}Celestial mechanics}{139}{section.12.1}
+\contentsline {section}{\numberline {12.2}Animation}{140}{section.12.2}
+\contentsline {section}{\numberline {12.3}Conservation of Energy}{142}{section.12.3}
+\contentsline {chapter}{\numberline {13}Final thoughts}{143}{chapter.13}
+\contentsline {section}{\numberline {13.1}Dot and cross products}{143}{section.13.1}
+\contentsline {section}{\numberline {13.2}What is a model for?}{144}{section.13.2}
+\contentsline {section}{\numberline {13.3}Glossary}{145}{section.13.3}
+\contentsline {section}{\numberline {13.4}Exercises}{145}{section.13.4}
