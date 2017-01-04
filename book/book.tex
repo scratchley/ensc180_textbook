@@ -1012,9 +1012,8 @@ something meaningful and memorable.  You should be very careful to choose a
 name that is not already in use; if you do, you might accidentally
 replace one of MATLAB's functions with your own.
 Finally, the name of the file cannot contain spaces.  If you create
-a file named {\tt my script.m}, MATLAB doesn't complain until you try
+a file named {\tt my script.m}, MATLAB will complain when you try
 to run it:
-% check the above *** wcs ***
 
 \begin{verbatim}
 >> my script
@@ -6596,8 +6595,8 @@ function res = freefall(t, X)
 end
 
 function res = acceleration(t, p, v)
-    g = -9.8;      % acceleration of gravity in m/s^2
-    res = g;
+    g = 9.8;      % gravity in m/s^2
+    res = -g;
 end
 \end{verbatim}
 
@@ -6664,7 +6663,7 @@ into account (you don't have to make any changes in the {\tt freefall} function:
 
 \begin{verbatim}
 function res = acceleration(t, p, v)
-    a_g = -9.8;              % acceleration of gravity in m/s^2
+    a_g = -9.8;              % acceleration due to gravity in m/s^2
     b = 0.2;                 % drag constant
     m = 75;                  % mass in kg
     f_d = b * v^2;           % drag force in N
@@ -7005,6 +7004,7 @@ net?
 
 
 \section{Spacial vectors and air resistance on projectiles}
+\label{spacial}
 
 The word ``vector'' means different things to different people.
 In MATLAB, a vector is a matrix that has either one row or one
@@ -7150,8 +7150,7 @@ assuming
 %?
 %Hint: the needed initial velocity is dependent apon the launch angle, and let's 
 %assume 
-for now a launch angle of 45 degrees
-?
+for now a launch angle of 45 degrees?
 %. 
 Do you think that 45 degress is the optimal launch angle when 
 air resistance is considered?  Why or why not?
@@ -7202,7 +7201,7 @@ we ignore Magnus force, the path of the baseball stays
 in a plane, so we can model it as a projectile in two
 dimensions.
 
-As presented earlier in the chapter, a 
+As presented in Section~\ref{spacial}, a 
 simple model of the drag of a baseball is:
 %
 \[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
