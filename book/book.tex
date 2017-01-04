@@ -1,6 +1,6 @@
 
 % LaTeX source for textbook ``Physical Modeling in MATLAB''
-% Copyright 2012 Allen B. Downey.
+% Copyright 2014 Allen B. Downey.
 
 %Note: This LaTex source can be successfully complied using TeXworks editor (Version 0.4.6) with TeX Live 2015.
 
@@ -72,7 +72,7 @@
 \title {\thetitle}
 \author {Allen B. Downey \\\\\\\\
 Version 2.x Contributor\\\\
-Craig Scratchley\\}
+W. Craig Scratchley\\}
 \date {Version \theversion}
 
 
@@ -135,6 +135,7 @@ of this book; they probably don't even like it.
 {\Large \thetitle}
 
 {\large Allen B. Downey}
+{\large Version 2.x Contributor:  W. Craig Scratchley}
 
 Version \theversion
 
@@ -151,9 +152,21 @@ Unported License, which is available at
 
 \end{htmlonly}
 \chapter {Preface to Version \theversion}
- {\itshape Physical Modeling in MATLAB}'s first edition was published in Jan 2008. Credit must be give to the original author, Allen B. Downey, for his intial work, and his continued updates to the book. Similarly, credit must also be given to the many online contributors who have helped improved the book over the years.
- With the multiple yearly updates of the MATLAB software itself, a significant part of the original material is no longer up-to-date. The most recent version of MATLAB is 2016b which was released in September 2016. Hence, there is a need to reexamine the contents of the book to keep it relevant to the latest version of MATLAB. Led by Dr. Craig Scratchley, with support from Teaching and Learning Centre (TLC) and the library of Simon Fraser University (SFU) through the Open Educational Resources (OER) grant, an effort to overhaul Physical Modeling in MATLAB was made. 
- Version \theversion , builds on the first version and was edited to (1) be consistent with MATLAB 2016b, (2) provide corrections, format standardizations and clarifications,(3) (eventually) follow a unified MATLAB coding-style in its provided coding examples outlined in \href{https://www.mathworks.com/matlabcentral/fileexchange/46056-matlab-style-guidelines-2-0}{MATLAB Style Guidelines 2.0}.
+ {\itshape Physical Modeling in MATLAB}'s first edition was published in Jan 2008. Credit must be give to the original author, Allen B. Downey, for his intial work, and his many updates to the book. Credit must also be given to the many online contributors who have helped improved the book over the years.
+
+ With the twice yearly updates of the MATLAB software itself, a significant part of the original material is no longer up-to-date. The most recent version of MATLAB is 2016b which was released in September 2016. Hence, there was a need to reexamine the contents of the book to keep it relevant to the latest version of MATLAB. Led by Craig Scratchley, with support from the Simon Fraser University (SFU) Teaching and Learning Centre (TLC) and library through an Open Educational Resources (OER) grant, an effort to overhaul Physical Modeling in MATLAB has been made. 
+
+ Version \theversion , builds on Allen Downey's work and was edited to (1) be consistent with MATLAB 2016b  (2) provide corrections, format standardizations and clarifications  (3) reorder and rework material from Chapter 10 to the end of the book.
+
+% eventually will need more information, like location of GitHub repository.
+% SFU collaborators should be mentioned here (too).
+
+If you have suggestions and corrections, please send them to both
+{\tt craig\_scratchley@alumni.sfu.ca} and {\tt downey@allendowney.com}.
+
+\noindent W. Craig Scratchley \\
+\noindent Vancouver, BC, Canada \\
+
 \chapter{Preface}
 Most books that use MATLAB are aimed at readers who know how
 to program.  This book is for people who have never programmed
@@ -242,7 +255,16 @@ code examples look better.
 
 \item Arjun Plakkat found a numerical error.
 
-\item Craig Scratchley let me know about a problem in the HTML version, and then started a project to produce this new significantly revised version of the book.
+\item Craig Scratchley let me know about a problem in the HTML version, 
+and then started a project to produce this new significantly revised version 
+of the book.  He supervised the following three individuals who assisted him:
+
+\item Zhen Gang Xiao did a lot of work on the book, including most 
+of the work synchronizing MATLAB output with R2016b 
+
+\item Zavier Patrick Aguila did things including consistently numbering equations.
+
+\item Michael Cline did things including putting in support for .pdf bookmarks.
 
 \end{itemize}
 
@@ -1010,9 +1032,8 @@ something meaningful and memorable.  You should be very careful to choose a
 name that is not already in use; if you do, you might accidentally
 replace one of MATLAB's functions with your own.
 Finally, the name of the file cannot contain spaces.  If you create
-a file named {\tt my script.m}, MATLAB doesn't complain until you try
+a file named {\tt my script.m}, MATLAB will complain when you try
 to run it:
-% check the above *** wcs ***
 
 \begin{verbatim}
 >> my script
@@ -1745,7 +1766,6 @@ plot; {\tt hold off} returns to the default behavior.
 
 %Ensure no figures are on the screen, and then t
 Try this:
-% check the above, *** wcs ***
 
 \begin{verbatim}
 >> hold on
@@ -2481,9 +2501,8 @@ logicals.
 \end{verbatim}
 
 ``Subscript indices'' is MATLAB's longfangled way to say ``indices.''
-``Real positive integers'' means that 
-the imaginary part of a complex number should be zero.  
-% check this, *** wcs ***
+``Real positive integers'' 
+is self-explanatory. 
 And you can forget about ``logicals'' for now.
 
 If the index is too big, you get this:
@@ -6645,8 +6664,8 @@ function res = freefall(t, X)
 end
 
 function res = acceleration(t, p, v)
-    g = -9.8;      % acceleration of gravity in m/s^2
-    res = g;
+    g = 9.8;      % gravity in m/s^2
+    res = -g;
 end
 \end{verbatim}
 
@@ -6715,7 +6734,7 @@ into account (you don't have to make any changes in the {\tt freefall} function:
 
 \begin{verbatim}
 function res = acceleration(t, p, v)
-    a_g = -9.8;              % acceleration of gravity in m/s^2
+    a_g = -9.8;              % acceleration due to gravity in m/s^2
     b = 0.2;                 % drag constant
     m = 75;                  % mass in kg
     f_d = b * v^2;           % drag force in N
@@ -7056,6 +7075,7 @@ net?
 
 
 \section{Spacial vectors and air resistance on projectiles}
+\label{spacial}
 
 The word ``vector'' means different things to different people.
 In MATLAB, a vector is a matrix that has either one row or one
@@ -7201,8 +7221,7 @@ assuming
 %?
 %Hint: the needed initial velocity is dependent apon the launch angle, and let's 
 %assume 
-for now a launch angle of 45 degrees
-?
+for now a launch angle of 45 degrees?
 %. 
 Do you think that 45 degress is the optimal launch angle when 
 air resistance is considered?  Why or why not?
@@ -7253,10 +7272,10 @@ we ignore Magnus force, the path of the baseball stays
 in a plane, so we can model it as a projectile in two
 dimensions.
 
-As presented earlier in the chapter, a 
+As presented in Section~\ref{spacial}, a 
 simple model of the drag of a baseball is:
 %
-\[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
+\[ F_d = -\frac{1}{2} ~ \rho ~ A ~ C_d ~ v^2 ~ \hat{V}   \]
 %
 where $F_d$ is a vector that represents the force on the baseball due
 to drag, $C_d$ is the drag coefficient (0.3 is a reasonable choice),
