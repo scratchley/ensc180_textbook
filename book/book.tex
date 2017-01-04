@@ -765,9 +765,8 @@ speed_of_light = 300000000
 
 Although MATLAB can handle large numbers, there is a limit.  The
 predefined variables {\tt realmax} and {\tt realmin} contain the
-largest and smallest numbers that MATLAB can handle\footnote{The names
-of these variables are misleading; floating-point numbers are
-sometimes, wrongly, called ``real''.}.
+largest and smallest number magnitudes that MATLAB can handle\footnote{The names
+of these variables are misleading: other documentation refers to ``floating-point numbers'', not ``real numbers''.}.
 
 \begin{verbatim}
 >> realmax
@@ -1053,9 +1052,11 @@ Translate this expression into MATLAB and store your
 code in a file named {\tt fibonacci1.m}.  At the prompt, set the value
 of {\tt n} to 10 and then run your script.  The last line of your
 script should assign the value of $F_n$ to {\tt ans}.
-(The correct value of $F_{10}$ is 55.0000 in the command window).
+Try outputting {\tt ans} with both {\tt format short} and {\tt format long}.
+Notice, especially with the long format, that the answer is not exactly
+55 as it should be for $F_{10}$.  This is due to things like rounding errors
+as the expression was being calculated.
 \end{ex}
-% consider the above *** wcs ***
 
 
 \section{Why scripts?}
@@ -1110,8 +1111,16 @@ the code you think you are running.
 \section{The workspace}
 
 The variables you create are stored in the {\bf workspace}, which is a
-set of variables and their values.  The {\tt who} command prints the
-names of the variables in the workspace. Make sure the workspace is empty and try the following commands.
+set of variables and their values.  
+The {\tt clear} command, by itself, removes any variables you may
+have in the workspace.
+
+\begin{verbatim}
+>> clear
+\end{verbatim}
+
+The {\tt who} command prints the
+names of the variables in the workspace. 
 
 \begin{verbatim}
 >> x=5;
@@ -1124,15 +1133,15 @@ Your variables are:
 x  y  z  
 \end{verbatim}
 
-The {\tt clear} command removes variables.
+The {\tt clear} command can also remove specified variables.
 
 \begin{verbatim}
->> clear y
+>> clear x y
 >> who
 
 Your variables are:
 
-x  z  
+z  
 \end{verbatim}
 
 To display the value of a variable, you can use the {\tt disp}
@@ -1149,7 +1158,11 @@ But it's easier to just type the variable name.
 >> z
 z = 9
 \end{verbatim}
-
+% Downey wrote:
+%(Strictly speaking, the name of a variable is an expression, so
+%evaluating it should assign a value to {\tt ans}, but MATLAB seems
+%to handle this as a special case.)
+%Zhen did not agree
 
 \section{More errors}
 
@@ -1735,7 +1748,8 @@ the new plot.  The {\tt hold} command lets you override that behavior.
 {\tt hold on} tells MATLAB not to clear the figure when it makes a new
 plot; {\tt hold off} returns to the default behavior.
 
-Ensure no figures are on the screen, and then try this:
+%Ensure no figures are on the screen, and then t
+Try this:
 % check the above, *** wcs ***
 
 \begin{verbatim}
@@ -1745,7 +1759,7 @@ Ensure no figures are on the screen, and then try this:
 >> hold off
 \end{verbatim}
 
-You should see a figure with two circles.  MATLAB scales
+You should see a figure with three circles.  MATLAB scales
 the plot automatically so that the axes run from the lowest value in
 the plot to the highest.  So in this example the points are plotted in
 the corners.
@@ -1881,10 +1895,10 @@ end
 ans = total
 \end{verbatim}
 
-The script above can now compute any number of terms, with the
+The code above can now compute any number of terms, with the
 precondition that you have to set {\tt n} before you execute
-the script.  Put the script in a file named {\tt series.m}, then 
-run it with different values
+the code.  Put the code in a file named {\tt series.m}, then 
+run the script with different values
 of {\tt n} 
 as shown in the following:
 
@@ -1970,7 +1984,7 @@ We have already seen the Fibonacci sequence, $F$, which
 is defined recurrently as
 
 \begin{equation}
-F_{i} = F_{i-1} + F_{i-2} 
+for~~i \ge 3, ~~  F_{i} = F_{i-1} + F_{i-2} 
 \end{equation}
 
 In order to get started, you have to specify the first two
@@ -2043,7 +2057,7 @@ aren't any numbers that fit that description, so the result is
 \begin{verbatim}
 >> 1:-1
 
-ans = Empty matrix: 1-by-0
+ans = 1×0 empty double row vector
 \end{verbatim}
 
 If the matrix is empty, you might expect it to be ``0-by-0,'' but
@@ -2314,6 +2328,7 @@ that it also displays the size and type of each variable.
 First I'll make one of each kind of value:
 
 \begin{verbatim}
+>> clear
 >> scalar = 5
 
 scalar = 5
@@ -2727,7 +2742,7 @@ end
 
 {\tt break} does pretty much what it sounds like.  It ends the
 loop and proceeds immediately to the next statement after the
-loop (in this case, there isn't one, so the script ends).
+loop (in this case, there isn't one, so the code ends).
 
 This example demonstrates the basic idea of a search, but it
 also demonstrates a dangerous use of the {\tt if} statement.
@@ -3117,7 +3132,9 @@ c = 1
 \end{verbatim}
 
 So inside a function you can use whatever variable names you
-want without worrying about collisions.
+want without worrying about collisions.  
+Notice the use of the "," which allowed two things to be done on
+one line, both of which were reported on.  
 
 
 \section{Documentation}
@@ -3205,10 +3222,9 @@ Then here's what you'll get:
 \end{verbatim}
 
 The second gotcha is that the name of the file can't have spaces.
-For example, if you write a function and name the file {\tt my func.m},
-which the MATLAB editor will happily allow you to do, and then
+For example, if you write a function and rename the file to {\tt my func.m},
+and then
 try to run it, you get:
-% check above, *** wcs ***
 
 \begin{verbatim}
 >> y = my func(1)
@@ -3358,9 +3374,14 @@ end
 \end{verbatim}
 
 This function is good enough for most applications, but remember
-that floating-point values are only approximately right; in some
+that floating-point values are 
+sometimes 
+only approximately right: in some
 cases the approximation is an integer but the actual
-value is not.
+value is not, 
+and in other cases like what we saw with fibonacci1.m,
+the actual value is an integer but the floating-point
+approximation is not.
 
 
 \section{An incremental development example}
@@ -6109,6 +6130,7 @@ equations:
 
 \begin{eqnarray*}
 \frac{dR}{dt} = a R - b R F \\
+\\
 \frac{dF}{dt} = e b R F - c F
 \end{eqnarray*}
 %
