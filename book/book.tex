@@ -6626,12 +6626,13 @@ To make this simulation more realistic, we can add air resistance.
 For large objects moving quickly through air, the force due to air
 resistance, called ``drag,'' is proportional to $v^2$:
 
-\[ F_{drag} = c v^2 \]
+\[ F_{d} = b v^2 \]
 
-Where $c$ is a drag constant that depends on the density of
+Where $b$ is a drag constant that depends on the density of
 air, the cross-sectional area of the object and
 the surface properties of the object.  For purposes of this
-problem, let's say that $c = 0.2$.
+problem, let's say that $b = 0.2$.
+% b is used in the book "Physics for Scientists and Engineers" by Paul A. Tipler.
 
 To convert from force to acceleration, we have to know mass, so let's
 say that the skydiver (with equipment) weighs 75 kg.
@@ -6641,17 +6642,19 @@ into account (you don't have to make any changes in the {\tt freefall} function:
 
 \begin{verbatim}
 function res = acceleration(t, p, v)
-    a_grav = -9.8;              % acceleration of gravity in m/s^2
-    c = 0.2;                    % drag constant
-    m = 75;                     % mass in kg
-    f_drag = c * v^2;           % drag force in N
-    a_drag = f_drag / m;        % drag acceleration in m/s^2
-    res = a_grav + a_drag;      % total acceleration
+    a_g = -9.8;              % acceleration of gravity in m/s^2
+    b = 0.2;                 % drag constant
+    m = 75;                  % mass in kg
+    f_d = b * v^2;           % drag force in N
+    a_d = f_d / m;           % drag acceleration in m/s^2
+    res = a_g + a_d;         % total acceleration
 end
 \end{verbatim}
 
-The sign of the drag force (and acceleration) is positive as
-long as the object is falling, the direction of the drag force is
+The sign of the drag force (and drag acceleration) is positive as
+long as the object is falling:  the direction of the drag force is
+the opposite of the direction of motion and we have defined the 
+positive direction to be
 up.
 The net
 acceleration is the sum of gravity and drag.  Be careful when you
@@ -6748,8 +6751,8 @@ function res = projectile(t, W)
 end
 
 function res = acceleration(t, P, V)
-    g = -9.8;             % acceleration of gravity in m/s^2
-    res = [0; g];
+    g = 9.8;             % gravity in m/s^2
+    res = [0; -g];
 end
 \end{verbatim}
 
@@ -6763,7 +6766,7 @@ elements for the $x$ and $y$ components.
 The result from
 {\tt acceleration} is also a vector; ignoring air resistance
 (for now), the acceleration in the $x$ direction is 0; in
-the $y$ direction it's $g$.
+the $y$ direction it's $-g$.
 Other than that, this code is similar to what we saw in
 Section~\ref{freefall}.
 
@@ -6775,8 +6778,8 @@ this:
 
 \begin{verbatim}
 ode45(@projectile, [0,10], [0, 3, 40, 30]);
-% should we change the above from 10 to 7?  *** wcs ***
 \end{verbatim}
+% should we change the above from 10 to 7?  *** wcs ***
 
 And the result looks like this:
 
@@ -7006,7 +7009,7 @@ from the time values in {\tt T} to the population values in {\tt Y}.
 
 \end{description}
 
-In this chapter we will see another use of MATLAB vectors:
+In this section we will see another use of MATLAB vectors:
 representing spatial vectors.  A spatial vector is a value that
 represents a multidimensional physical quantity like position,
 velocity, acceleration or force\footnote{See
@@ -7035,12 +7038,15 @@ And suppose you are asked to compute the total acceleration of
 the ball due to drag and gravity.  In math notation, the force
 due to drag is
 
-\[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
+\[ F_d = -\frac{1}{2} ~ \rho ~ A ~ C_d ~ v^2 ~ \hat{V}   \]
 
 where $V$ is a spatial vector representing velocity, $v$ is the magnitude
 of the velocity (sometimes called ``speed''), and $\hat{V}$ is a unit
 vector in the direction of the velocity vector.  The other terms,
 $\rho$, $A$ and $C_d$, are scalars.
+
+For more information about drag, see
+\url{https://en.wikipedia.org/wiki/Drag_(physics)}.
 
 The magnitude of a vector is the square root of the sum of the squares
 of the elements.  You could compute it with {\tt hypotenuse} from
@@ -7077,7 +7083,7 @@ ans = 1
 To compute $F_d$ we just multiply the scalar terms by $\hat{V}$.
 
 \begin{verbatim}
-Fd = - 1/2 * C * rho * A * v^2 * Vhat
+Fd = - 1/2 * rho * A * Cd * v^2 * Vhat
 \end{verbatim}
 
 Similarly, we can compute acceleration by dividing the vector
@@ -7087,20 +7093,20 @@ $F_d$ by the scalar $m$.
 Ad = Fd / m
 \end{verbatim}
 
-To represent the acceleration of gravity, we create a vector 
+To represent the acceleration due to gravity, we create a vector 
 with two components:
 
 \begin{verbatim}
 Ag = [0; -9.8]
 \end{verbatim}
 
-The $x$ component of gravity is 0; the $y$ component is $-9.8 m/s^2$.
+The $x$ component of acceleration due to gravity is 0; the $y$ component is $-9.8 m/s^2$.
 
 Finally we compute total acceleration by adding vector
 quantities:
 
 \begin{verbatim}
-A = Ag + Ad;
+At = Ag + Ad;
 \end{verbatim}
 
 One nice thing about this computation is that we didn't have to
@@ -7109,7 +7115,10 @@ spatial vectors as basic quantities, we can express complicated computations
 concisely.
 
 \begin{ex}
-Add air resistance to the simulation of the human projectile.  In
+Add air resistance to the simulation of the human projectile.  
+Use the formula 
+\[ F_d = -b ~ v^2 ~ \hat{V}   \]
+In
 the skydiver scenario, we estimated that the drag constant was
 $0.2$, but that was based on the assumption that the skydiver is
 falling flat.  A human cannonball, flying head-first, probably
@@ -7171,7 +7180,8 @@ we ignore Magnus force, the path of the baseball stays
 in a plane, so we can model it as a projectile in two
 dimensions.
 
-A simple model of the drag of a baseball is:
+As presented earlier in the chapter, a 
+simple model of the drag of a baseball is:
 %
 \[ F_d = -\frac{1}{2} ~ \rho ~ v^2 ~ A ~ C_d ~ \hat{V}   \]
 %
@@ -7183,9 +7193,6 @@ magnitude of the velocity vector, and $\hat{V}$ is a unit vector in
 the direction of the velocity vector.  The mass of the baseball is
 $0.145$ kg.
 
-For more information about drag, see
-\url{https://en.wikipedia.org/wiki/Drag_(physics)}.
-
 \begin{itemize}
 
 \item Write a function that takes 
@@ -7193,7 +7200,8 @@ as input variables
 the initial velocity, the initial height, and the launch angle of the baseball,
 %as input variables, 
 uses {\tt ode45} to compute
-the trajectory, and returns the range (horizontal distance in flight)
+the trajectory, and returns the range (horizontal distance in flight until
+the ball impacts the ground)
 as an output variable.
 
 \item Use your implemented function to display the horizontal distance profile 
@@ -7205,31 +7213,8 @@ Describe the relation between the horizontal distance and the initial velocity.
 the horizontal distance profile 
 with launch angles from 20 to 60 degrees. Describe the relation between 
 the horizontal distance and the launch angle.  Approximate the optimal 
-launch angle for this problem (for present purposes, the launch angle that gives the furthest horizontal distance to ball impact).
+launch angle for this problem (for present purposes, the launch angle that gives the furthest horizontal distance to the ball impacting the ground).
 You can alter the plotted launch angles if needed or desired.  
-
-\item Write a function that takes the initial velocity of the baseball
-as an input variable, computes the launch angle that maximizes
-the range, and returns the resulted angle and the corresponding range as output variables.
-How does the resulted launch angle vary with initial velocity?
-
-\item When the Red Sox won the World Series in 2007, they played the
-Colorado Rockies at their home field in Denver, Colorado.  Find an
-estimate of the density of air in the Mile High City.  What effect
-does this have on drag?  Make a prediction about what effect this will
-have on the launch angle that produces the longest horizontal flying 
-distance, and then use your simulation to test
-your prediction.
-
-\item The actual drag on a baseball is more complicated than what is
-captured by our simple model.  In particular, the drag coefficient
-varies with velocity.  You can get some of the details from {\em The
-Physics of Baseball}\footnote{Robert K. Adair, Harper Paperbacks, 3rd
-Edition, 2002.}; you also might find information on the web.
-Either way, specify a more realistic model of drag and modify your
-program to implement it.  How big is the effect on your computed
-ranges?  How big is the effect on the launch angles that produce the 
-maximum horizontal flying distance?
 
 \end{itemize}
 
@@ -7244,28 +7229,7 @@ maximum horizontal flying distance?
 In Exercise~\ref{baseball}, you were asked to approximate the launch angle which
 can produce the longest horizontal distance for a ball batted at a particular speed 
 and from a particular height.  This angle can be considered as the
-optimal angle. However, very often,  the meaning of ``optimal'' is not obvious.
-
-For example, the Green Monster in Fenway Park is about 12 m high and about 97
-m from home plate along the left field line.  We could ask about the minimum
-speed a ball must leave the bat in order to clear the monster
-(assuming it goes off at the optimal angle)?
-
-In the first thought, we temp 
-We may be tempted
-to choose for the optimal angle the angle that yields the longest
-range (distance from home plate when it lands).  But in this
-case we are trying to clear a 12m wall, so maybe we want
-the angle that yields the longest range when the ball falls
-through 12m.
-
-Although either definition would be good enough for some purposes,
-neither is quite right.  In this case the ``optimal'' angle is
-the one that yields the greatest height at the point where
-the ball reaches the wall, which is 97m from home plate.
-Remember, we are ultimately trying to minimize (optimize)
-the speed that the ball leaves the bat.  At the minimum speed,
-the ball will just clear the wall if hit at the optimal angle. 
+optimal angle. 
 
 The first step in any optimization problem is to define
 what ``optimal'' means.  The second step is to define a range of
@@ -7281,7 +7245,7 @@ the simplest way to get close to an optimal value is to run the
 simulation with a wide range of values and choose the one
 that yields the best result.  This
 method does not combine efficiency and accuracy, 
-especially in a case like this where
+and that combination is especially important in a case like this where
 computing the distances is expensive.
 
 A better algorithm is a Golden Section Search.  
@@ -7310,7 +7274,7 @@ root.  If $y$ is negative then the pair $(x_1, x_3)$ brackets the root.
 Either way the size of the bracket gets smaller, so our
 estimate of the location of the root gets better.
 
-So that was root-finding.  The Sliver Section Search is similar, but
+So that was root-finding.  The Silver Section Search is similar, but
 we have to start with three values, and the picture looks like
 this:
 
@@ -7346,14 +7310,14 @@ function res = optimize(V)
     x2 = V(2);
     x3 = V(3);
     
-    fx1 = height_func(x1);
-    fx2 = height_func(x2);
-    fx3 = height_func(x3);
+    fx1 = distance_func(x1);
+    fx2 = distance_func(x2);
+    fx3 = distance_func(x3);
    
     for i=1:200
         if x3-x2 > x2-x1
             x4 = (x2+x3) / 2;
-            fx4 = height_func(x4);
+            fx4 = distance_func(x4);
             if fx4 > fx2
                 x1 = x2;  fx1 = fx2;
                 x2 = x4;  fx2 = fx4;
@@ -7362,7 +7326,7 @@ function res = optimize(V)
             end
         else
             x4 = (x1+x2) / 2;
-            fx4 = height_func(x4);
+            fx4 = distance_func(x4);
             if fx4 > fx2
                 x3 = x2;  fx3 = fx2;
                 x2 = x4;  fx2 = fx4;
@@ -7381,10 +7345,12 @@ end
 
 The input variable is a vector that contains three values that bracket
 a maximum; in this case they are angles in degrees.  {\tt optimize}
-starts by evaluating {\tt height\_func} for each of the three values.
-We assume that {\tt height\_func} returns the quantity we want to
-optimize; for the Green Monster Problem it is the height of
-the ball when it reaches the wall.
+starts by evaluating {\tt distance\_func} for each of the three values.
+We assume that {\tt distance\_func} returns the result we want to
+maximize; for the baseball best-angle-for-longest-distance problem 
+it is the horizontal distance travelled by the 
+ball when it hits the ground.
+
 
 Each time through the {\tt for} loop the function chooses a value
 of {\tt x4}, evaluates {\tt height\_func}, and then updates the
@@ -7430,7 +7396,7 @@ ans = -1
 
 Modify {\tt optimize} so that it takes a function handle
 as an input variable and uses it as the function to be
-optimized.
+maximized.
 \end{ex}
 
 \begin{ex}
@@ -7438,8 +7404,63 @@ The MATLAB function {\tt fminsearch} takes a function handle
 and searches for a local minimum.  Read the documentation for
 {\tt fminsearch} and use it to find the optimal launch angle
 of a baseball with a given velocity.
+
+\begin{itemize}
+
+\item Write a function that takes the initial velocity of the baseball
+as an input variable, computes the launch angle that maximizes
+the range, and returns the optimal angle and the corresponding range as output variables.
+How does the optimal launch angle vary with initial velocity?
+
+\item When the Red Sox won the World Series in 2007, they played the
+Colorado Rockies at their home field in Denver, Colorado.  Find an
+estimate of the density of air in the Mile High City.  What effect
+does this have on drag?  Make a prediction about what effect this will
+have on the launch angle that produces the longest horizontal flying 
+distance, and then use your simulation to test
+your prediction.
+
+\item The actual drag on a baseball is more complicated than what is
+captured by our simple model.  In particular, the drag coefficient
+varies with velocity.  You can get some of the details from {\em The
+Physics of Baseball}\footnote{Robert K. Adair, Harper Paperbacks, 3rd
+Edition, 2002.}; you also might find information on the web.
+Either way, specify a more realistic model of drag and modify your
+program to implement it.  How big is the effect on your computed
+ranges?  How big is the effect on the launch angles that produce the 
+maximum horizontal flying distance?
+
+\end{itemize}
 \end{ex}
 
+\begin{ex}
+Very often, in an optimization problem, the meaning of ``optimal'' is not obvious.
+
+For example, the Green Monster in Fenway Park is about 12 m high and about 97
+m from home plate along the left field line.  
+%We could ask about 
+What is the
+the optimal angle that the ball should leave 
+the bat so that the ball clears the Green Monster with the minimum speed.
+%We could ask about the minimum
+%speed a ball must leave the bat in order to clear the monster
+%(assuming it goes off at the optimal angle)?
+
+We may be tempted
+to choose for the optimal angle the angle that yields the longest
+range (distance from home plate when it lands).  But in this
+case we are trying to clear a 12m wall, so maybe we want
+the angle that yields the longest range when the ball falls
+through 12m.
+
+Although either definition would be good enough for some purposes,
+neither is quite right.  In this case the ``optimal'' angle is
+the one that yields the greatest height at the point where
+the ball reaches the wall, which is 97m from home plate.
+Remember, we are ultimately trying to minimize 
+the speed that the ball needs to leave the bat.  At this minimum speed,
+the ball will just clear the wall if hit at the optimal angle. 
+\end{ex}
 
 \section{Discrete and continuous maps}
 
