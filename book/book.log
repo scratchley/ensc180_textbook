@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.27)  4 JAN 2017 08:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.27)  4 JAN 2017 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,21 +403,31 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <5> not available
 
 {c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] Excluding 'html
 only' comment. [2]
+Underfull \hbox (badness 3780) in paragraph at lines 164--166
+[]\OT1/cmr/m/n/10 If you have sug-ges-tions and cor-rec-tions, please send them
+ to both
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--169
+
+ []
+
 [3
 
 ] [4
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 183.
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 []\OT1/cmr/m/n/10 If you have sug-ges-tions and cor-rec-tions, please send them
  to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
@@ -434,9 +444,9 @@ Chapter 1.
 
 ] [2] [3]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 467.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 489.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 468.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 490.
  [4] [5] [6] [7] [8] [9] [10]
 \c@ex=\count121
  [11] [12
@@ -454,14 +464,14 @@ Chapter 4.
 Missing character: There is no Ã in font cmtt10!
 Missing character: There is no — in font cmtt10!
 [33] [34]
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 2176--2176
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 2196--2196
 []\OT1/cmtt/m/n/10 Error: The expression to the left of the equals sign is not 
 a valid[] 
  []
 
 [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2909.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2928.
 
  [46] [47] [48
 
@@ -484,18 +494,18 @@ Package epstopdf Info: Source file: <figs/secant.eps>
 (epstopdf)                    size: 4317 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/secant-eps-converted-
 to.pdf figs/secant.eps>
-(epstopdf)             \includegraphics on input line 4126.
+(epstopdf)             \includegraphics on input line 4145.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/secant-eps-converted-to.pdf, id=706, 218.8175pt x 167.62625pt>
+<figs/secant-eps-converted-to.pdf, id=705, 218.8175pt x 167.62625pt>
 File: figs/secant-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/secant-eps-converted-to.pdf>
 Package pdftex.def Info: figs/secant-eps-converted-to.pdf used on input line 41
-26.
+45.
 (pdftex.def)             Requested size: 141.50848pt x 108.405pt.
  [68] [69 <./figs/secant-eps-converted-to.pdf>] [70] [71]
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 4344--4344
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 4363--4363
 []\OT1/cmtt/m/n/10 The function values at the interval endpoints must differ in
  sign.[] 
  []
@@ -513,14 +523,14 @@ Package epstopdf Info: Source file: <figs/model.eps>
 (epstopdf)                    size: 6108 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/model-eps-converted-t
 o.pdf figs/model.eps>
-(epstopdf)             \includegraphics on input line 4733.
+(epstopdf)             \includegraphics on input line 4752.
 Package epstopdf Info: Output file is already uptodate.
- <figs/model-eps-converted-to.pdf, id=775, 327.2225pt x 213.79875pt>
+ <figs/model-eps-converted-to.pdf, id=774, 327.2225pt x 213.79875pt>
 File: figs/model-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/model-eps-converted-to.pdf>
-Package pdftex.def Info: figs/model-eps-converted-to.pdf used on input line 473
-3.
+Package pdftex.def Info: figs/model-eps-converted-to.pdf used on input line 475
+2.
 (pdftex.def)             Requested size: 165.91261pt x 108.405pt.
  [80 <./figs/model-eps-converted-to.pdf>]
 [81] [82] [83] [84] [85] [86] [87] [88]
@@ -536,14 +546,14 @@ Package epstopdf Info: Source file: <figs/rats.eps>
 (epstopdf)                    size: 7496 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/rats-eps-converted-to
 .pdf figs/rats.eps>
-(epstopdf)             \includegraphics on input line 5560.
+(epstopdf)             \includegraphics on input line 5579.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/rats-eps-converted-to.pdf, id=856, 475.7775pt x 357.335pt>
+<figs/rats-eps-converted-to.pdf, id=855, 475.7775pt x 357.335pt>
 File: figs/rats-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/rats-eps-converted-to.pdf>
-Package pdftex.def Info: figs/rats-eps-converted-to.pdf used on input line 5560
+Package pdftex.def Info: figs/rats-eps-converted-to.pdf used on input line 5579
 .
 (pdftex.def)             Requested size: 192.44925pt x 144.54pt.
  [94 <./figs/rats-eps-converted-to.pdf>]
@@ -556,14 +566,14 @@ Package epstopdf Info: Source file: <figs/ode45_simple.eps>
 (epstopdf)                    size: 7277 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ode45_simple-eps-conv
 erted-to.pdf figs/ode45_simple.eps>
-(epstopdf)             \includegraphics on input line 5653.
+(epstopdf)             \includegraphics on input line 5672.
 Package epstopdf Info: Output file is already uptodate.
- <figs/ode45_simple-eps-converted-to.pdf, id=870, 421.575pt x 316.18124pt>
+ <figs/ode45_simple-eps-converted-to.pdf, id=869, 421.575pt x 316.18124pt>
 File: figs/ode45_simple-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ode45_simple-eps-converted-to.pdf>
 Package pdftex.def Info: figs/ode45_simple-eps-converted-to.pdf used on input l
-ine 5653.
+ine 5672.
 (pdftex.def)             Requested size: 211.99632pt x 158.99377pt.
 Package epstopdf Info: Source file: <figs/ode45.eps>
 (epstopdf)                    date: 2017-01-03 13:29:04
@@ -573,15 +583,15 @@ Package epstopdf Info: Source file: <figs/ode45.eps>
 (epstopdf)                    size: 6820 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ode45-eps-converted-t
 o.pdf figs/ode45.eps>
-(epstopdf)             \includegraphics on input line 5660.
+(epstopdf)             \includegraphics on input line 5679.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/ode45-eps-converted-to.pdf, id=871, 421.575pt x 316.18124pt>
+<figs/ode45-eps-converted-to.pdf, id=870, 421.575pt x 316.18124pt>
 File: figs/ode45-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ode45-eps-converted-to.pdf>
-Package pdftex.def Info: figs/ode45-eps-converted-to.pdf used on input line 566
-0.
+Package pdftex.def Info: figs/ode45-eps-converted-to.pdf used on input line 567
+9.
 (pdftex.def)             Requested size: 211.99632pt x 158.99377pt.
 
 Underfull \vbox (badness 4505) has occurred while \output is active []
@@ -597,14 +607,14 @@ Package epstopdf Info: Source file: <figs/stiff.eps>
 (epstopdf)                    size: 12750 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/stiff-eps-converted-t
 o.pdf figs/stiff.eps>
-(epstopdf)             \includegraphics on input line 5789.
+(epstopdf)             \includegraphics on input line 5808.
 Package epstopdf Info: Output file is already uptodate.
- <figs/stiff-eps-converted-to.pdf, id=893, 398.48875pt x 312.16624pt>
+ <figs/stiff-eps-converted-to.pdf, id=892, 398.48875pt x 312.16624pt>
 File: figs/stiff-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/stiff-eps-converted-to.pdf>
-Package pdftex.def Info: figs/stiff-eps-converted-to.pdf used on input line 578
-9.
+Package pdftex.def Info: figs/stiff-eps-converted-to.pdf used on input line 580
+8.
 (pdftex.def)             Requested size: 184.51097pt x 144.54pt.
  [98] [99 <./figs/stiff-eps-converted-to.pdf>] [100] [101] [102
 
@@ -619,15 +629,15 @@ Package epstopdf Info: Source file: <figs/lotka.eps>
 (epstopdf)                    size: 26743 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/lotka-eps-converted-t
 o.pdf figs/lotka.eps>
-(epstopdf)             \includegraphics on input line 6241.
+(epstopdf)             \includegraphics on input line 6260.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/lotka-eps-converted-to.pdf, id=952, 401.5pt x 312.16624pt>
+<figs/lotka-eps-converted-to.pdf, id=951, 401.5pt x 312.16624pt>
 File: figs/lotka-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/lotka-eps-converted-to.pdf>
-Package pdftex.def Info: figs/lotka-eps-converted-to.pdf used on input line 624
-1.
+Package pdftex.def Info: figs/lotka-eps-converted-to.pdf used on input line 626
+0.
 (pdftex.def)             Requested size: 185.90526pt x 144.54pt.
  [108 <./figs/lotka-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/phase.eps>
@@ -638,14 +648,14 @@ Package epstopdf Info: Source file: <figs/phase.eps>
 (epstopdf)                    size: 5898 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/phase-eps-converted-t
 o.pdf figs/phase.eps>
-(epstopdf)             \includegraphics on input line 6345.
+(epstopdf)             \includegraphics on input line 6364.
 Package epstopdf Info: Output file is already uptodate.
-<figs/phase-eps-converted-to.pdf, id=962, 396.48125pt x 312.16624pt>
+<figs/phase-eps-converted-to.pdf, id=961, 396.48125pt x 312.16624pt>
 File: figs/phase-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/phase-eps-converted-to.pdf>
-Package pdftex.def Info: figs/phase-eps-converted-to.pdf used on input line 634
-5.
+Package pdftex.def Info: figs/phase-eps-converted-to.pdf used on input line 636
+4.
 (pdftex.def)             Requested size: 183.58144pt x 144.54pt.
 
 Underfull \vbox (badness 5446) has occurred while \output is active []
@@ -664,18 +674,18 @@ Package epstopdf Info: Source file: <figs/freefall.eps>
 (epstopdf)                    size: 10740 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/freefall-eps-converte
 d-to.pdf figs/freefall.eps>
-(epstopdf)             \includegraphics on input line 6633.
+(epstopdf)             \includegraphics on input line 6652.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/freefall-eps-converted-to.pdf, id=1008, 404.51125pt x 313.17pt>
+<figs/freefall-eps-converted-to.pdf, id=1007, 404.51125pt x 313.17pt>
 File: figs/freefall-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/freefall-eps-converted-to.pdf>
 Package pdftex.def Info: figs/freefall-eps-converted-to.pdf used on input line 
-6633.
+6652.
 (pdftex.def)             Requested size: 186.70084pt x 144.54pt.
  [116 <./figs/freefall-eps-converted-to.pdf>]
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 6674--6674
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 6693--6693
 []    \OT1/cmtt/m/n/10 a_g = -9.8;              % acceleration due to gravity i
 n m/s^2[] 
  []
@@ -688,14 +698,14 @@ Package epstopdf Info: Source file: <figs/freefall2.eps>
 (epstopdf)                    size: 10387 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/freefall2-eps-convert
 ed-to.pdf figs/freefall2.eps>
-(epstopdf)             \includegraphics on input line 6690.
+(epstopdf)             \includegraphics on input line 6709.
 Package epstopdf Info: Output file is already uptodate.
-<figs/freefall2-eps-converted-to.pdf, id=1019, 404.51125pt x 313.17pt>
+<figs/freefall2-eps-converted-to.pdf, id=1018, 404.51125pt x 313.17pt>
 File: figs/freefall2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/freefall2-eps-converted-to.pdf>
 Package pdftex.def Info: figs/freefall2-eps-converted-to.pdf used on input line
- 6690.
+ 6709.
 (pdftex.def)             Requested size: 186.70084pt x 144.54pt.
  [117 <./figs/freefall2-eps-converted-to.pdf>] [118]
 Package epstopdf Info: Source file: <figs/proj1_10s.eps>
@@ -706,33 +716,33 @@ Package epstopdf Info: Source file: <figs/proj1_10s.eps>
 (epstopdf)                    size: 14699 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/proj1_10s-eps-convert
 ed-to.pdf figs/proj1_10s.eps>
-(epstopdf)             \includegraphics on input line 6808.
+(epstopdf)             \includegraphics on input line 6827.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/proj1_10s-eps-converted-to.pdf, id=1041, 421.575pt x 316.18124pt>
+<figs/proj1_10s-eps-converted-to.pdf, id=1040, 421.575pt x 316.18124pt>
 File: figs/proj1_10s-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/proj1_10s-eps-converted-to.pdf>
 Package pdftex.def Info: figs/proj1_10s-eps-converted-to.pdf used on input line
- 6808.
+ 6827.
 (pdftex.def)             Requested size: 192.72392pt x 144.54pt.
  [119 <./figs/proj1_10s-eps-converted-to.pdf>] [120]
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
  [121]
-Overfull \hbox (52.74678pt too wide) in paragraph at lines 6968--6968
+Overfull \hbox (52.74678pt too wide) in paragraph at lines 6987--6987
  []    \OT1/cmtt/m/n/10 isterminal = 1;      % Stop the integration if height c
 rosses zero.[] 
  []
 
 
-Overfull \hbox (15.9971pt too wide) in paragraph at lines 6968--6968
+Overfull \hbox (15.9971pt too wide) in paragraph at lines 6987--6987
  []    \OT1/cmtt/m/n/10 direction = -1;      % But only if the height is decrea
 sing.[] 
  []
 
 
-Underfull \hbox (badness 1194) in paragraph at lines 6982--6988
+Underfull \hbox (badness 1194) in paragraph at lines 7001--7007
 []\OT1/cmtt/m/n/10 isterminal \OT1/cmr/m/n/10 de-ter-mines what hap-pens when t
 he event oc-curs. If
  []
@@ -750,12 +760,12 @@ Package epstopdf Info: Source file: <figs/secant.eps>
 (epstopdf)                    size: 4317 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/secant-eps-converted-
 to.pdf figs/secant.eps>
-(epstopdf)             \includegraphics on input line 7283.
+(epstopdf)             \includegraphics on input line 7302.
 Package epstopdf Info: Output file is already uptodate.
 File: figs/secant-eps-converted-to.pdf Graphic file (type pdf)
  <use figs/secant-eps-converted-to.pdf>
-Package pdftex.def Info: figs/secant-eps-converted-to.pdf used on input line 72
-83.
+Package pdftex.def Info: figs/secant-eps-converted-to.pdf used on input line 73
+02.
 (pdftex.def)             Requested size: 141.50848pt x 108.405pt.
 Package epstopdf Info: Source file: <figs/golden1.eps>
 (epstopdf)                    date: 2017-01-03 13:29:04
@@ -765,15 +775,15 @@ Package epstopdf Info: Source file: <figs/golden1.eps>
 (epstopdf)                    size: 4235 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/golden1-eps-converted
 -to.pdf figs/golden1.eps>
-(epstopdf)             \includegraphics on input line 7303.
+(epstopdf)             \includegraphics on input line 7322.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/golden1-eps-converted-to.pdf, id=1105, 218.8175pt x 157.58875pt>
+<figs/golden1-eps-converted-to.pdf, id=1104, 218.8175pt x 157.58875pt>
 File: figs/golden1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/golden1-eps-converted-to.pdf>
 Package pdftex.def Info: figs/golden1-eps-converted-to.pdf used on input line 7
-303.
+322.
 (pdftex.def)             Requested size: 150.52345pt x 108.405pt.
 Package epstopdf Info: Source file: <figs/golden2.eps>
 (epstopdf)                    date: 2017-01-03 13:29:04
@@ -783,22 +793,22 @@ Package epstopdf Info: Source file: <figs/golden2.eps>
 (epstopdf)                    size: 4663 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/golden2-eps-converted
 -to.pdf figs/golden2.eps>
-(epstopdf)             \includegraphics on input line 7315.
+(epstopdf)             \includegraphics on input line 7334.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/golden2-eps-converted-to.pdf, id=1106, 484.81125pt x 180.675pt>
+<figs/golden2-eps-converted-to.pdf, id=1105, 484.81125pt x 180.675pt>
 File: figs/golden2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/golden2-eps-converted-to.pdf>
 Package pdftex.def Info: figs/golden2-eps-converted-to.pdf used on input line 7
-315.
+334.
 (pdftex.def)             Requested size: 290.88899pt x 108.405pt.
 
 Underfull \vbox (badness 3058) has occurred while \output is active []
 
  [128 <./figs/golden1-eps-converted-to.pdf>] [129 <./figs/golden2-eps-converted
 -to.pdf>]
-Underfull \hbox (badness 2035) in paragraph at lines 7387--7392
+Underfull \hbox (badness 2035) in paragraph at lines 7406--7411
 \OT1/cmr/m/it/10 the Golden Sec-tion Search ([]$\OT1/cmtt/m/it/10 https : / / e
 n . wikipedia . org / wiki / Golden _
  []
@@ -812,15 +822,15 @@ Package epstopdf Info: Source file: <figs/ratplot.eps>
 (epstopdf)                    size: 6031 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ratplot-eps-converted
 -to.pdf figs/ratplot.eps>
-(epstopdf)             \includegraphics on input line 7651.
+(epstopdf)             \includegraphics on input line 7670.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/ratplot-eps-converted-to.pdf, id=1153, 715.67375pt x 316.18124pt>
+<figs/ratplot-eps-converted-to.pdf, id=1152, 715.67375pt x 316.18124pt>
 File: figs/ratplot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ratplot-eps-converted-to.pdf>
 Package pdftex.def Info: figs/ratplot-eps-converted-to.pdf used on input line 7
-651.
+670.
 (pdftex.def)             Requested size: 332.44632pt x 158.99724pt.
 Package epstopdf Info: Source file: <figs/ratplot2.eps>
 (epstopdf)                    date: 2017-01-03 13:29:04
@@ -830,15 +840,15 @@ Package epstopdf Info: Source file: <figs/ratplot2.eps>
 (epstopdf)                    size: 5667 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ratplot2-eps-converte
 d-to.pdf figs/ratplot2.eps>
-(epstopdf)             \includegraphics on input line 7661.
+(epstopdf)             \includegraphics on input line 7680.
 Package epstopdf Info: Output file is already uptodate.
 
-<figs/ratplot2-eps-converted-to.pdf, id=1154, 411.5375pt x 328.22626pt>
+<figs/ratplot2-eps-converted-to.pdf, id=1153, 411.5375pt x 328.22626pt>
 File: figs/ratplot2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ratplot2-eps-converted-to.pdf>
 Package pdftex.def Info: figs/ratplot2-eps-converted-to.pdf used on input line 
-7661.
+7680.
 (pdftex.def)             Requested size: 289.07901pt x 144.54019pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -850,13 +860,13 @@ d-to.pdf>]
 ]
 Chapter 12.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7843--7846
+Underfull \hbox (badness 10000) in paragraph at lines 7862--7865
 []\OT1/cmr/bx/n/10 Exercise 12.2 \OT1/cmr/m/it/10 En-cap-su-late these state-me
 nts in a func-tion named
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 7843--7846
+Underfull \hbox (badness 1694) in paragraph at lines 7862--7865
 \OT1/cmtt/m/n/10 gravity[]force[]func \OT1/cmr/m/it/10 that takes \OT1/cmtt/m/n
 /10 P1\OT1/cmr/m/it/10 , \OT1/cmtt/m/n/10 m1\OT1/cmr/m/it/10 , \OT1/cmtt/m/n/10
  P2\OT1/cmr/m/it/10 , and \OT1/cmtt/m/n/10 m2 \OT1/cmr/m/it/10 as in-put vari-a
@@ -864,7 +874,7 @@ bles
  []
 
 [139]
-Overfull \hbox (22.4968pt too wide) in paragraph at lines 7887--7887
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 7906--7906
 []    \OT1/cmtt/m/n/10 minmax = [min([X1;X2]), max([X1;X2]), min([Y1;Y2]), max(
 [Y1;Y2])];[] 
  []
@@ -874,12 +884,12 @@ Chapter 13.
 [143
 
 ] [144] [145]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8230.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 8230.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8249.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8249.
  (./book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8230.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 8230.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8230.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8249.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 8249.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8249.
  ) 
 Here is how much of TeX's memory you used:
  7394 strings out of 493013
@@ -888,7 +898,7 @@ Here is how much of TeX's memory you used:
  10406 multiletter control sequences out of 15000+600000
  16578 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,11n,43p,585b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,11n,43p,580b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-di
@@ -911,10 +921,10 @@ onts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2016/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt8.pfb>
-Output written on book.pdf (157 pages, 706348 bytes).
+Output written on book.pdf (157 pages, 706913 bytes).
 PDF statistics:
- 1862 PDF objects out of 2073 (max. 8388607)
- 1632 compressed objects within 17 object streams
+ 1861 PDF objects out of 2073 (max. 8388607)
+ 1631 compressed objects within 17 object streams
  410 named destinations out of 1000 (max. 500000)
  1236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
