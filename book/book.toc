@@ -110,7 +110,7 @@
 \contentsline {section}{\numberline {9.3}The transpose operator}{105}{section.9.3}
 \contentsline {section}{\numberline {9.4}Lotka-Volterra}{106}{section.9.4}
 \contentsline {section}{\numberline {9.5}What can go wrong?}{108}{section.9.5}
-\contentsline {section}{\numberline {9.6}Output matrices}{108}{section.9.6}
+\contentsline {section}{\numberline {9.6}Output matrices}{109}{section.9.6}
 \contentsline {section}{\numberline {9.7}Glossary}{110}{section.9.7}
 \contentsline {section}{\numberline {9.8}Exercises}{111}{section.9.8}
 \contentsline {chapter}{\numberline {10}Second-order systems}{113}{chapter.10}

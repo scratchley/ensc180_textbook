@@ -3797,7 +3797,9 @@ ans = 20    21    29
 There is an interesting connection between Fibonacci numbers and
 Pythagorean triples.  If $F$ is a Fibonacci sequence, then
 
-\[ (F_n F_{n+3}, 2 F_{n+1} F_{n+2}, F_{n+1}^2 + F_{n+2}^2 ) \]
+\begin{equation}
+(F_n F_{n+3}, 2 F_{n+1} F_{n+2}, F_{n+1}^2 + F_{n+2}^2 )
+\end{equation}
 
 is a Pythagorean triple for all $n \ge 1$.
 
@@ -3987,14 +3989,18 @@ seen before.
 If you have studied functions in a math class, you have probably
 seen something like
 
-\[ f(x) = x^2 - 2x -3 \]
+\begin{equation}
+f(x) = x^2 - 2x -3
+\end{equation}
 
 which is supposed to mean that $f$ is a function that maps from
 $x$ to $x^2 - 2x -3$.  The problem is that $f(x)$ is also used to mean
 the value of $f$ that corresponds to a particular value of $x$.  So I
 don't like this notation.  I prefer
 
-\[ f : x \to x^2 - 2x -3 \]
+\begin{equation}
+f : x \to x^2 - 2x -3
+\end{equation}
 
 which means ``f is the function that maps from
 $x$ to $x^2 - 2x -3$.''  In MATLAB, this would be expressed
@@ -4119,7 +4125,9 @@ a given value of $x$ is from being a solution.
 
 In this example, the error function is
 
-\[ f : x \to x^2 - 2x -3 \]
+\begin{equation}
+f : x \to x^2 - 2x -3
+\end{equation}
 
 Any value of $x$ that makes $f(x) = 0$ is also a solution
 of the original equation.
@@ -4625,8 +4633,10 @@ Addison-Wesley, 1989.} with radius $r$ is $\frac{4}{3} \pi r^3$.
 If a sphere with radius $r$ is submerged in water to a depth $d$, the
 volume of the sphere below the water line is 
 
-\[ volume = \frac{\pi}{3} (3r d^2 - d^3) \quad 
-\mbox{as long as} \quad d < 2 r \]
+\begin{equation}
+volume = \frac{\pi}{3} (3r d^2 - d^3) \quad 
+\mbox{as long as} \quad d < 2 r
+\end{equation}
 
 An object floats at the level where the weight of the displaced water
 equals the total weight of the object.
@@ -5000,7 +5010,9 @@ vector as an input and computes a new vector that contains all of the
 partial sums of the original.  In math notation, if $V$ is the
 original vector, then the elements of the cumulative sum, $C$, are:
 
-\[ C_i = \sum_{j=1}^i V_j \]
+\begin{equation}
+C_i = \sum_{j=1}^i V_j
+\end{equation}
 
 In other words, the $i$th element of $C$ is the sum of the first
 $i$ elements from $V$.  MATLAB provides a function named {\tt cumsum}
@@ -5057,7 +5069,9 @@ The multiplicative version of {\tt cumsum} is {\tt cumprod},
 which computes the {\bf cumulative product}.  In math notation,
 that's:
 
-\[ P_i = \prod_{j=1}^i V_j \]
+\begin{equation}
+P_i = \prod_{j=1}^i V_j
+\end{equation}
 
 In MATLAB, that looks like:
 
@@ -5106,7 +5120,9 @@ is called {\bf existential quantification}, and it is denoted with
 the symbol $\exists$, which is pronounced ``there exists.''  For example,
 this expression
 
-\[ \exists x \mbox{~in~} S: x>0 \]
+\begin{equation}
+\exists x \mbox{~in~} S: x>0
+\end{equation}
 
 means, ``there exists some element $x$ in the set $S$ such that
 $x>0$.''  In MATLAB it is natural to express this idea with a logical
@@ -5146,7 +5162,9 @@ logicians as {\bf universal quantification} and denoted with
 the symbol $\forall$ which is pronounced ``for all.''  So this
 expression
 
-\[ \forall x \mbox{~in~} S: x>0 \]
+\begin{equation}
+\forall x \mbox{~in~} S: x>0
+\end{equation}
 
 means ``for all elements, $x$, in the set $S$, $x>0$.''
 
@@ -5155,11 +5173,15 @@ count the number of elements that satisfy the condition.
 A better way is to reduce the problem to
 existential quantification; that is, to rewrite
 
-\[ \forall x \mbox{~in~} S: x>0 \]
+\begin{equation}
+\forall x \mbox{~in~} S: x>0
+\end{equation}
 
 as
 
-\[ \sim \exists x \mbox{~in~} S: x \le 0 \]
+\begin{equation}
+\sim \exists x \mbox{~in~} S: x \le 0
+\end{equation}
 
 Where $\sim \exists$ means ``does not exist.''
 In other words, checking that all the elements are positive is
@@ -5303,7 +5325,9 @@ such that $y = f(t)$.  We don't
 know what it is, but we can write a differential equation
 that describes it:
 
-\[ \frac{df}{dt} = a f \]
+\begin{equation}
+\frac{df}{dt} = a f
+\end{equation}
 
 where $a$ is a constant that characterizes how quickly the population
 increases.
@@ -5312,7 +5336,9 @@ Notice that both sides of the equation are functions.  To say that
 two functions are equal is to say that their values are equal at
 all times.  In other words:
 
-\[ \forall t: \frac{df}{dt}(t) = a f(t) \]
+\begin{equation}
+\forall t: \frac{df}{dt}(t) = a f(t)
+\end{equation}
 
 This is an {\bf ordinary} differential equation (ODE) because all the
 derivatives involved are taken with respect to the
@@ -5334,7 +5360,10 @@ can express the solution as a function of $t$.
 This particular ODE has an infinite number of solutions, but
 they all have this form:
 
-\[ f(t) = b e^{at} \]
+\begin{equation}
+f(t) = b e^{at}
+\end{equation}
+
 
 For any value of $b$, this function satisfies the ODE.  If
 you don't believe me, take its derivative and check.
@@ -5347,12 +5376,18 @@ population over time.
 For example, if we know that $f(0) = 5$ billion cells, then we
 can write
 
-\[ f(0) = 5 = b e^{a 0} \]
+\begin{equation}
+f(0) = 5 = b e^{a 0}
+\end{equation}
+
 
 and solve for $b$, which is 5.  That determines what we wanted
 to know:
 
-\[ f(t) = 5 e^{at} \]
+\begin{equation}
+f(t) = 5 e^{at}
+\end{equation}
+
 
 The extra bit of information that determines $b$ is called
 the {\bf initial condition} (although it isn't always specified
@@ -5381,7 +5416,9 @@ $r$ changes slowly and $\Delta t$ is small.
 But let's assume (for now) that the ODE we are interested in can
 be written so that
 
-\[ \frac{df}{dt}(t) = g(t, f(t)) \]
+\begin{equation}
+\frac{df}{dt}(t) = g(t, f(t))
+\end{equation}
 
 where $g$ is some function that maps $(t, y)$ onto $r$;
 that is, given the time and current population, it computes the rate
@@ -5496,7 +5533,10 @@ depends on the current population and the availability of food,
 which varies over the course of the year.
 The governing equation might be something like
 
-\[ \frac{df}{dt}(t) = a f(t) \left[1 + \sin (\omega t) \right] \]
+\begin{equation}
+\frac{df}{dt}(t) = a f(t) \left[1 + \sin (\omega t) \right]
+\end{equation}
+
 %
 where $t$ is time in days and $f(t)$ is the population at time $t$.
 
@@ -5517,14 +5557,18 @@ $f$ numerically, we have to transform it into a rate function.
 The first step is to introduce a variable,
 $y$, as another name for $f(t)$
 
-\[ \frac{df}{dt}(t) = a y \left[1 + \sin (\omega t) \right] \]
+\begin{equation}
+\frac{df}{dt}(t) = a y \left[1 + \sin (\omega t) \right]
+\end{equation}
 
 This equation means that if we are given $t$ and $y$, we can
 compute $df/dt(t)$, which is the rate of change of $f$.
 The next step is to express that computation as a function called
 $g$:
 
-\[ g(t, y) = a y \left[1 + \sin (\omega t) \right] \]
+\begin{equation}
+g(t, y) = a y \left[1 + \sin (\omega t) \right]
+\end{equation}
 
 Writing the function this way is useful because we can use it 
 with Euler's method
@@ -5712,7 +5756,9 @@ in that order, and return one output variable, {\tt r}.
 
 If you are working with a rate function like this:
 
-\[ g(t, y) = a y \]
+\begin{equation}
+g(t, y) = a y
+\end{equation}
 
 You might be tempted to write this:
 
@@ -5799,7 +5845,9 @@ conditions) the time step needed to control the error is very small,
 which means that the computation takes a long time.  Here's one
 example:
 
-\[ \frac{df}{dt} = f^2 - f^3 \]
+\begin{equation}
+\frac{df}{dt} = f^2 - f^3
+\end{equation}
 
 If you solve this ODE with the initial condition $f(0) = \delta$ over
 the interval from 0 to $2/\delta$, with $\delta = 0.01$, you should
@@ -5892,7 +5940,10 @@ the question as posed.
 As a simplification, we can use Newton's Law of
 Cooling\footnote{\url{https://en.wikipedia.org/wiki/Heat_conduction}}:
 
-\[ \frac{df}{dt} = -r (f - e) \]
+\begin{equation}
+\frac{df}{dt} = -r (f - e)
+\end{equation}
+
 %
 where $f$ is the temperature of the coffee as a function of time and
 $df/dt$ is its time derivative; $e$ is the temperature of the
@@ -6147,11 +6198,11 @@ is rabbits and foxes.
 The model is governed by the following system of differential
 equations:
 
-\begin{eqnarray*}
+\begin{eqnarray}
 \frac{dR}{dt} = a R - b R F \\
 \\
 \frac{dF}{dt} = e b R F - c F
-\end{eqnarray*}
+\end{eqnarray}
 %
 where
 %
@@ -6541,7 +6592,9 @@ By making {\tt rho} an input argument, we made it easier to test
 
 Newton's second law of motion is often written like this
 
-\[ F = ma \]
+\begin{equation}
+F = ma
+\end{equation}
 
 where $F$ is the net force acting on a object, $m$ is the mass
 of the object, and $a$ is the resulting acceleration of the object.
@@ -6554,7 +6607,9 @@ a function and the result of evaluating $F(t)$ is a vector that
 describes the net force at time $t$.  So a more explicit way to
 write Newton's law is
 
-\[ \forall t: \vec{F}(t) = m \vec{a}(t) \]
+\begin{equation}
+\forall t: \vec{F}(t) = m \vec{a}(t)
+\end{equation}
 
 The arrangement of this equation suggests that if you know $m$ and $a$
 you can compute force, which is true, but in most physical
@@ -6566,9 +6621,9 @@ find the position of the object, $p$?  Well, we know that acceleration
 is the second derivative of position, so we can write a differential
 equation
 
-
-\[ \frac{d^2p}{dt^2} = a\]
-
+\begin{equation}
+\frac{d^2p}{dt^2} = a
+\end{equation}
 
 Where $a$ and $p$ are functions of time that return vectors,
 and $\frac{d^2p}{dt^2}$ is the second time derivative of $p$.
@@ -6578,11 +6633,11 @@ ODE.  {\tt ode45} can't solve this equation in this form, but by
 introducing a new variable, $v$, for velocity, we can rewrite it as
 a system of first-order ODEs.
 
-\begin{eqnarray*}
+\begin{eqnarray}
 \frac{dp}{dt} &=& v \\
 \\
 \frac{dv}{dt} &=& a
-\end{eqnarray*}
+\end{eqnarray}
 
 The first equation says that the first derivative of $p$ is $v$; the
 second says that the derivative of $v$ is $a$.
@@ -6667,7 +6722,9 @@ To make this simulation more realistic, we can add air resistance.
 For large objects moving quickly through air, the force due to air
 resistance, called ``drag,'' is proportional to $v^2$:
 
-\[ F_{d} = b v^2 \]
+\begin{equation}
+F_{drag} = b v^2
+\end{equation}
 
 Where $b$ is a drag constant that depends on the density of
 air, the cross-sectional area of the object and
@@ -7716,7 +7773,9 @@ For example\footnote{This example is adapted from Gerald and Wheatley,
 1989.}, suppose that the population of field mice is governed by this
 rate equation:
 
-\[ g(t, y) = ay - b(t) y^{1.7} \]
+\begin{equation}
+g(t, y) = ay - b(t) y^{1.7}
+\end{equation}
 
 where $t$ is time in months, $y$ is population, $a$ is a parameter
 that characterizes population growth in the absence of limitations,
@@ -7824,8 +7883,10 @@ vector $P_1$, and a planet with mass $m_2$ at point $P_2$.  The
 magnitude of the gravitational force\footnote{See
 \url{https://en.wikipedia.org/wiki/Gravity}} between them is
 
-\[ f_g = G \frac{m_1 m_2}{r^2}  \]
-%
+\begin{equation}
+f_g = G \frac{m_1 m_2}{r^2}
+\end{equation}
+
 where $r$ is the distance between them and $G$ is the universal
 gravitational constant, which is about $6.67 \times 10^{-11} N m^2 /
 kg^2$.  Remember that when using this 
@@ -8013,8 +8074,9 @@ energy of the planets and sun.
 The potential energy of a sun with mass $m_1$ and a
 planet with mass $m_2$ and a distance $r$ between them is
 
-\[ U = -G \frac{m_1 m_2}{r}  \]
-%
+\begin{equation}
+U = -G \frac{m_1 m_2}{r}
+\end{equation}
 
 \begin{ex}
 Write a function called {\tt energy\_func} that takes the output of
